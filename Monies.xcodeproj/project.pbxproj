@@ -1,0 +1,895 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		318BA22C5CB14BB8BC19CBD0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F803269C0A154048A7C6546F /* libPods.a */; };
+		37C7F3301AFB8BAA00A62A80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7F32F1AFB8BAA00A62A80 /* Constants.swift */; };
+		AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18D3311AF6DE3200F5836F /* TableRowController.swift */; };
+		AB18D3381AF7A15A00F5836F /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
+		AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75ECC1941219F008B072F /* LockViewController.swift */; };
+		AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
+		AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */; };
+		AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7731AF6951E002C17EF /* RLMSupport.swift */; };
+		ABAD45DE1AF7DD0B0008AC2F /* Blank.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAD45DD1AF7DD0B0008AC2F /* Blank.m */; };
+		ABAD45E01AF7F7010008AC2F /* Communications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD45DF1AF7F7010008AC2F /* Communications.swift */; };
+		ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */; };
+		ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */; };
+		ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */; };
+		ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAE1AF69838007966DD /* WebViewDriver.swift */; };
+		ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */; };
+		ABD99CBC1AF6C8A2007966DD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CBB1AF6C8A2007966DD /* InterfaceController.swift */; };
+		ABD99CBE1AF6C8A2007966DD /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CBD1AF6C8A2007966DD /* GlanceController.swift */; };
+		ABD99CC01AF6C8A2007966DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CBF1AF6C8A2007966DD /* Images.xcassets */; };
+		ABD99CC41AF6C8A2007966DD /* Monies WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */; };
+		ABD99CCC1AF6C8A2007966DD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CCA1AF6C8A2007966DD /* Interface.storyboard */; };
+		ABD99CCE1AF6C8A2007966DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CCD1AF6C8A2007966DD /* Images.xcassets */; };
+		ABD99CD11AF6C8A2007966DD /* Monies WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EAF19411C9E008B072F /* AppDelegate.swift */; };
+		ABE75EB219411C9E008B072F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EB119411C9E008B072F /* ViewController.swift */; };
+		ABE75EB519411C9E008B072F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB319411C9E008B072F /* Main.storyboard */; };
+		ABE75EB719411C9E008B072F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB619411C9E008B072F /* Images.xcassets */; };
+		ABE75EC319411C9E008B072F /* MoniesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EC219411C9E008B072F /* MoniesTests.swift */; };
+		C5271CC7BF196DC099E0220B /* libPods-Monies WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8F922E63330A0720FA21610 /* libPods-Monies WatchKit Extension.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABD99CC51AF6C8A2007966DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABE75EA219411C9E008B072F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD99CC21AF6C8A2007966DD;
+			remoteInfo = "Monies WatchKit App";
+		};
+		ABD99CCF1AF6C8A2007966DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABE75EA219411C9E008B072F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABD99CB61AF6C8A1007966DD;
+			remoteInfo = "Monies WatchKit Extension";
+		};
+		ABE75EBD19411C9E008B072F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ABE75EA219411C9E008B072F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ABE75EA919411C9E008B072F;
+			remoteInfo = Monies;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		ABD99CD81AF6C8A2007966DD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				ABD99CD11AF6C8A2007966DD /* Monies WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		300FBECA5216106AB611C20E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		37C7F32F1AFB8BAA00A62A80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		869466C19A81FB5557CE39FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AB18D3311AF6DE3200F5836F /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableRowController.swift; path = "../Monies WatchKit App/TableRowController.swift"; sourceTree = "<group>"; };
+		AB18D3331AF6DF7300F5836F /* Monies WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Monies WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = "Monies-Bridging-Header.h"; sourceTree = "<group>"; };
+		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxAccount.swift; sourceTree = "<group>"; };
+		AB9ED7731AF6951E002C17EF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		ABAD45DC1AF7DD0B0008AC2F /* Blank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blank.h; sourceTree = "<group>"; };
+		ABAD45DD1AF7DD0B0008AC2F /* Blank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blank.m; sourceTree = "<group>"; };
+		ABAD45DF1AF7F7010008AC2F /* Communications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communications.swift; sourceTree = "<group>"; };
+		ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxDriver.swift; sourceTree = "<group>"; };
+		ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebKitAsyncRunner.swift; sourceTree = "<group>"; };
+		ABD99CAE1AF69838007966DD /* WebViewDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewDriver.swift; sourceTree = "<group>"; };
+		ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
+		ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Monies WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD99CBA1AF6C8A2007966DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD99CBB1AF6C8A2007966DD /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		ABD99CBD1AF6C8A2007966DD /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		ABD99CBF1AF6C8A2007966DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monies WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABD99CC91AF6C8A2007966DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD99CCB1AF6C8A2007966DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		ABD99CCD1AF6C8A2007966DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABE75EAA19411C9E008B072F /* Monies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monies.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE75EAE19411C9E008B072F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABE75EAF19411C9E008B072F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ABE75EB119411C9E008B072F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ABE75EB419411C9E008B072F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABE75EB619411C9E008B072F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ABE75EBC19411C9E008B072F /* MoniesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoniesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABE75EC119411C9E008B072F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABE75EC219411C9E008B072F /* MoniesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoniesTests.swift; sourceTree = "<group>"; };
+		ABE75ECC1941219F008B072F /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
+		CB241AE98519F9C923EFB9C6 /* Pods-Monies WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		F803269C0A154048A7C6546F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8F922E63330A0720FA21610 /* libPods-Monies WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Monies WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ABD99CB41AF6C8A1007966DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5271CC7BF196DC099E0220B /* libPods-Monies WatchKit Extension.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE75EA719411C9E008B072F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */,
+				318BA22C5CB14BB8BC19CBD0 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE75EB919411C9E008B072F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB6A772A19479C3F009D3D45 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ABE75EB119411C9E008B072F /* ViewController.swift */,
+				ABE75ECC1941219F008B072F /* LockViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		AB9ED7751AF6952A002C17EF /* models */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		ABD99CB01AF6983B007966DD /* driver */ = {
+			isa = PBXGroup;
+			children = (
+				ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */,
+				ABD99CAE1AF69838007966DD /* WebViewDriver.swift */,
+				ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */,
+			);
+			name = driver;
+			sourceTree = "<group>";
+		};
+		ABD99CB81AF6C8A2007966DD /* Monies WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				ABD99CBB1AF6C8A2007966DD /* InterfaceController.swift */,
+				ABAD45DC1AF7DD0B0008AC2F /* Blank.h */,
+				ABAD45DD1AF7DD0B0008AC2F /* Blank.m */,
+				ABD99CBD1AF6C8A2007966DD /* GlanceController.swift */,
+				AB18D3311AF6DE3200F5836F /* TableRowController.swift */,
+				ABD99CBF1AF6C8A2007966DD /* Images.xcassets */,
+				ABD99CB91AF6C8A2007966DD /* Supporting Files */,
+				AB18D3331AF6DF7300F5836F /* Monies WatchKit Extension-Bridging-Header.h */,
+				ABAD45DF1AF7F7010008AC2F /* Communications.swift */,
+			);
+			path = "Monies WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		ABD99CB91AF6C8A2007966DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABD99CBA1AF6C8A2007966DD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABD99CC71AF6C8A2007966DD /* Monies WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				ABD99CCA1AF6C8A2007966DD /* Interface.storyboard */,
+				ABD99CCD1AF6C8A2007966DD /* Images.xcassets */,
+				ABD99CC81AF6C8A2007966DD /* Supporting Files */,
+			);
+			path = "Monies WatchKit App";
+			sourceTree = "<group>";
+		};
+		ABD99CC81AF6C8A2007966DD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABD99CC91AF6C8A2007966DD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABE75EA119411C9E008B072F = {
+			isa = PBXGroup;
+			children = (
+				ABE75EAC19411C9E008B072F /* Monies */,
+				ABE75EBF19411C9E008B072F /* MoniesTests */,
+				ABD99CB81AF6C8A2007966DD /* Monies WatchKit Extension */,
+				ABD99CC71AF6C8A2007966DD /* Monies WatchKit App */,
+				ABE75EAB19411C9E008B072F /* Products */,
+				B1465BB745594AA7B690DDFD /* Frameworks */,
+				CA05176F27E9D03FCF71FC93 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		ABE75EAB19411C9E008B072F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ABE75EAA19411C9E008B072F /* Monies.app */,
+				ABE75EBC19411C9E008B072F /* MoniesTests.xctest */,
+				ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */,
+				ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ABE75EAC19411C9E008B072F /* Monies */ = {
+			isa = PBXGroup;
+			children = (
+				37C7F32F1AFB8BAA00A62A80 /* Constants.swift */,
+				ABD99CB01AF6983B007966DD /* driver */,
+				AB9ED7751AF6952A002C17EF /* models */,
+				AB6A772A19479C3F009D3D45 /* controllers */,
+				ABE75EAF19411C9E008B072F /* AppDelegate.swift */,
+				ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */,
+				ABE75EB319411C9E008B072F /* Main.storyboard */,
+				ABE75EB619411C9E008B072F /* Images.xcassets */,
+				ABE75EAD19411C9E008B072F /* Supporting Files */,
+				AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */,
+			);
+			path = Monies;
+			sourceTree = "<group>";
+		};
+		ABE75EAD19411C9E008B072F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ED76F1AF68E1C002C17EF /* Async.swift */,
+				AB9ED7731AF6951E002C17EF /* RLMSupport.swift */,
+				ABE75EAE19411C9E008B072F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ABE75EBF19411C9E008B072F /* MoniesTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABE75EC219411C9E008B072F /* MoniesTests.swift */,
+				ABE75EC019411C9E008B072F /* Supporting Files */,
+			);
+			path = MoniesTests;
+			sourceTree = "<group>";
+		};
+		ABE75EC019411C9E008B072F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ABE75EC119411C9E008B072F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B1465BB745594AA7B690DDFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */,
+				F803269C0A154048A7C6546F /* libPods.a */,
+				F8F922E63330A0720FA21610 /* libPods-Monies WatchKit Extension.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA05176F27E9D03FCF71FC93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				300FBECA5216106AB611C20E /* Pods.debug.xcconfig */,
+				869466C19A81FB5557CE39FF /* Pods.release.xcconfig */,
+				CB241AE98519F9C923EFB9C6 /* Pods-Monies WatchKit Extension.debug.xcconfig */,
+				2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ABD99CB61AF6C8A1007966DD /* Monies WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD99CD51AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit Extension" */;
+			buildPhases = (
+				74E798186AD20E34785218D7 /* Check Pods Manifest.lock */,
+				ABD99CB31AF6C8A1007966DD /* Sources */,
+				ABD99CB41AF6C8A1007966DD /* Frameworks */,
+				ABD99CB51AF6C8A1007966DD /* Resources */,
+				6D0FF87B4DE4E6DB24762345 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD99CC61AF6C8A2007966DD /* PBXTargetDependency */,
+			);
+			name = "Monies WatchKit Extension";
+			productName = "Monies WatchKit Extension";
+			productReference = ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		ABD99CC21AF6C8A2007966DD /* Monies WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABD99CD21AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit App" */;
+			buildPhases = (
+				ABD99CC11AF6C8A2007966DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Monies WatchKit App";
+			productName = "Monies WatchKit App";
+			productReference = ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+		ABE75EA919411C9E008B072F /* Monies */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABE75EC619411C9E008B072F /* Build configuration list for PBXNativeTarget "Monies" */;
+			buildPhases = (
+				F20C38BD95F3445BBF140B03 /* Check Pods Manifest.lock */,
+				ABE75EA619411C9E008B072F /* Sources */,
+				ABE75EA719411C9E008B072F /* Frameworks */,
+				ABE75EA819411C9E008B072F /* Resources */,
+				9622E6D77B7F468AB141852E /* Copy Pods Resources */,
+				ABD99CD81AF6C8A2007966DD /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABD99CD01AF6C8A2007966DD /* PBXTargetDependency */,
+			);
+			name = Monies;
+			productName = Monies;
+			productReference = ABE75EAA19411C9E008B072F /* Monies.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ABE75EBB19411C9E008B072F /* MoniesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABE75EC919411C9E008B072F /* Build configuration list for PBXNativeTarget "MoniesTests" */;
+			buildPhases = (
+				ABE75EB819411C9E008B072F /* Sources */,
+				ABE75EB919411C9E008B072F /* Frameworks */,
+				ABE75EBA19411C9E008B072F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ABE75EBE19411C9E008B072F /* PBXTargetDependency */,
+			);
+			name = MoniesTests;
+			productName = MoniesTests;
+			productReference = ABE75EBC19411C9E008B072F /* MoniesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ABE75EA219411C9E008B072F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Daniel Green";
+				TargetAttributes = {
+					ABD99CB61AF6C8A1007966DD = {
+						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 352LTJUM25;
+					};
+					ABD99CC21AF6C8A2007966DD = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					ABE75EA919411C9E008B072F = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = 352LTJUM25;
+					};
+					ABE75EBB19411C9E008B072F = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = ABE75EA919411C9E008B072F;
+					};
+				};
+			};
+			buildConfigurationList = ABE75EA519411C9E008B072F /* Build configuration list for PBXProject "Monies" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ABE75EA119411C9E008B072F;
+			productRefGroup = ABE75EAB19411C9E008B072F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ABE75EA919411C9E008B072F /* Monies */,
+				ABE75EBB19411C9E008B072F /* MoniesTests */,
+				ABD99CB61AF6C8A1007966DD /* Monies WatchKit Extension */,
+				ABD99CC21AF6C8A2007966DD /* Monies WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ABD99CB51AF6C8A1007966DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD99CC01AF6C8A2007966DD /* Images.xcassets in Resources */,
+				ABD99CC41AF6C8A2007966DD /* Monies WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABD99CC11AF6C8A2007966DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABD99CCC1AF6C8A2007966DD /* Interface.storyboard in Resources */,
+				ABD99CCE1AF6C8A2007966DD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE75EA819411C9E008B072F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE75EB519411C9E008B072F /* Main.storyboard in Resources */,
+				ABE75EB719411C9E008B072F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE75EBA19411C9E008B072F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D0FF87B4DE4E6DB24762345 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74E798186AD20E34785218D7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9622E6D77B7F468AB141852E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F20C38BD95F3445BBF140B03 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ABD99CB31AF6C8A1007966DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABAD45E01AF7F7010008AC2F /* Communications.swift in Sources */,
+				AB18D3381AF7A15A00F5836F /* Async.swift in Sources */,
+				ABD99CBC1AF6C8A2007966DD /* InterfaceController.swift in Sources */,
+				AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */,
+				ABD99CBE1AF6C8A2007966DD /* GlanceController.swift in Sources */,
+				ABAD45DE1AF7DD0B0008AC2F /* Blank.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE75EA619411C9E008B072F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */,
+				37C7F3301AFB8BAA00A62A80 /* Constants.swift in Sources */,
+				AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */,
+				ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */,
+				ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */,
+				AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */,
+				ABE75EB219411C9E008B072F /* ViewController.swift in Sources */,
+				ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */,
+				ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */,
+				ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */,
+				AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABE75EB819411C9E008B072F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABE75EC319411C9E008B072F /* MoniesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABD99CC61AF6C8A2007966DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD99CC21AF6C8A2007966DD /* Monies WatchKit App */;
+			targetProxy = ABD99CC51AF6C8A2007966DD /* PBXContainerItemProxy */;
+		};
+		ABD99CD01AF6C8A2007966DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABD99CB61AF6C8A1007966DD /* Monies WatchKit Extension */;
+			targetProxy = ABD99CCF1AF6C8A2007966DD /* PBXContainerItemProxy */;
+		};
+		ABE75EBE19411C9E008B072F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ABE75EA919411C9E008B072F /* Monies */;
+			targetProxy = ABE75EBD19411C9E008B072F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ABD99CCA1AF6C8A2007966DD /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABD99CCB1AF6C8A2007966DD /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		ABE75EB319411C9E008B072F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABE75EB419411C9E008B072F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ABD99CD31AF6C8A2007966DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Monies_WatchKit_Extension;
+				INFOPLIST_FILE = "Monies WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		ABD99CD41AF6C8A2007966DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = Monies_WatchKit_Extension;
+				INFOPLIST_FILE = "Monies WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		ABD99CD61AF6C8A2007966DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB241AE98519F9C923EFB9C6 /* Pods-Monies WatchKit Extension.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Monies WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "23df792c-9d6f-4a8a-a209-dbcd9b0c4189";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Monies WatchKit Extension/Monies WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ABD99CD71AF6C8A2007966DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Monies WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "23df792c-9d6f-4a8a-a209-dbcd9b0c4189";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Monies WatchKit Extension/Monies WatchKit Extension-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		ABE75EC419411C9E008B072F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ABE75EC519411C9E008B072F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ABE75EC719411C9E008B072F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 300FBECA5216106AB611C20E /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = Monies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "23df792c-9d6f-4a8a-a209-dbcd9b0c4189";
+				SWIFT_OBJC_BRIDGING_HEADER = "Monies/Monies-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ABE75EC819411C9E008B072F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 869466C19A81FB5557CE39FF /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				INFOPLIST_FILE = Monies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "23df792c-9d6f-4a8a-a209-dbcd9b0c4189";
+				SWIFT_OBJC_BRIDGING_HEADER = "Monies/Monies-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		ABE75ECA19411C9E008B072F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Monies.app/Monies";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MoniesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		ABE75ECB19411C9E008B072F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Monies.app/Monies";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MoniesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ABD99CD21AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD99CD31AF6C8A2007966DD /* Debug */,
+				ABD99CD41AF6C8A2007966DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABD99CD51AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABD99CD61AF6C8A2007966DD /* Debug */,
+				ABD99CD71AF6C8A2007966DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABE75EA519411C9E008B072F /* Build configuration list for PBXProject "Monies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE75EC419411C9E008B072F /* Debug */,
+				ABE75EC519411C9E008B072F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABE75EC619411C9E008B072F /* Build configuration list for PBXNativeTarget "Monies" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE75EC719411C9E008B072F /* Debug */,
+				ABE75EC819411C9E008B072F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ABE75EC919411C9E008B072F /* Build configuration list for PBXNativeTarget "MoniesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABE75ECA19411C9E008B072F /* Debug */,
+				ABE75ECB19411C9E008B072F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ABE75EA219411C9E008B072F /* Project object */;
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Monies_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="3gV-AM-eHo">
+                            <items>
+                                <tableRow identifier="row" selectable="NO" id="Sdm-w5-kJp" customClass="TableRowController" customModule="Monies_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="5Rw-iz-ZHl">
+                                        <items>
+                                            <group width="1" alignment="left" layout="vertical" id="W9g-9I-XZH">
+                                                <items>
+                                                    <label alignment="left" text="Label" id="eBl-EB-UcC">
+                                                        <color key="textColor" red="0.73333333329999995" green="0.21960784310000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                    <label alignment="left" text="Label" textAlignment="left" id="Dlb-hh-heY"/>
+                                                    <label alignment="left" text="Label" id="aMN-ly-Dar">
+                                                        <color key="textColor" red="0.70196080207824707" green="0.70196080207824707" blue="0.70196080207824707" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="accountName" destination="eBl-EB-UcC" id="tVJ-Ds-l7M"/>
+                                        <outlet property="agoLabel" destination="aMN-ly-Dar" id="Sho-9C-1am"/>
+                                        <outlet property="available" destination="Dlb-hh-heY" id="7hd-sV-4Xj"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <button width="1" alignment="left" title="Refresh" id="vRR-7S-Qkh">
+                            <connections>
+                                <action selector="refreshButton" destination="AgC-eL-Hgc" id="pzq-cN-9dm"/>
+                            </connections>
+                        </button>
+                        <label alignment="center" textAlignment="center" id="j5J-zt-Hqs"/>
+                    </items>
+                    <connections>
+                        <outlet property="label" destination="j5J-zt-Hqs" id="WtI-e9-pQR"/>
+                        <outlet property="table" destination="3gV-AM-eHo" id="zDY-FR-sdI"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="164" y="217"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="rjY-Ar-IMT">
+            <objects>
+                <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="Monies_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" id="WuR-Jp-Erd">
+                            <items>
+                                <label alignment="left" text="Monies" id="viy-k6-dUv"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="eew-Gs-W6Y">
+                            <items>
+                                <table alignment="left" id="7Rf-lQ-hTu">
+                                    <items>
+                                        <tableRow identifier="row" selectable="NO" id="qbr-PP-EPH" customClass="TableRowController" customModule="Monies_WatchKit_Extension">
+                                            <group key="rootItem" width="1" height="0.0" alignment="left" id="F0m-BZ-vdA">
+                                                <items>
+                                                    <group width="1" alignment="left" id="VE6-60-Oda">
+                                                        <items>
+                                                            <label width="83" alignment="left" text="Label" textAlignment="left" id="wN6-ZC-f9R"/>
+                                                            <label width="36" alignment="right" text="Label" textAlignment="right" id="YT6-eZ-R4c">
+                                                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                            <connections>
+                                                <outlet property="agoLabel" destination="YT6-eZ-R4c" id="02J-EP-GgD"/>
+                                                <outlet property="available" destination="wN6-ZC-f9R" id="hlR-Cs-mD4"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="table" destination="7Rf-lQ-hTu" id="g6w-3L-BAd"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="164" y="514"/>
+        </scene>
+    </scenes>
+</document>
