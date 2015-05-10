@@ -67,23 +67,4 @@ class HalifaxAccount: RLMObject {
         let price = formatter.stringFromNumber(value)!
         return price.stringByReplacingOccurrencesOfString("$", withString: "£")
     }
-    
-//    func asDictionaryForWatch() -> [String : String] {
-//        return [
-//            "name": name,
-//            "realAvailable": calculateRealAvailable(),
-//            "updatedAt": self.updatedAt
-//        ]
-//    }
-//    
-//    class func allObjectsAsArrayOfDictionariesForWatch() -> [[String : String]] {
-//        var array = [[String : String]]()
-//        
-//        for object in allObjects() {
-//            let account = object as! HalifaxAccount
-//            array.append(account.asDictionaryForWatch())
-//        }
-//        
-//        return array
-//    }
 }
