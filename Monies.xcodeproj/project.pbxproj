@@ -16,6 +16,10 @@
 		AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */; };
 		AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7731AF6951E002C17EF /* RLMSupport.swift */; };
 		ABAD45E01AF7F7010008AC2F /* Communications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD45DF1AF7F7010008AC2F /* Communications.swift */; };
+		ABB6F2F61AFFCE130015C563 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7731AF6951E002C17EF /* RLMSupport.swift */; };
+		ABB6F2F81AFFCE9C0015C563 /* ProvisionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */; };
+		ABB6F2F91AFFCEAF0015C563 /* ProvisionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */; };
+		ABB6F2FA1AFFCF4B0015C563 /* HalifaxAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */; };
 		ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */; };
 		ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */; };
 		ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */; };
@@ -75,12 +79,13 @@
 		AB18D3311AF6DE3200F5836F /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableRowController.swift; path = "../Monies WatchKit App/TableRowController.swift"; sourceTree = "<group>"; };
 		AB18D3331AF6DF7300F5836F /* Monies WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Monies WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = "Monies-Bridging-Header.h"; sourceTree = "<group>"; };
-		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Monies/Async.swift; sourceTree = "<group>"; };
 		AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxAccount.swift; sourceTree = "<group>"; };
-		AB9ED7731AF6951E002C17EF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		AB9ED7731AF6951E002C17EF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = Monies/RLMSupport.swift; sourceTree = "<group>"; };
 		ABAD45DF1AF7F7010008AC2F /* Communications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communications.swift; sourceTree = "<group>"; };
 		ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Monies.entitlements; sourceTree = "<group>"; };
 		ABB6F2F41AFFCCD80015C563 /* Monies WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Monies WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionRealm.swift; sourceTree = "<group>"; };
 		ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxDriver.swift; sourceTree = "<group>"; };
 		ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebKitAsyncRunner.swift; sourceTree = "<group>"; };
@@ -142,6 +147,18 @@
 				AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */,
 			);
 			name = models;
+			path = Monies;
+			sourceTree = "<group>";
+		};
+		ABB6F2F51AFFCDFC0015C563 /* Shared Target */ = {
+			isa = PBXGroup;
+			children = (
+				AB9ED76F1AF68E1C002C17EF /* Async.swift */,
+				AB9ED7731AF6951E002C17EF /* RLMSupport.swift */,
+				ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */,
+				AB9ED7751AF6952A002C17EF /* models */,
+			);
+			name = "Shared Target";
 			sourceTree = "<group>";
 		};
 		ABD99CB01AF6983B007966DD /* driver */ = {
@@ -161,10 +178,10 @@
 				ABD99CBB1AF6C8A2007966DD /* InterfaceController.swift */,
 				ABD99CBD1AF6C8A2007966DD /* GlanceController.swift */,
 				AB18D3311AF6DE3200F5836F /* TableRowController.swift */,
+				ABAD45DF1AF7F7010008AC2F /* Communications.swift */,
 				ABD99CBF1AF6C8A2007966DD /* Images.xcassets */,
 				ABD99CB91AF6C8A2007966DD /* Supporting Files */,
 				AB18D3331AF6DF7300F5836F /* Monies WatchKit Extension-Bridging-Header.h */,
-				ABAD45DF1AF7F7010008AC2F /* Communications.swift */,
 			);
 			path = "Monies WatchKit Extension";
 			sourceTree = "<group>";
@@ -198,6 +215,7 @@
 		ABE75EA119411C9E008B072F = {
 			isa = PBXGroup;
 			children = (
+				ABB6F2F51AFFCDFC0015C563 /* Shared Target */,
 				ABE75EAC19411C9E008B072F /* Monies */,
 				ABD99CB81AF6C8A2007966DD /* Monies WatchKit Extension */,
 				ABD99CC71AF6C8A2007966DD /* Monies WatchKit App */,
@@ -223,7 +241,6 @@
 				ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */,
 				37C7F32F1AFB8BAA00A62A80 /* Constants.swift */,
 				ABD99CB01AF6983B007966DD /* driver */,
-				AB9ED7751AF6952A002C17EF /* models */,
 				AB6A772A19479C3F009D3D45 /* controllers */,
 				ABE75EAF19411C9E008B072F /* AppDelegate.swift */,
 				ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */,
@@ -238,8 +255,6 @@
 		ABE75EAD19411C9E008B072F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AB9ED76F1AF68E1C002C17EF /* Async.swift */,
-				AB9ED7731AF6951E002C17EF /* RLMSupport.swift */,
 				ABE75EAE19411C9E008B072F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -492,9 +507,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABAD45E01AF7F7010008AC2F /* Communications.swift in Sources */,
+				ABB6F2FA1AFFCF4B0015C563 /* HalifaxAccount.swift in Sources */,
+				ABB6F2F61AFFCE130015C563 /* RLMSupport.swift in Sources */,
 				AB18D3381AF7A15A00F5836F /* Async.swift in Sources */,
 				ABD99CBC1AF6C8A2007966DD /* InterfaceController.swift in Sources */,
 				AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */,
+				ABB6F2F91AFFCEAF0015C563 /* ProvisionRealm.swift in Sources */,
 				ABD99CBE1AF6C8A2007966DD /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +522,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */,
+				ABB6F2F81AFFCE9C0015C563 /* ProvisionRealm.swift in Sources */,
 				37C7F3301AFB8BAA00A62A80 /* Constants.swift in Sources */,
 				AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */,
 				ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */,

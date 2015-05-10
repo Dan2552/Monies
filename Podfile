@@ -1,8 +1,11 @@
 platform :ios, "8.0"
 
-pod 'Realm', '~> 0.90'
-pod 'DateTools', '~> 1.5'
+use_frameworks!
+pod 'Realm', '~> 0.92'
+pod 'DateTools', git: 'https://github.com/bassrock/DateTools.git', branch: 'NSBundle-Fix'
 
 target :"Monies WatchKit Extension" do
-    pod 'DateTools', '~> 1.5'
+  use_frameworks!
+  pod 'Realm', '~> 0.92'
+  pod 'DateTools', git: 'https://github.com/bassrock/DateTools.git', branch: 'NSBundle-Fix'
 end

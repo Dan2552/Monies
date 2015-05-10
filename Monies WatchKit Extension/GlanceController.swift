@@ -16,12 +16,13 @@ class GlanceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        provisionRealm();
         // Configure interface objects here.
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        callToParent("current")
+        loadTable()
         super.willActivate()
     }
 
@@ -32,15 +33,16 @@ class GlanceController: WKInterfaceController {
 
     
     func loadTable() {
-        table.setNumberOfRows(objects.count, withRowType: "row")
-        for (index, object) in enumerate(objects) {
+        let objects = HalifaxAccount.allObjects()
+        table.setNumberOfRows(Int(objects.count), withRowType: "row")
+        for (index, account) in enumerate(objects) {
             let row = self.table.rowControllerAtIndex(index) as! TableRowController
-            row.setContentForAccount(object)
+            row.setContentForAccount(account as! HalifaxAccount)
         }
     }
+    
     func callToParent(action: String) {
-        Communications.callToParent(action) { response, objects in
-            if let o = objects { self.objects = o }
+        Communications.callToParent(action) { response in
             self.loadTable()
         }
     }

@@ -14,11 +14,10 @@ class TableRowController: NSObject {
     @IBOutlet weak var agoLabel: WKInterfaceLabel?
     var updatedAt = NSDate()
     
-    func setContentForAccount(account: [String : String]) {
-        accountName?.setText(account["name"]?.componentsSeparatedByString(" ").first)
-        available.setText(account["realAvailable"])
-        let updatedAtString = account["updatedAt"]
-        if let s = updatedAtString { updatedAt = updatedAtDate(s) }
+    func setContentForAccount(account: HalifaxAccount) {
+        accountName?.setText(account.name.componentsSeparatedByString(" ").first)
+        available.setText(account.calculateRealAvailable())
+        updatedAt = account.updatedAtDate()
         updateTimeAgo()
     }
     
@@ -27,10 +26,5 @@ class TableRowController: NSObject {
             self.agoLabel!.setText(self.updatedAt.timeAgoSinceNow())
             Async.main(after: 1) { self.updateTimeAgo() }
         }
-    }
-    
-    func updatedAtDate(updatedAt: NSString) -> NSDate {
-        let interval = updatedAt.doubleValue
-        return NSDate(timeIntervalSince1970: interval)
     }
 }

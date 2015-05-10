@@ -14,9 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
     let halifax = HalifaxDriver(webView: WKWebView())
-    var backgroundTask: UIBackgroundTaskIdentifier?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        provisionRealm()
         return true
     }
     
@@ -24,45 +24,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, handleWatchKitExtensionRequest userInfo: [NSObject : AnyObject]?, reply: (([NSObject : AnyObject]!) -> Void)!) {
+        // Suggested "fix" from http://www.fiveminutewatchkit.com/blog/2015/3/11/one-weird-trick-to-fix-openparentapplicationreply
+        // --------------------
+        var bogusWorkaroundTask: UIBackgroundTaskIdentifier?
+        bogusWorkaroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler() {
+            UIApplication.sharedApplication().endBackgroundTask(bogusWorkaroundTask!)
+        }
+        Async.main(after: 2) {
+            UIApplication.sharedApplication().endBackgroundTask(bogusWorkaroundTask!)
+        }
+        // --------------------
+        
         let info = userInfo as! [String: String]
         let action = info["action"]!
     
         if action == "refresh" {
+            var backgroundTask: UIBackgroundTaskIdentifier?
             backgroundTask = UIApplication.sharedApplication().beginBackgroundTaskWithExpirationHandler() {
                 println("expiring :(")
+                reply(nil)
+                UIApplication.sharedApplication().endBackgroundTask(backgroundTask!)
             }
             
             halifax.drive = true
             halifax.loadAccounts()
-            stopTaskWhenFinished()
+            stopTaskWhenFinished(backgroundTask!)
             
             reply(["response": "refreshing"])
         } else if action == "refreshed?" {
             if self.halifax.loadAccountsInProgress {
                 reply(["response": "refreshing \(self.halifax.currentPageDescription)"])
             } else {
-                reply([
-                    "response": "refreshed!",
-                    "objects": HalifaxAccount.allObjectsAsArrayOfDictionariesForWatch()
-                ])
+                reply(["response": "refreshed!"])
             }
         } else {
-            reply([
-                "response": "current",
-                "objects": HalifaxAccount.allObjectsAsArrayOfDictionariesForWatch()
-            ])
+            reply(nil)
         }
     }
     
-    func stopTaskWhenFinished() {
-        Async.main(after: 1) {
+    func stopTaskWhenFinished(backgroundTask: UIBackgroundTaskIdentifier) {
+        Async.main(after: 0.2) {
             if self.halifax.loadAccountsInProgress {
                 println("not yet...")
-                println("\(self.halifax.webview)")
-                println("\(self.halifax.webview.URL)")
-                //self.stopTaskWhenFinished()
             } else {
-                if let task = self.backgroundTask { UIApplication.sharedApplication().endBackgroundTask(task) }
+                UIApplication.sharedApplication().endBackgroundTask(backgroundTask)
                 println("done!")
             }
 

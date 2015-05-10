@@ -15,17 +15,17 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var table: WKInterfaceTable!
     
-    var objects = [[String : String]]()
-    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        provisionRealm()
     }
     
     func loadTable() {
-        table.setNumberOfRows(objects.count, withRowType: "row")
-        for (index, object) in enumerate(objects) {
+        let objects = HalifaxAccount.allObjects()
+        table.setNumberOfRows(Int(objects.count), withRowType: "row")
+        for (index, account) in enumerate(objects) {
             let row = self.table.rowControllerAtIndex(index) as! TableRowController
-            row.setContentForAccount(object)
+            row.setContentForAccount(account as! HalifaxAccount)
         }
     }
 
@@ -36,16 +36,15 @@ class InterfaceController: WKInterfaceController {
     func callToParent(action: String) {
         self.label.setText("connecting")
         
-        Communications.callToParent(action) { response, objects in
+        Communications.callToParent(action) { response in
             self.label.setText(response)
-            if let o = objects { self.objects = o }
             self.loadTable()
         }
     }
     
     override func willActivate() {
-        callToParent("current")
         super.willActivate()
+        loadTable()
     }
 
     override func didDeactivate() {
