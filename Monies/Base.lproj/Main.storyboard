@@ -16,25 +16,10 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oei-Ps-C4b">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                                <state key="normal" title="Button" image="grid">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Oei-Ps-C4b" secondAttribute="bottom" id="7Rw-x7-Twu"/>
-                            <constraint firstItem="Oei-Ps-C4b" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="9GA-a0-y79"/>
-                            <constraint firstItem="Oei-Ps-C4b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YNf-Ot-OF3"/>
-                            <constraint firstAttribute="trailing" secondItem="Oei-Ps-C4b" secondAttribute="trailing" id="tOz-A6-Z6i"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Lock" id="Yq9-6t-BSq"/>
                     <connections>
-                        <outlet property="dragArea" destination="Oei-Ps-C4b" id="GEQ-QU-Ubq"/>
                         <segue destination="kgX-Ij-Mab" kind="push" identifier="allow" id="pPn-Zf-9dI"/>
                     </connections>
                 </viewController>
@@ -197,9 +182,6 @@
             <point key="canvasLocation" x="35" y="396"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="grid" width="1500" height="1500"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -15,7 +15,6 @@
 		AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
 		AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */; };
 		AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7731AF6951E002C17EF /* RLMSupport.swift */; };
-		ABAD45DE1AF7DD0B0008AC2F /* Blank.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAD45DD1AF7DD0B0008AC2F /* Blank.m */; };
 		ABAD45E01AF7F7010008AC2F /* Communications.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAD45DF1AF7F7010008AC2F /* Communications.swift */; };
 		ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */; };
 		ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */; };
@@ -86,8 +85,6 @@
 		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxAccount.swift; sourceTree = "<group>"; };
 		AB9ED7731AF6951E002C17EF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
-		ABAD45DC1AF7DD0B0008AC2F /* Blank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blank.h; sourceTree = "<group>"; };
-		ABAD45DD1AF7DD0B0008AC2F /* Blank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Blank.m; sourceTree = "<group>"; };
 		ABAD45DF1AF7F7010008AC2F /* Communications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communications.swift; sourceTree = "<group>"; };
 		ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 		ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxDriver.swift; sourceTree = "<group>"; };
@@ -177,8 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				ABD99CBB1AF6C8A2007966DD /* InterfaceController.swift */,
-				ABAD45DC1AF7DD0B0008AC2F /* Blank.h */,
-				ABAD45DD1AF7DD0B0008AC2F /* Blank.m */,
 				ABD99CBD1AF6C8A2007966DD /* GlanceController.swift */,
 				AB18D3311AF6DE3200F5836F /* TableRowController.swift */,
 				ABD99CBF1AF6C8A2007966DD /* Images.xcassets */,
@@ -538,7 +533,6 @@
 				ABD99CBC1AF6C8A2007966DD /* InterfaceController.swift in Sources */,
 				AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */,
 				ABD99CBE1AF6C8A2007966DD /* GlanceController.swift in Sources */,
-				ABAD45DE1AF7DD0B0008AC2F /* Blank.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
