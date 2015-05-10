@@ -56,6 +56,9 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
         println("click")
         run("document.getElementById('\(field)').click();") { (result) in
             completion(result)
+            
+            // for some reason, clicking sometimes doesn't work without this
+            self.run("$('body').text()") { result in }
         }
     }
     
