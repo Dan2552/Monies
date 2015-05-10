@@ -8,15 +8,17 @@
 
 import WatchKit
 import Foundation
+import WebKit
 
-
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
 
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var table: WKInterfaceTable!
+    let halifax = HalifaxDriver(webView: WKWebView())
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
+        halifax.halifaxDelegate = self
         provisionRealm()
     }
     
@@ -30,16 +32,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     @IBAction func refreshButton() {
-        callToParent("refresh")
-    }
-    
-    func callToParent(action: String) {
-        self.label.setText("connecting")
-        
-        Communications.callToParent(action) { response in
-            self.label.setText(response)
-            self.loadTable()
-        }
+        halifax.loadAccounts()
     }
     
     override func willActivate() {
@@ -50,6 +43,14 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    func halifaxDriverAccountAdded(account: HalifaxAccount) {
+        loadTable()
+    }
+    
+    func halifaxDriverLoadedPage(page: String) {
+        self.label.setText(page)
     }
 
 }
