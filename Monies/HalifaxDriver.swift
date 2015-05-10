@@ -156,6 +156,7 @@ class HalifaxDriver: WebViewDriver {
             navigateToAccount(currentAccount + 1)
         } else {
             loadAccountsInProgress = false
+            halifaxDelegate?.halifaxDriverLoadedPage("done")
         }
     }
 
