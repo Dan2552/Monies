@@ -14,11 +14,10 @@ class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
 
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var table: WKInterfaceTable!
-    let halifax = HalifaxDriver(webView: WKWebView())
+    var halifax: HalifaxDriver?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        halifax.halifaxDelegate = self
         provisionRealm()
     }
     
@@ -32,7 +31,11 @@ class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
     }
 
     @IBAction func refreshButton() {
-        halifax.loadAccounts()
+        if halifax == nil {
+            halifax = HalifaxDriver(webView: WKWebView())
+            halifax?.halifaxDelegate = self
+        }
+        halifax?.loadAccounts()
     }
     
     override func willActivate() {
