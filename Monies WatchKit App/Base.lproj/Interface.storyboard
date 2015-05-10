@@ -38,13 +38,17 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <button width="1" alignment="left" title="Refresh" id="vRR-7S-Qkh">
-                            <connections>
-                                <action selector="refreshButton" destination="AgC-eL-Hgc" id="pzq-cN-9dm"/>
-                            </connections>
-                        </button>
                         <label alignment="center" textAlignment="center" id="j5J-zt-Hqs"/>
                     </items>
+                    <menu key="menu" id="Xjm-w2-WDD">
+                        <items>
+                            <menuItem title="Refresh" icon="more" id="ese-hV-b1d">
+                                <connections>
+                                    <action selector="refreshButton" destination="AgC-eL-Hgc" id="fHv-p8-Ska"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="label" destination="j5J-zt-Hqs" id="WtI-e9-pQR"/>
                         <outlet property="table" destination="3gV-AM-eHo" id="zDY-FR-sdI"/>
