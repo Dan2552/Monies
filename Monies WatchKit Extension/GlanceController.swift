@@ -11,40 +11,38 @@ import Foundation
 
 
 class GlanceController: WKInterfaceController {
-    var objects = [[String : String]]()
-    @IBOutlet weak var table: WKInterfaceTable!
+    @IBOutlet weak var nameLabel: WKInterfaceLabel!
+    @IBOutlet weak var timeAgoLabel: WKInterfaceLabel!
+    @IBOutlet weak var availableLabel: WKInterfaceLabel!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         provisionRealm();
-        // Configure interface objects here.
     }
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
-        loadTable()
         super.willActivate()
+        let objects = HalifaxAccount.allObjects()
+        if objects.count > 0 {
+            let account = objects.firstObject() as! HalifaxAccount!
+            setContentForAccount(account)
+        }
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
     
-    func loadTable() {
-        let objects = HalifaxAccount.allObjects()
-        table.setNumberOfRows(Int(objects.count), withRowType: "row")
-        for (index, account) in enumerate(objects) {
-            let row = self.table.rowControllerAtIndex(index) as! TableRowController
-            row.setContentForAccount(account as! HalifaxAccount)
-        }
+    func setContentForAccount(account: HalifaxAccount) {
+        nameLabel.setText(account.name.componentsSeparatedByString(" ").first)
+        availableLabel.setText(account.calculateRealAvailable())
+        updateTimeAgo(account)
     }
     
-    func callToParent(action: String) {
-        Communications.callToParent(action) { response in
-            self.loadTable()
-        }
+    func updateTimeAgo(account: HalifaxAccount) {
+        timeAgoLabel.setText(account.updatedAtDate().timeAgoSinceNow())
+        Async.main(after: 1) { self.updateTimeAgo(account) }
     }
-
 }

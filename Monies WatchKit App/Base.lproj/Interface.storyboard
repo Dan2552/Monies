@@ -58,42 +58,30 @@
             <objects>
                 <glanceController spacing="0.0" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="Monies_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group alignment="left" id="WuR-Jp-Erd">
+                        <group alignment="left" layout="vertical" id="WuR-Jp-Erd">
                             <items>
-                                <label alignment="left" text="Monies" id="viy-k6-dUv"/>
+                                <label alignment="left" text="Account Name" id="EQl-xw-AVj">
+                                    <color key="textColor" red="0.73333333329999995" green="0.21960784310000001" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </label>
+                                <label alignment="left" text="10 minutes ago" id="NXD-If-kEj">
+                                    <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
                             </items>
                         </group>
                         <group alignment="left" id="eew-Gs-W6Y">
                             <items>
-                                <table alignment="left" id="7Rf-lQ-hTu">
-                                    <items>
-                                        <tableRow identifier="row" selectable="NO" id="qbr-PP-EPH" customClass="TableRowController" customModule="Monies_WatchKit_Extension">
-                                            <group key="rootItem" width="1" height="0.0" alignment="left" id="F0m-BZ-vdA">
-                                                <items>
-                                                    <group width="1" alignment="left" id="VE6-60-Oda">
-                                                        <items>
-                                                            <label width="83" alignment="left" text="Label" textAlignment="left" id="wN6-ZC-f9R"/>
-                                                            <label width="36" alignment="right" text="Label" textAlignment="right" id="YT6-eZ-R4c">
-                                                                <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
-                                                            </label>
-                                                        </items>
-                                                    </group>
-                                                </items>
-                                            </group>
-                                            <connections>
-                                                <outlet property="agoLabel" destination="YT6-eZ-R4c" id="02J-EP-GgD"/>
-                                                <outlet property="available" destination="wN6-ZC-f9R" id="hlR-Cs-mD4"/>
-                                            </connections>
-                                        </tableRow>
-                                    </items>
-                                </table>
+                                <label width="1" alignment="center" verticalAlignment="center" text="£88888.88" textAlignment="center" id="4K4-Vo-XlY">
+                                    <fontDescription key="font" type="system" pointSize="29"/>
+                                </label>
                             </items>
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                     <connections>
-                        <outlet property="table" destination="7Rf-lQ-hTu" id="g6w-3L-BAd"/>
+                        <outlet property="availableLabel" destination="4K4-Vo-XlY" id="08K-OX-440"/>
+                        <outlet property="nameLabel" destination="EQl-xw-AVj" id="VIt-wW-VfM"/>
+                        <outlet property="timeAgoLabel" destination="NXD-If-kEj" id="Xvg-l4-Dkd"/>
                     </connections>
                 </glanceController>
             </objects>
