@@ -14,6 +14,9 @@ class GlanceController: WKInterfaceController {
     @IBOutlet weak var nameLabel: WKInterfaceLabel!
     @IBOutlet weak var timeAgoLabel: WKInterfaceLabel!
     @IBOutlet weak var availableLabel: WKInterfaceLabel!
+    var reloadTimer: NSTimer?
+    var updatedTimeAgoTimer: NSTimer?
+    var account: HalifaxAccount?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -23,26 +26,46 @@ class GlanceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        loadData()
+        reloadTimer = NSTimer.scheduledTimerWithTimeInterval(30,
+            target: self,
+            selector: Selector("loadData"),
+            userInfo: nil,
+            repeats: true
+        )
+        updatedTimeAgoTimer = NSTimer.scheduledTimerWithTimeInterval(1,
+            target: self,
+            selector: Selector("updateTimeAgo"),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    override func didDeactivate() {
+        // This method is called when watch view controller is no longer visible
+        super.didDeactivate()
+        reloadTimer?.invalidate()
+        updatedTimeAgoTimer?.invalidate()
+    }
+    
+    func loadData() {
         let objects = HalifaxAccount.allObjects()
         if objects.count > 0 {
             let account = objects.firstObject() as! HalifaxAccount!
             setContentForAccount(account)
         }
     }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
     
     func setContentForAccount(account: HalifaxAccount) {
-        nameLabel.setText(account.name.componentsSeparatedByString(" ").first)
+        self.account = account
+        nameLabel.setText(account.name)
         availableLabel.setText(account.calculateRealAvailable())
-        updateTimeAgo(account)
+        updateTimeAgo()
     }
     
-    func updateTimeAgo(account: HalifaxAccount) {
-        timeAgoLabel.setText(account.updatedAtDate().timeAgoSinceNow())
-        Async.main(after: 1) { self.updateTimeAgo(account) }
+    func updateTimeAgo() {
+        if let a = account {
+            timeAgoLabel.setText(a.updatedAtDate().timeAgoSinceNow())
+        }
     }
 }
