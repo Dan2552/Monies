@@ -34,6 +34,46 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
         self.webview.loadRequest(NSURLRequest(URL: NSURL(string: location)!))
     }
     
+    
+    func elementById(elementName:String) -> String {
+        return "document.getElementById('\(elementName)')"
+    }
+    
+    func elementsByName(elementName:String) -> String {
+        return "document.getElementsByName('\(elementName)')"
+    }
+    
+    func elementsByClassName(elementName:String) -> String {
+        return "document.getElementsByClassName('\(elementName)')"
+    }
+    
+    func elementsByQuerySelector(selector:String) -> String {
+        return "document.querySelector('\(selector)')"
+    }
+    
+    func elementAtIndex(elementPath:String, index:NSInteger) -> String {
+        return elementPath + "[\(index)]"
+    }
+    
+    func fillInElement(elementPath:String, with:String, completion: ((String) -> Void)) {
+        var printValue = with
+        
+        run(elementPath + ".value = \"\(with)\";") { result in
+            completion(result)
+        }
+    }
+    
+    func clickElement(elementPath:String, completion: ((String) -> Void)) {
+        run(elementPath + ".click();") { (result) in
+            completion(result)
+            
+            // for some reason, clicking sometimes doesn't work without this
+            self.run("$('body').text()") { result in }
+        }
+    }
+    
+    
+    
     func labelFor(element:String, completion: ((String) -> Void)) {
         let js = "var answer; var mem = document.getElementById('\(element)'); if (mem) { answer = mem.parentElement.children[0].textContent }; mem && answer || 'null'"
         
@@ -48,7 +88,7 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     func fillIn(field:String, with:String, completion: ((String) -> Void)) {
         var printValue = with
         if (field as NSString).containsString("pwd") { printValue = "[redacted]" }
-        println("fill in value \(printValue)")
+        println("fill in element '\(field)' value '\(printValue)'")
         
         run("document.getElementById('\(field)').value = \"\(with)\";") { result in
             completion(result)
@@ -58,6 +98,16 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     func click(field:String, completion: ((String) -> Void)) {
         println("click \(field)")
         run("document.getElementById('\(field)').click();") { (result) in
+            completion(result)
+            
+            // for some reason, clicking sometimes doesn't work without this
+            self.run("$('body').text()") { result in }
+        }
+    }
+    
+    func clickClass(className:String, completion: ((String) -> Void)) {
+        println("click \(className)")
+        run("document.getElementsByClassName('\(className)')[0].click();") { (result) in
             completion(result)
             
             // for some reason, clicking sometimes doesn't work without this

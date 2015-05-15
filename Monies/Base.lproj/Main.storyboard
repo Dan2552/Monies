@@ -36,11 +36,11 @@
                         <viewControllerLayoutGuide type="bottom" id="O9Y-uN-6pq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IBk-V3-E0p">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WlZ-fG-1w1">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="JZL-ny-iqV" customClass="AccountTableViewCell" customModule="Monies" customModuleProvider="target">
@@ -138,10 +138,11 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="WlZ-fG-1w1" secondAttribute="trailing" id="7Ra-cN-imG"/>
                             <constraint firstItem="WlZ-fG-1w1" firstAttribute="leading" secondItem="IBk-V3-E0p" secondAttribute="leading" id="CCI-uS-rbv"/>
-                            <constraint firstItem="WlZ-fG-1w1" firstAttribute="top" secondItem="Tw8-Bu-ed5" secondAttribute="bottom" constant="-64" id="UFZ-wv-1Uh"/>
+                            <constraint firstItem="WlZ-fG-1w1" firstAttribute="top" secondItem="Tw8-Bu-ed5" secondAttribute="bottom" id="UFZ-wv-1Uh"/>
                             <constraint firstItem="O9Y-uN-6pq" firstAttribute="top" secondItem="WlZ-fG-1w1" secondAttribute="bottom" id="zXH-co-XaF"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Monies" id="j7a-h4-5a0">
                         <barButtonItem key="rightBarButtonItem" title="Web" id="fCd-CZ-teg">
                             <connections>

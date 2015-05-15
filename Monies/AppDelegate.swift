@@ -13,8 +13,7 @@ import WebKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-    let halifax = HalifaxDriver(webView: WKWebView())
-    
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         provisionRealm()
         return true

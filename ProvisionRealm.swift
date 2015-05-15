@@ -9,7 +9,10 @@
 import Foundation
 
 func provisionRealm() {
-    let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.wildcard")!
-    let realmPath = directory.path!.stringByAppendingPathComponent("db.realm")
-    RLMRealm.setDefaultRealmPath(realmPath)
+    if let directory = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.wildcard") {
+        let realmPath = directory.path!.stringByAppendingPathComponent("db.realm")
+        RLMRealm.setDefaultRealmPath(realmPath)
+    } else {
+        NSLog("no group folder found");
+    }
 }

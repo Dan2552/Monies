@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		37C7F3301AFB8BAA00A62A80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7F32F1AFB8BAA00A62A80 /* Constants.swift */; };
+		3BF8F32F1B052AEC00B42065 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F32E1B052AEC00B42065 /* BankAccount.swift */; };
+		3BF8F3301B052AEC00B42065 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F32E1B052AEC00B42065 /* BankAccount.swift */; };
+		3BF8F3321B052B3900B42065 /* HSBCAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F3311B052B3900B42065 /* HSBCAccount.swift */; };
+		3BF8F3331B052B3900B42065 /* HSBCAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F3311B052B3900B42065 /* HSBCAccount.swift */; };
+		3BF8F3351B052C1200B42065 /* BankWebDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F3341B052C1200B42065 /* BankWebDriver.swift */; };
+		3BF8F3361B052C1200B42065 /* BankWebDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F3341B052C1200B42065 /* BankWebDriver.swift */; };
+		3BF8F3381B052E2200B42065 /* HSBCDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F3371B052E2200B42065 /* HSBCDriver.swift */; };
+		3BF8F3391B052E2200B42065 /* HSBCDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F3371B052E2200B42065 /* HSBCDriver.swift */; };
 		8EA3449C99EAA5AB232A9037 /* Pods_Monies_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FAFD2F4C894EA4E5737B712 /* Pods_Monies_WatchKit_Extension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18D3311AF6DE3200F5836F /* TableRowController.swift */; };
 		AB18D3381AF7A15A00F5836F /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
@@ -77,6 +85,10 @@
 		2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		300FBECA5216106AB611C20E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		37C7F32F1AFB8BAA00A62A80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Monies/Constants.swift; sourceTree = "<group>"; };
+		3BF8F32E1B052AEC00B42065 /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BankAccount.swift; path = models/BankAccount.swift; sourceTree = "<group>"; };
+		3BF8F3311B052B3900B42065 /* HSBCAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBCAccount.swift; sourceTree = "<group>"; };
+		3BF8F3341B052C1200B42065 /* BankWebDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BankWebDriver.swift; path = driver/BankWebDriver.swift; sourceTree = "<group>"; };
+		3BF8F3371B052E2200B42065 /* HSBCDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HSBCDriver.swift; path = driver/HSBCDriver.swift; sourceTree = "<group>"; };
 		869466C19A81FB5557CE39FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9FAFD2F4C894EA4E5737B712 /* Pods_Monies_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monies_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB18D3311AF6DE3200F5836F /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableRowController.swift; path = "../Monies WatchKit App/TableRowController.swift"; sourceTree = "<group>"; };
@@ -147,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */,
+				3BF8F32E1B052AEC00B42065 /* BankAccount.swift */,
+				3BF8F3311B052B3900B42065 /* HSBCAccount.swift */,
 			);
 			name = models;
 			path = Monies;
@@ -169,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */,
+				3BF8F3371B052E2200B42065 /* HSBCDriver.swift */,
+				3BF8F3341B052C1200B42065 /* BankWebDriver.swift */,
 				ABD99CAE1AF69838007966DD /* WebViewDriver.swift */,
 				ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */,
 			);
@@ -366,7 +382,7 @@
 					};
 					ABE75EA919411C9E008B072F = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = XV8PWA37TZ;
+						DevelopmentTeam = L23MUGMJ3D;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -509,14 +525,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABB6F2FA1AFFCF4B0015C563 /* HalifaxAccount.swift in Sources */,
+				3BF8F3331B052B3900B42065 /* HSBCAccount.swift in Sources */,
+				3BF8F3301B052AEC00B42065 /* BankAccount.swift in Sources */,
 				ABB6F2F61AFFCE130015C563 /* RLMSupport.swift in Sources */,
 				AB18D3381AF7A15A00F5836F /* Async.swift in Sources */,
 				ABD99CBC1AF6C8A2007966DD /* InterfaceController.swift in Sources */,
 				ABB6F2FD1AFFEAEB0015C563 /* WebViewDriver.swift in Sources */,
 				AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */,
+				3BF8F3361B052C1200B42065 /* BankWebDriver.swift in Sources */,
 				ABB6F2FE1AFFEAEE0015C563 /* WKWebKitAsyncRunner.swift in Sources */,
 				ABB6F2F91AFFCEAF0015C563 /* ProvisionRealm.swift in Sources */,
 				ABD99CBE1AF6C8A2007966DD /* GlanceController.swift in Sources */,
+				3BF8F3391B052E2200B42065 /* HSBCDriver.swift in Sources */,
 				ABB6F2FC1AFFEAE80015C563 /* HalifaxDriver.swift in Sources */,
 				ABB6F2FF1AFFEAF90015C563 /* Constants.swift in Sources */,
 			);
@@ -532,6 +552,10 @@
 				AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */,
 				ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */,
 				ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */,
+				3BF8F32F1B052AEC00B42065 /* BankAccount.swift in Sources */,
+				3BF8F3381B052E2200B42065 /* HSBCDriver.swift in Sources */,
+				3BF8F3351B052C1200B42065 /* BankWebDriver.swift in Sources */,
+				3BF8F3321B052B3900B42065 /* HSBCAccount.swift in Sources */,
 				AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */,
 				ABE75EB219411C9E008B072F /* ViewController.swift in Sources */,
 				ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */,
@@ -580,6 +604,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -590,10 +615,12 @@
 				IBSC_MODULE = Monies_WatchKit_Extension;
 				INFOPLIST_FILE = "Monies WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "199aa9f5-3e03-4ead-935d-9bccf118f8a6";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 4;
 				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
 			};
@@ -603,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -610,6 +638,7 @@
 				IBSC_MODULE = Monies_WatchKit_Extension;
 				INFOPLIST_FILE = "Monies WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "199aa9f5-3e03-4ead-935d-9bccf118f8a6";
@@ -757,11 +786,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Monies/Monies.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Monies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c7cad3f3-05d1-4e38-9a3b-d500b773b23b";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Monies/Monies-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -776,11 +806,12 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Monies/Monies.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Monies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c7cad3f3-05d1-4e38-9a3b-d500b773b23b";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Monies/Monies-Bridging-Header.h";
 			};
 			name = Release;

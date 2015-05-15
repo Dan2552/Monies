@@ -10,11 +10,11 @@ import WatchKit
 import Foundation
 import WebKit
 
-class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
+class InterfaceController: WKInterfaceController, BankDriverDelegate {
 
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var table: WKInterfaceTable!
-    var halifax: HalifaxDriver?
+    var bankDriver: BankWebDriver?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -31,11 +31,11 @@ class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
     }
 
     @IBAction func refreshButton() {
-        if halifax == nil {
-            halifax = HalifaxDriver(webView: WKWebView())
-            halifax?.halifaxDelegate = self
+        if bankDriver == nil {
+//            bankDriver = HalifaxDriver(webView: WKWebView())
+            bankDriver?.bankDelegate = self
         }
-        halifax?.loadAccounts()
+        bankDriver?.loadAccounts()
     }
     
     override func willActivate() {
@@ -48,12 +48,13 @@ class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
         super.didDeactivate()
     }
     
-    func halifaxDriverAccountAdded(account: HalifaxAccount) {
+    func bankDriverDelegateAccountAdded(account: BankAccount) {
         loadTable()
     }
     
-    func halifaxDriverLoadedPage(page: String) {
+    func bankDriverDelegateLoadedPage(page: String) {
         self.label.setText(page)
     }
+
 
 }
