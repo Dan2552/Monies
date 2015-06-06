@@ -68,8 +68,8 @@ class HalifaxDriver: BankWebDriver {
     func loginStep1() {
         println("Signing in (part 1)")
         WKWebKitAsyncRunner(tasks: [
-            { result, next in self.fillIn("frmLogin:strCustomerLogin_userID", with: username, completion: next) },
-            { result, next in self.fillIn("frmLogin:strCustomerLogin_pwd", with: password, completion: next) },
+            { result, next in self.fillIn("frmLogin:strCustomerLogin_userID", with: LoginCredentials.sharedInstance.username!, completion: next) },
+            { result, next in self.fillIn("frmLogin:strCustomerLogin_pwd", with: LoginCredentials.sharedInstance.password!, completion: next) },
             { result, next in self.click("frmLogin:lnkLogin1", completion: next)}
         ])
     }
@@ -100,7 +100,7 @@ class HalifaxDriver: BankWebDriver {
         
         var n = -1
         for (index, label) in enumerate(labels) { if (key == label) { n = index } }
-        if n > -1 { return "&nbsp;\(Array(password)[n])" }
+        if n > -1 { return "&nbsp;\(Array(LoginCredentials.sharedInstance.password!)[n])" }
         return ""
     }
     

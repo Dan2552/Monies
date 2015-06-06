@@ -14,14 +14,25 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     let webDriver = HSBCDriver(webView: WKWebView())
     var accounts = BankAccount.allObjects()
     
+    @IBOutlet var toggleWebButton : UIBarButtonItem!
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            
         webDriver.delegate = self
         webDriver.bankDelegate = self
         self.view.addSubview(webDriver.webview)
         webDriver.webview.hidden = true
+        
+        performSegueWithIdentifier("lockSegue", sender: self)
+    }
+    
+    @IBAction func unlock(segue: UIStoryboardSegue) {
+        webDriver.loadAccounts()
+    }
+    
+    @IBAction func accountAdded(segue: UIStoryboardSegue) {
         webDriver.loadAccounts()
     }
     
@@ -38,7 +49,8 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.refresh()
+//        self.refresh()
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -71,8 +83,6 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
         let height = self.view.frame.height - top
         webDriver.webview.frame = CGRect(x: 0, y: top, width: self.view.frame.width, height: height)
     }
-    
-    @IBOutlet var toggleWebButton : UIBarButtonItem!
     
     @IBAction func toggleWeb(sender : UIBarButtonItem) {
         if webDriver.webview.hidden {

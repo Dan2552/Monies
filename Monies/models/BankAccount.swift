@@ -16,7 +16,6 @@ class BankAccount: RLMObject {
     dynamic var overdraft = ""
     dynamic var updatedAt = ""
     
-    
     // All of these formatter methods shouldn't really be here in the model
     
     func doubleFromString(string: NSString) -> Double {
@@ -36,10 +35,15 @@ class BankAccount: RLMObject {
         return formatAsPrice(c)
     }
     
+    func currencySymbol() -> String {
+        return "£"
+    }
+    
     func formatAsPrice(value: Double) -> String {
         let formatter = NSNumberFormatter()
         formatter.numberStyle = .CurrencyStyle
+        formatter.currencySymbol = self.currencySymbol()
         let price = formatter.stringFromNumber(value)!
-        return price.stringByReplacingOccurrencesOfString("$", withString: "£")
+        return price
     }
 }

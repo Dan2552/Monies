@@ -12,9 +12,10 @@ class HSBCAccount: BankAccount {
         self.name = heading;
         
         let newBalance = details.stringByReplacingOccurrencesOfString("C", withString: "").stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-        println(newBalance)
-        self.balance = newBalance
-
+        
+        balance = newBalance
+        available = balance
+        overdraft = "0"
         
         /*let headingSplit = heading.componentsSeparatedByString("\n")
         name = headingSplit[0]

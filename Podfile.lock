@@ -3,10 +3,12 @@ PODS:
   - Realm (0.92.2):
     - Realm/Headers (= 0.92.2)
   - Realm/Headers (0.92.2)
+  - SSKeychain (1.2.3)
 
 DEPENDENCIES:
   - DateTools (from `https://github.com/bassrock/DateTools.git`, branch `NSBundle-Fix`)
   - Realm (~> 0.92)
+  - SSKeychain
 
 EXTERNAL SOURCES:
   DateTools:
@@ -21,5 +23,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
   Realm: fa8e8f7f788dd63744485c15b453487bc7546c8e
+  SSKeychain: 3f42991739c6c60a9cf1bbd4dff6c0d3694bcf3d
 
 COCOAPODS: 0.37.1

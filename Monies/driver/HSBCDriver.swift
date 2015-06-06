@@ -73,7 +73,7 @@ class HSBCDriver: BankWebDriver {
         println("Signing in (part 1)")
         
         WKWebKitAsyncRunner(tasks: [
-            { result, next in self.fillInElement(self.elementAtIndex(self.elementsByName("userid"), index: 0), with: username, completion: next)},
+            { result, next in self.fillInElement(self.elementAtIndex(self.elementsByName("userid"), index: 0), with: LoginCredentials.sharedInstance.username!, completion: next)},
             { result, next in self.click("registerStep1Submit", completion: next)}
             ])
     }
@@ -90,19 +90,19 @@ class HSBCDriver: BankWebDriver {
         println("Signing in (part 2)")
 
         WKWebKitAsyncRunner(tasks: [
-            { result, next in self.fillInElement(self.elementById("memorableAnswer"), with: memorableAnswer, completion: next)}
+            { result, next in self.fillInElement(self.elementById("memorableAnswer"), with: LoginCredentials.sharedInstance.memorableAnswer!, completion: next)}
             ])
         
         for i in 0...5 {
             let element = self.elementsByQuerySelector(".active#pass\(i+1)")
             WKWebKitAsyncRunner(tasks: [
-                { result, next in self.fillInElement(element, with:"\(Array(password)[i])", completion: next)}
+                { result, next in self.fillInElement(element, with:"\(Array(LoginCredentials.sharedInstance.password!)[i])", completion: next)}
                 ])
         }
         for i in reverse(0...1) {
             let element = self.elementsByQuerySelector(".active#pass\(8-i)")
             WKWebKitAsyncRunner(tasks: [
-                { result, next in self.fillInElement(element, with:"\(Array(password)[count(password)-1 - i])", completion: next)}
+                { result, next in self.fillInElement(element, with:"\(Array(LoginCredentials.sharedInstance.password!)[count(LoginCredentials.sharedInstance.password!)-1 - i])", completion: next)}
                 ])
         }
         

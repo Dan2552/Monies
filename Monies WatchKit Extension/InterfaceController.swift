@@ -22,17 +22,17 @@ class InterfaceController: WKInterfaceController, BankDriverDelegate {
     }
     
     func loadTable() {
-        let objects = HalifaxAccount.allObjects()
+        let objects = HSBCAccount.allObjects()
         table.setNumberOfRows(Int(objects.count), withRowType: "row")
         for (index, account) in enumerate(objects) {
             let row = self.table.rowControllerAtIndex(index) as! TableRowController
-            row.setContentForAccount(account as! HalifaxAccount)
+            row.setContentForAccount(account as! HSBCAccount)
         }
     }
 
     @IBAction func refreshButton() {
         if bankDriver == nil {
-//            bankDriver = HalifaxDriver(webView: WKWebView())
+            bankDriver = HSBCDriver(webView: WKWebView())
             bankDriver?.bankDelegate = self
         }
         bankDriver?.loadAccounts()

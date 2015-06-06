@@ -9,11 +9,51 @@
 import UIKit
 import LocalAuthentication
 
-class LockViewController: UIViewController {
+class LockViewController: UITableViewController, UITextFieldDelegate {
+    
+    
+    @IBOutlet weak var bankTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var memorableAnswerTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var unlockButton: UIButton!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+        loadLoginDetails()
+        refreshUnlockButton()
+    }
+    
+    func loadLoginDetails() {
+        if let bankType = LoginCredentials.sharedInstance.bankType {
+            bankTypeSegmentedControl.selectedSegmentIndex = bankType.rawValue-1;
+        } else {
+            bankTypeSegmentedControl.selectedSegmentIndex = -1
+        }
+        
+        loginTextField.text = LoginCredentials.sharedInstance.username
+        memorableAnswerTextField.text = LoginCredentials.sharedInstance.memorableAnswer
+        passwordTextField.text = LoginCredentials.sharedInstance.password
+    }
+    
+    func refreshUnlockButton() {
+        LoginCredentials.sharedInstance.bankType = BankType(rawValue: bankTypeSegmentedControl.selectedSegmentIndex+1)
+        LoginCredentials.sharedInstance.username = loginTextField.text as String;
+        LoginCredentials.sharedInstance.memorableAnswer = memorableAnswerTextField.text as String;
+        LoginCredentials.sharedInstance.password = passwordTextField.text as String;
+        
+        unlockButton.enabled = LoginCredentials.sharedInstance.credentialsPresent()
+    }
+    
+    @IBAction func unlockButtonPushed(sender: AnyObject) {
+        LoginCredentials.sharedInstance.saveCredentials()
+        
         touchId()
+    }
+    
+    @IBAction func bankTypeSegmentedControlValueChanged(sender: AnyObject) {
+        refreshUnlockButton()
     }
     
     func touchId() {
@@ -37,6 +77,11 @@ class LockViewController: UIViewController {
     }
     
     func allow() {
-        performSegueWithIdentifier("allow", sender: self)
+        performSegueWithIdentifier("unlock", sender: self)
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        refreshUnlockButton()
+        return true;
     }
 }
