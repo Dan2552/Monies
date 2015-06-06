@@ -45,6 +45,7 @@ class LoginCredentials {
     
     func saveCredentials() {
         NSUserDefaults.standardUserDefaults().setValue(self.username, forKey: "loginName")
+        NSUserDefaults.standardUserDefaults().setValue(self.bankType?.rawValue, forKey: "bankType")
         
         SSKeychain.setPassword(self.memorableAnswer, forService: self.username, account: "memorableAnswer")
         SSKeychain.setPassword(self.password, forService: self.username, account: "password")

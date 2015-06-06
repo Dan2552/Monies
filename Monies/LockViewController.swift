@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+import OnePasswordExtension
 
 class LockViewController: UITableViewController, UITextFieldDelegate {
     
@@ -17,12 +18,15 @@ class LockViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var memorableAnswerTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var unlockButton: UIButton!
+    @IBOutlet weak var onePasswordButton: UIBarButtonItem!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         loadLoginDetails()
         refreshUnlockButton()
+        
+        self.onePasswordButton.enabled = OnePasswordExtension.sharedExtension().isAppExtensionAvailable()
     }
     
     func loadLoginDetails() {
@@ -54,6 +58,23 @@ class LockViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func bankTypeSegmentedControlValueChanged(sender: AnyObject) {
         refreshUnlockButton()
+    }
+    
+    @IBAction func onePasswordButtonPushed(sender: AnyObject) {
+        OnePasswordExtension.sharedExtension().findLoginForURLString("https://www.hsbc.co.uk", forViewController: self, sender: sender, completion: { (loginDictionary, error) -> Void in
+            if loginDictionary == nil {
+                //if error!.code != Int(AppExtensionErrorCodeCancelledByUser) {
+                if error!.code != Int(0) {
+                    var alert = UIAlertController(title: "Error", message: String(format: "Error invoking 1Password App Extension for find login: %@", error!), preferredStyle: UIAlertControllerStyle.Alert)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                return
+            }
+            
+            self.loginTextField.text = loginDictionary?["username"] as? String
+            // memorisable Answer?
+            self.passwordTextField.text = loginDictionary?["password"] as? String
+        })
     }
     
     func touchId() {

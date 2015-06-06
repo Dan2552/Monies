@@ -144,14 +144,21 @@
                             <outlet property="delegate" destination="1fU-CE-RWa" id="0wG-q0-cZM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Login" id="reH-U5-REz"/>
+                    <navigationItem key="navigationItem" title="Login" id="reH-U5-REz">
+                        <barButtonItem key="rightBarButtonItem" image="onepassword-toolbar-light" id="Ky3-kG-zVl">
+                            <connections>
+                                <action selector="onePasswordButtonPushed:" destination="1fU-CE-RWa" id="Ebe-3x-6Cx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bankTypeSegmentedControl" destination="9QI-eM-qOc" id="bTT-Zs-gnm"/>
                         <outlet property="loginTextField" destination="3qC-Ww-XAU" id="AJT-9k-b0E"/>
                         <outlet property="memorableAnswerTextField" destination="eqz-1I-c16" id="yqC-eE-KIo"/>
+                        <outlet property="onePasswordButton" destination="Ky3-kG-zVl" id="8lb-qm-teS"/>
                         <outlet property="passwordTextField" destination="uvt-w8-Bv6" id="W3h-jB-oZU"/>
                         <outlet property="unlockButton" destination="SRf-bM-jPj" id="nSx-ri-HP0"/>
-                        <segue destination="kUz-lD-IUC" kind="unwind" unwindAction="unlock:" id="wRy-T9-Oe9"/>
+                        <segue destination="kUz-lD-IUC" kind="unwind" identifier="unlock" unwindAction="unlock:" id="p56-pq-gwU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yCB-E6-YHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -350,6 +357,9 @@
             <point key="canvasLocation" x="1191" y="-190"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="onepassword-toolbar-light" width="27" height="27"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

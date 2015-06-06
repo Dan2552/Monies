@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3B8793D41B2329C300ED63FF /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8793D31B2329C300ED63FF /* LoginCredentials.swift */; };
 		3B8793D51B2329C300ED63FF /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8793D31B2329C300ED63FF /* LoginCredentials.swift */; };
+		3B8793DA1B233D0A00ED63FF /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B8793D71B233D0A00ED63FF /* 1Password.xcassets */; };
+		3B8793DB1B233D0A00ED63FF /* OnePasswordExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8793D91B233D0A00ED63FF /* OnePasswordExtension.m */; };
+		3B8793DD1B2340CC00ED63FF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B8793DC1B2340CC00ED63FF /* LaunchScreen.xib */; };
 		3BF8F32F1B052AEC00B42065 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F32E1B052AEC00B42065 /* BankAccount.swift */; };
 		3BF8F3301B052AEC00B42065 /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F32E1B052AEC00B42065 /* BankAccount.swift */; };
 		3BF8F3321B052B3900B42065 /* HSBCAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8F3311B052B3900B42065 /* HSBCAccount.swift */; };
@@ -85,6 +88,10 @@
 		2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		300FBECA5216106AB611C20E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3B8793D31B2329C300ED63FF /* LoginCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginCredentials.swift; path = Monies/LoginCredentials.swift; sourceTree = "<group>"; };
+		3B8793D71B233D0A00ED63FF /* 1Password.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = 1Password.xcassets; sourceTree = "<group>"; };
+		3B8793D81B233D0A00ED63FF /* OnePasswordExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnePasswordExtension.h; sourceTree = "<group>"; };
+		3B8793D91B233D0A00ED63FF /* OnePasswordExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnePasswordExtension.m; sourceTree = "<group>"; };
+		3B8793DC1B2340CC00ED63FF /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		3BF8F32E1B052AEC00B42065 /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BankAccount.swift; path = models/BankAccount.swift; sourceTree = "<group>"; };
 		3BF8F3311B052B3900B42065 /* HSBCAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HSBCAccount.swift; sourceTree = "<group>"; };
 		3BF8F3341B052C1200B42065 /* BankWebDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BankWebDriver.swift; path = driver/BankWebDriver.swift; sourceTree = "<group>"; };
@@ -146,6 +153,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B8793D61B233CFE00ED63FF /* external */ = {
+			isa = PBXGroup;
+			children = (
+				3B8793D71B233D0A00ED63FF /* 1Password.xcassets */,
+				3B8793D81B233D0A00ED63FF /* OnePasswordExtension.h */,
+				3B8793D91B233D0A00ED63FF /* OnePasswordExtension.m */,
+			);
+			path = external;
+			sourceTree = "<group>";
+		};
 		AB6A772A19479C3F009D3D45 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,10 +276,12 @@
 			isa = PBXGroup;
 			children = (
 				ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */,
+				3B8793D61B233CFE00ED63FF /* external */,
 				AB6A772A19479C3F009D3D45 /* controllers */,
 				ABE75EAF19411C9E008B072F /* AppDelegate.swift */,
 				ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */,
 				ABE75EB319411C9E008B072F /* Main.storyboard */,
+				3B8793DC1B2340CC00ED63FF /* LaunchScreen.xib */,
 				ABE75EB619411C9E008B072F /* Images.xcassets */,
 				ABE75EAD19411C9E008B072F /* Supporting Files */,
 				AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */,
@@ -435,8 +454,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B8793DD1B2340CC00ED63FF /* LaunchScreen.xib in Resources */,
 				ABE75EB519411C9E008B072F /* Main.storyboard in Resources */,
 				ABE75EB719411C9E008B072F /* Images.xcassets in Resources */,
+				3B8793DA1B233D0A00ED63FF /* 1Password.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +571,7 @@
 				AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */,
 				ABB6F2F81AFFCE9C0015C563 /* ProvisionRealm.swift in Sources */,
 				AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */,
+				3B8793DB1B233D0A00ED63FF /* OnePasswordExtension.m in Sources */,
 				ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */,
 				ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */,
 				3BF8F32F1B052AEC00B42065 /* BankAccount.swift in Sources */,
