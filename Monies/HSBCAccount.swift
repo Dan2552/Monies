@@ -9,7 +9,7 @@
 class HSBCAccount: BankAccount {
     func setFromDetails(heading: String, details: String, url: String) {
         self.url = url
-        self.name = heading;
+        self.name = "HSBC Debit";
         
         let newBalance = details.stringByReplacingOccurrencesOfString("C", withString: "").stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         

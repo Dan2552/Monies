@@ -14,7 +14,6 @@ class HalifaxDriver: BankWebDriver {
     var currentAccount = 0
     var currentUrl = ""
     var accounts: RLMArray
-    var drive = true
     var loadAccountsInProgress = false
     var currentPageDescription = "web"
     

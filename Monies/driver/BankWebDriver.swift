@@ -15,6 +15,7 @@ protocol BankDriverDelegate {
 
 class BankWebDriver: WebViewDriver {
     var bankDelegate: BankDriverDelegate?
+    var drive = true
     
     func getAccounts() {
         

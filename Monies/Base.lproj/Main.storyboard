@@ -22,9 +22,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="9QI-eM-qOc">
-                                                    <rect key="frame" x="8" y="8" width="304" height="28"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="29"/>
                                                     <segments>
-                                                        <segment title="Halixfax"/>
+                                                        <segment title="Halifax"/>
                                                         <segment title="HSBC"/>
                                                     </segments>
                                                     <connections>
@@ -72,7 +72,7 @@
                                                     <rect key="frame" x="8" y="8" width="304" height="27.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="1fU-CE-RWa" id="vLD-uL-QOJ"/>
                                                     </connections>

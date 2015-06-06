@@ -11,7 +11,7 @@ import SSKeychain
 
 enum BankType : Int {
     case Unknown = 0
-    case Halixfax = 1
+    case Halifax = 1
     case HSBC = 2
 }
 

@@ -11,7 +11,7 @@ import WebKit
 
 class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource, WebViewDriverProgressDelegate, BankDriverDelegate {
 
-    let webDriver = HSBCDriver(webView: WKWebView())
+    var webDriver: BankWebDriver?;
     var accounts = BankAccount.allObjects()
     
     @IBOutlet var toggleWebButton : UIBarButtonItem!
@@ -20,20 +20,18 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
             
-        webDriver.delegate = self
-        webDriver.bankDelegate = self
-        self.view.addSubview(webDriver.webview)
-        webDriver.webview.hidden = true
-        
         performSegueWithIdentifier("lockSegue", sender: self)
     }
     
     @IBAction func unlock(segue: UIStoryboardSegue) {
-        webDriver.loadAccounts()
-    }
-    
-    @IBAction func accountAdded(segue: UIStoryboardSegue) {
-        webDriver.loadAccounts()
+        
+        webDriver = (LoginCredentials.sharedInstance.bankType == .Halifax) ? HalifaxDriver(webView: WKWebView()) : HSBCDriver(webView: WKWebView())
+        webDriver!.delegate = self
+        webDriver!.bankDelegate = self
+        self.view.addSubview(webDriver!.webview)
+        webDriver!.webview.hidden = true
+        
+        webDriver!.loadAccounts()
     }
     
     func webViewDriverProgress(progress: Bool) {
@@ -81,20 +79,22 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     func sizeWebView() {
         let top = self.tableView.contentInset.top
         let height = self.view.frame.height - top
-        webDriver.webview.frame = CGRect(x: 0, y: top, width: self.view.frame.width, height: height)
+        webDriver!.webview.frame = CGRect(x: 0, y: top, width: self.view.frame.width, height: height)
     }
     
     @IBAction func toggleWeb(sender : UIBarButtonItem) {
-        if webDriver.webview.hidden {
-            webDriver.webview.hidden = false
-            tableView.hidden = true
-            webDriver.drive = false
-            sizeWebView()
-        } else {
-            webDriver.loadAccounts()
-            webDriver.webview.hidden = true
-            tableView.hidden = false
-            webDriver.drive = true
+        if let driver = webDriver {
+            if driver.webview.hidden {
+                driver.webview.hidden = false
+                tableView.hidden = true
+                driver.drive = false
+                sizeWebView()
+            } else {
+                driver.loadAccounts()
+                driver.webview.hidden = true
+                tableView.hidden = false
+                driver.drive = true
+            }
         }
     }
 }
