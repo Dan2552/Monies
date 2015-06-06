@@ -24,10 +24,10 @@ class LoginCredentials {
     var password: String?
     
     init() {
-        if let username = NSUserDefaults.standardUserDefaults().stringForKey("loginName") {
+        if let username = sharedUserDefaults().stringForKey("loginName") {
             self.username = username as String
             
-            self.bankType = BankType(rawValue: NSUserDefaults.standardUserDefaults().integerForKey("bankType"))!
+            self.bankType = BankType(rawValue: sharedUserDefaults().integerForKey("bankType"))!
         
             self.memorableAnswer = SSKeychain.passwordForService(username, account: "memorableAnswer")
             self.password = SSKeychain.passwordForService(username, account: "password")
@@ -39,13 +39,18 @@ class LoginCredentials {
         }
     }
     
+    func sharedUserDefaults() -> NSUserDefaults {
+        return NSUserDefaults(suiteName: "group.wildcard")!
+    }
+    
     func credentialsPresent() -> Bool {
         return (self.username != nil && self.bankType != .Unknown && self.memorableAnswer != nil && self.password != nil)
     }
     
     func saveCredentials() {
-        NSUserDefaults.standardUserDefaults().setValue(self.username, forKey: "loginName")
-        NSUserDefaults.standardUserDefaults().setValue(self.bankType?.rawValue, forKey: "bankType")
+        sharedUserDefaults().setValue(self.username, forKey: "loginName")
+        sharedUserDefaults().setValue(self.bankType?.rawValue, forKey: "bankType")
+        sharedUserDefaults().synchronize()
         
         SSKeychain.setPassword(self.memorableAnswer, forService: self.username, account: "memorableAnswer")
         SSKeychain.setPassword(self.password, forService: self.username, account: "password")
