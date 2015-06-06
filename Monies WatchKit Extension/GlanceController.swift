@@ -16,7 +16,7 @@ class GlanceController: WKInterfaceController {
     @IBOutlet weak var availableLabel: WKInterfaceLabel!
     var reloadTimer: NSTimer?
     var updatedTimeAgoTimer: NSTimer?
-    var account: HalifaxAccount?
+    var account: HSBCAccount?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -49,14 +49,14 @@ class GlanceController: WKInterfaceController {
     }
     
     func loadData() {
-        let objects = HalifaxAccount.allObjects()
+        let objects = HSBCAccount.allObjects()
         if objects.count > 0 {
-            let account = objects.firstObject() as! HalifaxAccount!
+            let account = objects.firstObject() as! HSBCAccount!
             setContentForAccount(account)
         }
     }
     
-    func setContentForAccount(account: HalifaxAccount) {
+    func setContentForAccount(account: HSBCAccount) {
         self.account = account
         nameLabel.setText(account.name)
         availableLabel.setText(account.calculateRealAvailable())

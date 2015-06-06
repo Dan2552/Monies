@@ -9,35 +9,80 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource, WebViewDriverProgressDelegate, HalifaxDriverDelegate {
+class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource, WebViewDriverProgressDelegate, BankDriverDelegate {
 
-    let halifax = (UIApplication.sharedApplication().delegate as! AppDelegate).halifax
-    var accounts = HalifaxAccount.allObjects()
+    var webDriver: BankWebDriver?;
+    var accounts = BankAccount.allObjects()
+    let refreshControl = UIRefreshControl()
+    var unlockNeeded = true
+    
+    @IBOutlet weak var progressText: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet var toggleWebButton : UIBarButtonItem!
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        halifax.delegate = self
-        halifax.halifaxDelegate = self
-        self.view.addSubview(halifax.webview)
-        halifax.webview.hidden = true
-        halifax.loadAccounts()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "lock", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
+        // Initialize the refresh control.
+        refreshControl.addTarget(self, action: "reloadAccounts", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
+        
+        setProgressVisible(false)
+    }
+    
+    @IBAction func unlock(segue: UIStoryboardSegue) {
+
+        unlockNeeded = false
+        refresh()
+        
+        reloadAccounts()
+    }
+    
+    func reloadAccounts() {
+        webDriver = (LoginCredentials.sharedInstance.bankType == .Halifax) ? HalifaxDriver(webView: WKWebView()) : HSBCDriver(webView: WKWebView())
+        webDriver!.delegate = self
+        webDriver!.bankDelegate = self
+        self.view.addSubview(webDriver!.webview)
+        webDriver!.webview.hidden = true
+        
+        webDriver!.loadAccounts()
+        setProgressVisible(true)
     }
     
     func webViewDriverProgress(progress: Bool) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = progress
     }
     
-    func halifaxDriverAccountAdded(account: HalifaxAccount) {
-        refresh()
+    func bankDriverDelegateRunning(running: Bool) {
+        setProgressVisible(running)
     }
     
-    func halifaxDriverLoadedPage(page: String) {
-        toggleWebButton.title = page
+    func bankDriverDelegateAccountAdded(account: BankAccount) {
+        refresh()
+    }
+
+    func bankDriverDelegateLoadedPage(pageName: String, percent: Float) {
+        progressText.text = pageName
+        progressView.setProgress(percent, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.refresh()
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (unlockNeeded) {
+            performSegueWithIdentifier("lockSegue", sender: self)
+        }
+    }
+    
+    func lock() {
+        unlockNeeded = true
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -45,8 +90,17 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     }
     
     func refresh() {
-        accounts = HalifaxAccount.allObjects()
+        accounts = HSBCAccount.allObjects()
         tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+    func setProgressVisible(visible: Bool) {
+        let alpha = CGFloat(visible ? 1.0 : 0.0)
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.progressText.alpha = alpha
+            self.progressView.alpha = alpha
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,7 +109,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! AccountTableViewCell
-        let account = accounts.objectAtIndex(UInt(indexPath.row)) as! HalifaxAccount
+        let account = accounts.objectAtIndex(UInt(indexPath.row)) as! BankAccount
         cell.setContentForAccount(account)
         return cell
     }
@@ -68,22 +122,22 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     func sizeWebView() {
         let top = self.tableView.contentInset.top
         let height = self.view.frame.height - top
-        halifax.webview.frame = CGRect(x: 0, y: top, width: self.view.frame.width, height: height)
+        webDriver!.webview.frame = CGRect(x: 0, y: top, width: self.view.frame.width, height: height)
     }
     
-    @IBOutlet var toggleWebButton : UIBarButtonItem!
-    
     @IBAction func toggleWeb(sender : UIBarButtonItem) {
-        if halifax.webview.hidden {
-            halifax.webview.hidden = false
-            tableView.hidden = true
-            halifax.drive = false
-            sizeWebView()
-        } else {
-            halifax.loadAccounts()
-            halifax.webview.hidden = true
-            tableView.hidden = false
-            halifax.drive = true
+        if let driver = webDriver {
+            if driver.webview.hidden {
+                driver.webview.hidden = false
+                tableView.hidden = true
+                driver.drive = false
+                sizeWebView()
+            } else {
+                driver.loadAccounts()
+                driver.webview.hidden = true
+                tableView.hidden = false
+                driver.drive = true
+            }
         }
     }
 }

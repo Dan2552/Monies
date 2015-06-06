@@ -14,7 +14,7 @@ class TableRowController: NSObject {
     @IBOutlet weak var agoLabel: WKInterfaceLabel?
     var updatedAt = NSDate()
     
-    func setContentForAccount(account: HalifaxAccount) {
+    func setContentForAccount(account: HSBCAccount) {
         accountName?.setText(account.name.componentsSeparatedByString(" ").first)
         available.setText(account.calculateRealAvailable())
         updatedAt = account.updatedAtDate()

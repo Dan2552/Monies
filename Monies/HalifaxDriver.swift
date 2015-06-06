@@ -6,25 +6,14 @@
 //  Copyright (c) 2014 Daniel Green. All rights reserved.
 //
 
-import UIKit
 import WebKit
 
-protocol HalifaxDriverDelegate {
-    func halifaxDriverAccountAdded(account: HalifaxAccount)
-    func halifaxDriverLoadedPage(page: String)
-}
-
-
-
-class HalifaxDriver: WebViewDriver {
+class HalifaxDriver: BankWebDriver {
 
     var accountLinks = Array<String>()
     var currentAccount = 0
     var currentUrl = ""
     var accounts: RLMArray
-    var halifaxDelegate: HalifaxDriverDelegate?
-    var drive = true
-    var loadAccountsInProgress = false
     var currentPageDescription = "web"
     
     override init(webView: WKWebView) {
@@ -38,7 +27,7 @@ class HalifaxDriver: WebViewDriver {
     func loadedPage(name: String) {
         println(name)
         currentPageDescription = name
-        halifaxDelegate?.halifaxDriverLoadedPage(name)
+        bankDelegate?.bankDriverDelegateLoadedPage(name, percent: 0.0)
     }
     
     override func pageLoaded(url : String) {
@@ -68,7 +57,7 @@ class HalifaxDriver: WebViewDriver {
         }
     }
     
-    func loadAccounts() {
+    override func loadAccounts() {
         loadAccountsInProgress = true
         println("loadAccounts called")
         self.visit("https://secure.halifax-online.co.uk/personal/a/mobile/account_overview/")
@@ -77,8 +66,8 @@ class HalifaxDriver: WebViewDriver {
     func loginStep1() {
         println("Signing in (part 1)")
         WKWebKitAsyncRunner(tasks: [
-            { result, next in self.fillIn("frmLogin:strCustomerLogin_userID", with: username, completion: next) },
-            { result, next in self.fillIn("frmLogin:strCustomerLogin_pwd", with: password, completion: next) },
+            { result, next in self.fillIn("frmLogin:strCustomerLogin_userID", with: LoginCredentials.sharedInstance.username!, completion: next) },
+            { result, next in self.fillIn("frmLogin:strCustomerLogin_pwd", with: LoginCredentials.sharedInstance.password!, completion: next) },
             { result, next in self.click("frmLogin:lnkLogin1", completion: next)}
         ])
     }
@@ -109,11 +98,11 @@ class HalifaxDriver: WebViewDriver {
         
         var n = -1
         for (index, label) in enumerate(labels) { if (key == label) { n = index } }
-        if n > -1 { return "&nbsp;\(Array(secondPassword)[n])" }
+        if n > -1 { return "&nbsp;\(Array(LoginCredentials.sharedInstance.password!)[n])" }
         return ""
     }
     
-    func getAccounts() {
+    override func getAccounts() {
         accounts.removeAllObjects()
         println("Accounts")
         run("document.getElementsByClassName('accountItem').length") { accountCountStr in
@@ -156,7 +145,7 @@ class HalifaxDriver: WebViewDriver {
             navigateToAccount(currentAccount + 1)
         } else {
             loadAccountsInProgress = false
-            halifaxDelegate?.halifaxDriverLoadedPage("done")
+            bankDelegate?.bankDriverDelegateLoadedPage("done", percent: 1.0)
         }
     }
 
@@ -175,7 +164,7 @@ class HalifaxDriver: WebViewDriver {
                     println("persisted")
                 }
                 self.accounts.addObject(account)
-                self.halifaxDelegate?.halifaxDriverAccountAdded(account!)
+                self.bankDelegate?.bankDriverDelegateAccountAdded(account!)
                 self.nextAccount()
             }
         }

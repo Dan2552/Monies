@@ -6,5 +6,9 @@
 	<array>
 		<string>group.wildcard</string>
 	</array>
+	<key>keychain-access-groups</key>
+	<array>
+		<string>$(AppIdentifierPrefix)uk.danielgreen.Monies</string>
+	</array>
 </dict>
 </plist>

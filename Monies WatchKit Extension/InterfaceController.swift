@@ -10,11 +10,11 @@ import WatchKit
 import Foundation
 import WebKit
 
-class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
+class InterfaceController: WKInterfaceController, BankDriverDelegate {
 
     @IBOutlet weak var label: WKInterfaceLabel!
     @IBOutlet weak var table: WKInterfaceTable!
-    var halifax: HalifaxDriver?
+    var bankDriver: BankWebDriver?
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -22,20 +22,20 @@ class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
     }
     
     func loadTable() {
-        let objects = HalifaxAccount.allObjects()
+        let objects = HSBCAccount.allObjects()
         table.setNumberOfRows(Int(objects.count), withRowType: "row")
         for (index, account) in enumerate(objects) {
             let row = self.table.rowControllerAtIndex(index) as! TableRowController
-            row.setContentForAccount(account as! HalifaxAccount)
+            row.setContentForAccount(account as! HSBCAccount)
         }
     }
 
     @IBAction func refreshButton() {
-        if halifax == nil {
-            halifax = HalifaxDriver(webView: WKWebView())
-            halifax?.halifaxDelegate = self
+        if bankDriver == nil {
+            bankDriver = HSBCDriver(webView: WKWebView())
+            bankDriver?.bankDelegate = self
         }
-        halifax?.loadAccounts()
+        bankDriver?.loadAccounts()
     }
     
     override func willActivate() {
@@ -48,12 +48,16 @@ class InterfaceController: WKInterfaceController, HalifaxDriverDelegate {
         super.didDeactivate()
     }
     
-    func halifaxDriverAccountAdded(account: HalifaxAccount) {
+    func bankDriverDelegateAccountAdded(account: BankAccount) {
         loadTable()
     }
     
-    func halifaxDriverLoadedPage(page: String) {
-        self.label.setText(page)
+    func bankDriverDelegateLoadedPage(pageName: String, percent: Float) {
+        self.label.setText(pageName)
+    }
+
+    func bankDriverDelegateRunning(running: Bool) {
+        
     }
 
 }
