@@ -14,7 +14,6 @@ class HalifaxDriver: BankWebDriver {
     var currentAccount = 0
     var currentUrl = ""
     var accounts: RLMArray
-    var loadAccountsInProgress = false
     var currentPageDescription = "web"
     
     override init(webView: WKWebView) {
@@ -28,7 +27,7 @@ class HalifaxDriver: BankWebDriver {
     func loadedPage(name: String) {
         println(name)
         currentPageDescription = name
-        bankDelegate?.bankDriverDelegateLoadedPage(name)
+        bankDelegate?.bankDriverDelegateLoadedPage(name, percent: 0.0)
     }
     
     override func pageLoaded(url : String) {
@@ -146,7 +145,7 @@ class HalifaxDriver: BankWebDriver {
             navigateToAccount(currentAccount + 1)
         } else {
             loadAccountsInProgress = false
-            bankDelegate?.bankDriverDelegateLoadedPage("done")
+            bankDelegate?.bankDriverDelegateLoadedPage("done", percent: 1.0)
         }
     }
 

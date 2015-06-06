@@ -119,7 +119,6 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
         self.webview.evaluateJavaScript(string, completionHandler: { result, error in
             if (error != nil) {
                 println("there was an error running javascript:")
-                println(string)
             }
             
             if let result : AnyObject = result {

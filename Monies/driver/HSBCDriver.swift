@@ -8,13 +8,23 @@
 
 import WebKit
 
+enum Page: String {
+    case Frontpage = "Frontpage"
+    case Login1 = "Login1"
+    case WithSecKey = "WithSecKey"
+    case WithoutSecKey = "WithoutSecKey"
+    case Accounts = "Accounts"
+    case Logout = "LogOut"
+
+    static var count: Int { return Page.Accounts.hashValue + 1}
+}
+
 class HSBCDriver: BankWebDriver {
     var accountLinks = Array<String>()
     var currentAccount = 0
     var currentUrl = ""
     var accounts: RLMArray
-    var loadAccountsInProgress = false
-    var currentPageDescription = "web"
+    var currentPage = Page.Frontpage
     
     override init(webView: WKWebView) {
         accounts = RLMArray(objectClassName: "HSBCAccount")
@@ -24,10 +34,11 @@ class HSBCDriver: BankWebDriver {
         super.init(webView: webView)
     }
     
-    func loadedPage(name: String) {
-        println(name)
-        currentPageDescription = name
-        bankDelegate?.bankDriverDelegateLoadedPage(name)
+    func loadedPage(page: Page) {
+        currentPage = page
+        let pageName = page.rawValue
+        println(pageName)
+        bankDelegate?.bankDriverDelegateLoadedPage(pageName, percent: Float(page.hashValue) / Float(Page.count-1) )
     }
     
     override func pageLoaded(url : String) {
@@ -38,20 +49,24 @@ class HSBCDriver: BankWebDriver {
         if !drive { return }
         
         if url.hasSuffix("hsbc.co.uk/1/2/mobile") {
-            loadedPage("frontpage")
+            loadedPage(.Frontpage)
             gotoLoginScreen()
         } else if url.hasSuffix("?IDV_URL=hsbc.mobile.MyHSBC_pib") {
-            loadedPage("login1")
+            loadedPage(.Login1)
             loginStep1()
-        } else if url.hasSuffix("security.hsbc.co.uk/gsa/SaaS30Resource/") {
-            loadedPage("withSecKey")
+        } else if (url.hasSuffix("security.hsbc.co.uk/gsa/SaaS30Resource/") && currentPage.hashValue < Page.WithSecKey.hashValue) {
+            loadedPage(.WithSecKey)
             switchToLoginPageWithoutSecKey()
         } else if url.hasSuffix("?__USER=withOutSecKey") {
-            loadedPage("withoutSecKey")
+            loadedPage(.WithoutSecKey)
             loginStep2()
         } else if url.hasSuffix("personal/online-banking?BlitzToken=blitz") {
-            loadedPage("accounts")
+            loadedPage(.Accounts)
             getAccounts()
+        } else if url.hasSuffix("/mobile/homepage") {
+            loadedPage(.Logout)
+            self.loadAccountsInProgress = false
+            self.bankDelegate!.bankDriverDelegateRunning(false)
         }
     }
     
@@ -59,6 +74,7 @@ class HSBCDriver: BankWebDriver {
         loadAccountsInProgress = true
         println("loadAccounts called")
         self.visit("http://www.hsbc.co.uk/1/2/mobile")
+        self.bankDelegate!.bankDriverDelegateRunning(true)
     }
     
     func gotoLoginScreen() {
@@ -117,7 +133,6 @@ class HSBCDriver: BankWebDriver {
         run("document.getElementsByClassName('col3')[2].firstChild.innerHTML") { result in
             let realm = RLMRealm.defaultRealm()
             let existing = HSBCAccount.objectsWhere("url = '\(self.currentUrl)'")
-            println("persisting... \(self.currentPageDescription)")
             let account = (existing.firstObject() as! HSBCAccount?) ?? HSBCAccount()
             realm.transactionWithBlock() {
                 account!.setFromDetails("", details: result, url: self.currentUrl)

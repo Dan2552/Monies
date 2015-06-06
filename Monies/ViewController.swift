@@ -13,18 +13,35 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
 
     var webDriver: BankWebDriver?;
     var accounts = BankAccount.allObjects()
+    let refreshControl = UIRefreshControl()
+    var unlockNeeded = true
     
+    @IBOutlet weak var progressText: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet var toggleWebButton : UIBarButtonItem!
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        performSegueWithIdentifier("lockSegue", sender: self)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "lock", name: UIApplicationDidEnterBackgroundNotification, object: nil)
+        
+        // Initialize the refresh control.
+        refreshControl.addTarget(self, action: "reloadAccounts", forControlEvents: .ValueChanged)
+        tableView.addSubview(refreshControl)
+        
+        setProgressVisible(false)
     }
     
     @IBAction func unlock(segue: UIStoryboardSegue) {
+
+        unlockNeeded = false
+        refresh()
         
+        reloadAccounts()
+    }
+    
+    func reloadAccounts() {
         webDriver = (LoginCredentials.sharedInstance.bankType == .Halifax) ? HalifaxDriver(webView: WKWebView()) : HSBCDriver(webView: WKWebView())
         webDriver!.delegate = self
         webDriver!.bankDelegate = self
@@ -32,23 +49,40 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
         webDriver!.webview.hidden = true
         
         webDriver!.loadAccounts()
+        setProgressVisible(true)
     }
     
     func webViewDriverProgress(progress: Bool) {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = progress
     }
     
+    func bankDriverDelegateRunning(running: Bool) {
+        setProgressVisible(running)
+    }
+    
     func bankDriverDelegateAccountAdded(account: BankAccount) {
         refresh()
     }
 
-    func bankDriverDelegateLoadedPage(page: String) {
-        toggleWebButton.title = page
+    func bankDriverDelegateLoadedPage(pageName: String, percent: Float) {
+        progressText.text = pageName
+        progressView.setProgress(percent, animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
-//        self.refresh()
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (unlockNeeded) {
+            performSegueWithIdentifier("lockSegue", sender: self)
+        }
+    }
+    
+    func lock() {
+        unlockNeeded = true
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -58,6 +92,15 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     func refresh() {
         accounts = HSBCAccount.allObjects()
         tableView.reloadData()
+        refreshControl.endRefreshing()
+    }
+    
+    func setProgressVisible(visible: Bool) {
+        let alpha = CGFloat(visible ? 1.0 : 0.0)
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.progressText.alpha = alpha
+            self.progressView.alpha = alpha
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

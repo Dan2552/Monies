@@ -52,9 +52,12 @@ class InterfaceController: WKInterfaceController, BankDriverDelegate {
         loadTable()
     }
     
-    func bankDriverDelegateLoadedPage(page: String) {
-        self.label.setText(page)
+    func bankDriverDelegateLoadedPage(pageName: String, percent: Float) {
+        self.label.setText(pageName)
     }
 
+    func bankDriverDelegateRunning(running: Bool) {
+        
+    }
 
 }

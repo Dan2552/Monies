@@ -10,12 +10,14 @@ import UIKit
 
 protocol BankDriverDelegate {
     func bankDriverDelegateAccountAdded(account: BankAccount)
-    func bankDriverDelegateLoadedPage(page: String)
+    func bankDriverDelegateLoadedPage(pageName: String, percent: Float)
+    func bankDriverDelegateRunning(running: Bool)
 }
 
 class BankWebDriver: WebViewDriver {
     var bankDelegate: BankDriverDelegate?
     var drive = true
+    var loadAccountsInProgress = false
     
     func getAccounts() {
         
