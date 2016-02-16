@@ -30,7 +30,7 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     }
     
     func visit(location: String) {
-        println("visiting \(location)")
+        print("visiting \(location)")
         self.webview.loadRequest(NSURLRequest(URL: NSURL(string: location)!))
     }
     
@@ -39,7 +39,7 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
         
         run(js) { result in
             if result != "null" {
-                println("read label \(result)")
+                print("read label \(result)")
                 completion(result)
             }
         }
@@ -48,7 +48,7 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     func fillIn(field:String, with:String, completion: ((String) -> Void)) {
         var printValue = with
         if (field as NSString).containsString("pwd") { printValue = "[redacted]" }
-        println("fill in value \(printValue)")
+        print("fill in value \(printValue)")
         
         run("document.getElementById('\(field)').value = \"\(with)\";") { result in
             completion(result)
@@ -56,7 +56,7 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     }
 
     func click(field:String, completion: ((String) -> Void)) {
-        println("click \(field)")
+        print("click \(field)")
         run("document.getElementById('\(field)').click();") { (result) in
             completion(result)
             
@@ -68,8 +68,8 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     func run(string:String, completion: ((String) -> Void)) {
         self.webview.evaluateJavaScript(string, completionHandler: { result, error in
             if (error != nil) {
-                println("there was an error running javascript:")
-                println(string)
+                print("there was an error running javascript:")
+                print(string)
             }
             
             if let result : AnyObject = result {
@@ -81,13 +81,13 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     }
     
     func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
-        println("didCommitNavigation")
+        print("didCommitNavigation")
         delegate?.webViewDriverProgress(true)
     }
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
-        println("didFinishNavigation")
-        var url = webView.URL!.absoluteString! as NSString
+        print("didFinishNavigation")
+        var url = webView.URL!.absoluteString as NSString
         delegate?.webViewDriverProgress(false)
         pageLoaded(url as! String)
     }

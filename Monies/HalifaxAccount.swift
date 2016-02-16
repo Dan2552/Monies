@@ -6,7 +6,9 @@
 //  Copyright (c) 2015 Daniel Green. All rights reserved.
 //
 
-class HalifaxAccount: RLMObject {
+import RealmSwift
+
+class HalifaxAccount: Object {
     dynamic var name = ""
     dynamic var sortCode = ""
     dynamic var accountNumber = ""

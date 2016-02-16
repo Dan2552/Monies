@@ -8,15 +8,17 @@
 
 import UIKit
 import WebKit
+import RealmSwift
 
 class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource, WebViewDriverProgressDelegate, HalifaxDriverDelegate {
 
     let halifax = (UIApplication.sharedApplication().delegate as! AppDelegate).halifax
-    var accounts = HalifaxAccount.allObjects()
+    var accounts: Results<HalifaxAccount>?
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refresh()
         halifax.delegate = self
         halifax.halifaxDelegate = self
         self.view.addSubview(halifax.webview)
@@ -45,17 +47,18 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     }
     
     func refresh() {
-        accounts = HalifaxAccount.allObjects()
+        let realm = try! Realm()
+        accounts = realm.objects(HalifaxAccount)
         tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(accounts.count)
+        return Int(accounts?.count ?? 0)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! AccountTableViewCell
-        let account = accounts.objectAtIndex(UInt(indexPath.row)) as! HalifaxAccount
+        let account = accounts![Int(indexPath.row)]
         cell.setContentForAccount(account)
         return cell
     }
