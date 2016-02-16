@@ -13,18 +13,23 @@ class LockViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        if needsToCreateAccount() {
+            performSegueWithIdentifier("createAccount", sender: nil)
+            return
+        }
         touchId()
     }
     
     func touchId() {
         let context = LAContext()
         var error : NSError?
-        var myLocalizedReasonString = "Identify"
+        let myLocalizedReasonString = "Identify"
         
         // Allow devices without TouchID
-        if !context.canEvaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, error: &error) {
+        guard context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) else {
             allow()
             return
+            
         }
         
         context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString) { success, error in
@@ -38,5 +43,9 @@ class LockViewController: UIViewController {
     
     func allow() {
         performSegueWithIdentifier("allow", sender: self)
+    }
+    
+    func needsToCreateAccount() -> Bool {
+        return Login.existing() == nil
     }
 }

@@ -7,57 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37C7F3301AFB8BAA00A62A80 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7F32F1AFB8BAA00A62A80 /* Constants.swift */; };
-		8EA3449C99EAA5AB232A9037 /* Pods_Monies_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FAFD2F4C894EA4E5737B712 /* Pods_Monies_WatchKit_Extension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18D3311AF6DE3200F5836F /* TableRowController.swift */; };
-		AB18D3381AF7A15A00F5836F /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
+		37DBC9111C73B3A70083C56F /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9101C73B3A70083C56F /* NewLoginViewController.swift */; };
+		37DBC9131C73BA370083C56F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9121C73BA370083C56F /* Login.swift */; };
+		37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9141C73BF570083C56F /* Int+Oridinal.swift */; };
+		A206B516A1941E4D860856DB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D32922495513B972ACEFD3 /* Pods.framework */; };
 		AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75ECC1941219F008B072F /* LockViewController.swift */; };
 		AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
 		AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */; };
-		AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7731AF6951E002C17EF /* RLMSupport.swift */; };
-		ABB6F2F61AFFCE130015C563 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7731AF6951E002C17EF /* RLMSupport.swift */; };
 		ABB6F2F81AFFCE9C0015C563 /* ProvisionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */; };
-		ABB6F2F91AFFCEAF0015C563 /* ProvisionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */; };
-		ABB6F2FA1AFFCF4B0015C563 /* HalifaxAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */; };
-		ABB6F2FC1AFFEAE80015C563 /* HalifaxDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */; };
-		ABB6F2FD1AFFEAEB0015C563 /* WebViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAE1AF69838007966DD /* WebViewDriver.swift */; };
-		ABB6F2FE1AFFEAEE0015C563 /* WKWebKitAsyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */; };
-		ABB6F2FF1AFFEAF90015C563 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C7F32F1AFB8BAA00A62A80 /* Constants.swift */; };
 		ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */; };
 		ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */; };
 		ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */; };
 		ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAE1AF69838007966DD /* WebViewDriver.swift */; };
 		ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */; };
-		ABD99CBC1AF6C8A2007966DD /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CBB1AF6C8A2007966DD /* InterfaceController.swift */; };
-		ABD99CBE1AF6C8A2007966DD /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CBD1AF6C8A2007966DD /* GlanceController.swift */; };
-		ABD99CC01AF6C8A2007966DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CBF1AF6C8A2007966DD /* Images.xcassets */; };
-		ABD99CC41AF6C8A2007966DD /* Monies WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */; };
-		ABD99CCC1AF6C8A2007966DD /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CCA1AF6C8A2007966DD /* Interface.storyboard */; };
-		ABD99CCE1AF6C8A2007966DD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD99CCD1AF6C8A2007966DD /* Images.xcassets */; };
-		ABD99CD11AF6C8A2007966DD /* Monies WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EAF19411C9E008B072F /* AppDelegate.swift */; };
 		ABE75EB219411C9E008B072F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EB119411C9E008B072F /* ViewController.swift */; };
 		ABE75EB519411C9E008B072F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB319411C9E008B072F /* Main.storyboard */; };
 		ABE75EB719411C9E008B072F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB619411C9E008B072F /* Images.xcassets */; };
-		B7A5DEB8A8756ED80327B54C /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D32922495513B972ACEFD3 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		ABD99CC51AF6C8A2007966DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ABE75EA219411C9E008B072F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ABD99CC21AF6C8A2007966DD;
-			remoteInfo = "Monies WatchKit App";
-		};
-		ABD99CCF1AF6C8A2007966DD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = ABE75EA219411C9E008B072F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ABD99CB61AF6C8A1007966DD;
-			remoteInfo = "Monies WatchKit Extension";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		ABD99CD81AF6C8A2007966DD /* Embed App Extensions */ = {
@@ -66,7 +33,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				ABD99CD11AF6C8A2007966DD /* Monies WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,17 +40,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		300FBECA5216106AB611C20E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		37C7F32F1AFB8BAA00A62A80 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Monies/Constants.swift; sourceTree = "<group>"; };
-		869466C19A81FB5557CE39FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9FAFD2F4C894EA4E5737B712 /* Pods_Monies_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monies_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37DBC9101C73B3A70083C56F /* NewLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
+		37DBC9121C73BA370083C56F /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		37DBC9141C73BF570083C56F /* Int+Oridinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Oridinal.swift"; sourceTree = "<group>"; };
+		4B5F0E43D7FEC37D79F93E50 /* Pods-Monies WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		725CAA9AF2E0F5BF633F075A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8081D8AB411B4E18D7E10D18 /* Pods_Monies_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monies_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB18D3311AF6DE3200F5836F /* TableRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableRowController.swift; path = "../Monies WatchKit App/TableRowController.swift"; sourceTree = "<group>"; };
 		AB18D3331AF6DF7300F5836F /* Monies WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Monies WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = "Monies-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Monies/Async.swift; sourceTree = "<group>"; };
 		AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxAccount.swift; sourceTree = "<group>"; };
-		AB9ED7731AF6951E002C17EF /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RLMSupport.swift; path = Monies/RLMSupport.swift; sourceTree = "<group>"; };
 		ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Monies.entitlements; sourceTree = "<group>"; };
 		ABB6F2F41AFFCCD80015C563 /* Monies WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Monies WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionRealm.swift; sourceTree = "<group>"; };
@@ -93,12 +59,10 @@
 		ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebKitAsyncRunner.swift; sourceTree = "<group>"; };
 		ABD99CAE1AF69838007966DD /* WebViewDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewDriver.swift; sourceTree = "<group>"; };
 		ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
-		ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Monies WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD99CBA1AF6C8A2007966DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD99CBB1AF6C8A2007966DD /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		ABD99CBD1AF6C8A2007966DD /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		ABD99CBF1AF6C8A2007966DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Monies WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD99CC91AF6C8A2007966DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD99CCB1AF6C8A2007966DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		ABD99CCD1AF6C8A2007966DD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -109,36 +73,38 @@
 		ABE75EB419411C9E008B072F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABE75EB619411C9E008B072F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ABE75ECC1941219F008B072F /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
-		CB241AE98519F9C923EFB9C6 /* Pods-Monies WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		D00E450388C602F1C1A5A77F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D059E1CEA9C3271A09E33DAA /* Pods-Monies WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		E2D32922495513B972ACEFD3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ABD99CB41AF6C8A1007966DD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8EA3449C99EAA5AB232A9037 /* Pods_Monies_WatchKit_Extension.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ABE75EA719411C9E008B072F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */,
-				B7A5DEB8A8756ED80327B54C /* Pods.framework in Frameworks */,
+				A206B516A1941E4D860856DB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37DBC9161C73C1670083C56F /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				37DBC9141C73BF570083C56F /* Int+Oridinal.swift */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
 		AB6A772A19479C3F009D3D45 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
 				ABE75EB119411C9E008B072F /* ViewController.swift */,
 				ABE75ECC1941219F008B072F /* LockViewController.swift */,
+				37DBC9101C73B3A70083C56F /* NewLoginViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -147,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */,
+				37DBC9121C73BA370083C56F /* Login.swift */,
 			);
 			name = models;
 			path = Monies;
@@ -155,9 +122,8 @@
 		ABB6F2F51AFFCDFC0015C563 /* Shared Target */ = {
 			isa = PBXGroup;
 			children = (
-				37C7F32F1AFB8BAA00A62A80 /* Constants.swift */,
+				37DBC9161C73C1670083C56F /* extensions */,
 				AB9ED76F1AF68E1C002C17EF /* Async.swift */,
-				AB9ED7731AF6951E002C17EF /* RLMSupport.swift */,
 				ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */,
 				ABD99CB01AF6983B007966DD /* driver */,
 				AB9ED7751AF6952A002C17EF /* models */,
@@ -225,7 +191,7 @@
 				ABD99CC71AF6C8A2007966DD /* Monies WatchKit App */,
 				ABE75EAB19411C9E008B072F /* Products */,
 				B1465BB745594AA7B690DDFD /* Frameworks */,
-				CA05176F27E9D03FCF71FC93 /* Pods */,
+				C9E4D17338155F4D48B992A4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,8 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				ABE75EAA19411C9E008B072F /* Monies.app */,
-				ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */,
-				ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,18 +231,18 @@
 			children = (
 				ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */,
 				E2D32922495513B972ACEFD3 /* Pods.framework */,
-				9FAFD2F4C894EA4E5737B712 /* Pods_Monies_WatchKit_Extension.framework */,
+				8081D8AB411B4E18D7E10D18 /* Pods_Monies_WatchKit_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CA05176F27E9D03FCF71FC93 /* Pods */ = {
+		C9E4D17338155F4D48B992A4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				300FBECA5216106AB611C20E /* Pods.debug.xcconfig */,
-				869466C19A81FB5557CE39FF /* Pods.release.xcconfig */,
-				CB241AE98519F9C923EFB9C6 /* Pods-Monies WatchKit Extension.debug.xcconfig */,
-				2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */,
+				725CAA9AF2E0F5BF633F075A /* Pods.debug.xcconfig */,
+				D00E450388C602F1C1A5A77F /* Pods.release.xcconfig */,
+				D059E1CEA9C3271A09E33DAA /* Pods-Monies WatchKit Extension.debug.xcconfig */,
+				4B5F0E43D7FEC37D79F93E50 /* Pods-Monies WatchKit Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -286,57 +250,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ABD99CB61AF6C8A1007966DD /* Monies WatchKit Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABD99CD51AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit Extension" */;
-			buildPhases = (
-				74E798186AD20E34785218D7 /* Check Pods Manifest.lock */,
-				ABD99CB31AF6C8A1007966DD /* Sources */,
-				ABD99CB41AF6C8A1007966DD /* Frameworks */,
-				ABD99CB51AF6C8A1007966DD /* Resources */,
-				6D0FF87B4DE4E6DB24762345 /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ABD99CC61AF6C8A2007966DD /* PBXTargetDependency */,
-			);
-			name = "Monies WatchKit Extension";
-			productName = "Monies WatchKit Extension";
-			productReference = ABD99CB71AF6C8A1007966DD /* Monies WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
-		};
-		ABD99CC21AF6C8A2007966DD /* Monies WatchKit App */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABD99CD21AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit App" */;
-			buildPhases = (
-				ABD99CC11AF6C8A2007966DD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Monies WatchKit App";
-			productName = "Monies WatchKit App";
-			productReference = ABD99CC31AF6C8A2007966DD /* Monies WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
-		};
 		ABE75EA919411C9E008B072F /* Monies */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABE75EC619411C9E008B072F /* Build configuration list for PBXNativeTarget "Monies" */;
 			buildPhases = (
-				F20C38BD95F3445BBF140B03 /* Check Pods Manifest.lock */,
+				9C10E575C59F3A1FCA87952D /* Check Pods Manifest.lock */,
 				ABE75EA619411C9E008B072F /* Sources */,
 				ABE75EA719411C9E008B072F /* Frameworks */,
 				ABE75EA819411C9E008B072F /* Resources */,
-				9622E6D77B7F468AB141852E /* Copy Pods Resources */,
 				ABD99CD81AF6C8A2007966DD /* Embed App Extensions */,
-				5C96D7B6A98AF9ED4356DAF8 /* Embed Pods Frameworks */,
+				035E1298DBCFBFA8E44706D1 /* Embed Pods Frameworks */,
+				619BE7C6864D8CBF4B166792 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				ABD99CD01AF6C8A2007966DD /* PBXTargetDependency */,
 			);
 			name = Monies;
 			productName = Monies;
@@ -349,21 +277,11 @@
 		ABE75EA219411C9E008B072F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Daniel Green";
 				TargetAttributes = {
-					ABD99CB61AF6C8A1007966DD = {
-						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = XV8PWA37TZ;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					ABD99CC21AF6C8A2007966DD = {
-						CreatedOnToolsVersion = 6.3.1;
-					};
 					ABE75EA919411C9E008B072F = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = XV8PWA37TZ;
@@ -389,31 +307,11 @@
 			projectRoot = "";
 			targets = (
 				ABE75EA919411C9E008B072F /* Monies */,
-				ABD99CB61AF6C8A1007966DD /* Monies WatchKit Extension */,
-				ABD99CC21AF6C8A2007966DD /* Monies WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ABD99CB51AF6C8A1007966DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABD99CC01AF6C8A2007966DD /* Images.xcassets in Resources */,
-				ABD99CC41AF6C8A2007966DD /* Monies WatchKit App.app in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABD99CC11AF6C8A2007966DD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABD99CCC1AF6C8A2007966DD /* Interface.storyboard in Resources */,
-				ABD99CCE1AF6C8A2007966DD /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ABE75EA819411C9E008B072F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,7 +324,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C96D7B6A98AF9ED4356DAF8 /* Embed Pods Frameworks */ = {
+		035E1298DBCFBFA8E44706D1 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -441,37 +339,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6D0FF87B4DE4E6DB24762345 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74E798186AD20E34785218D7 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9622E6D77B7F468AB141852E /* Copy Pods Resources */ = {
+		619BE7C6864D8CBF4B166792 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -486,7 +354,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F20C38BD95F3445BBF140B03 /* Check Pods Manifest.lock */ = {
+		9C10E575C59F3A1FCA87952D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -504,36 +372,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ABD99CB31AF6C8A1007966DD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				ABB6F2FA1AFFCF4B0015C563 /* HalifaxAccount.swift in Sources */,
-				ABB6F2F61AFFCE130015C563 /* RLMSupport.swift in Sources */,
-				AB18D3381AF7A15A00F5836F /* Async.swift in Sources */,
-				ABD99CBC1AF6C8A2007966DD /* InterfaceController.swift in Sources */,
-				ABB6F2FD1AFFEAEB0015C563 /* WebViewDriver.swift in Sources */,
-				AB18D3321AF6DE3200F5836F /* TableRowController.swift in Sources */,
-				ABB6F2FE1AFFEAEE0015C563 /* WKWebKitAsyncRunner.swift in Sources */,
-				ABB6F2F91AFFCEAF0015C563 /* ProvisionRealm.swift in Sources */,
-				ABD99CBE1AF6C8A2007966DD /* GlanceController.swift in Sources */,
-				ABB6F2FC1AFFEAE80015C563 /* HalifaxDriver.swift in Sources */,
-				ABB6F2FF1AFFEAF90015C563 /* Constants.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		ABE75EA619411C9E008B072F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DBC9111C73B3A70083C56F /* NewLoginViewController.swift in Sources */,
 				AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */,
+				37DBC9131C73BA370083C56F /* Login.swift in Sources */,
 				ABB6F2F81AFFCE9C0015C563 /* ProvisionRealm.swift in Sources */,
-				37C7F3301AFB8BAA00A62A80 /* Constants.swift in Sources */,
-				AB9ED7741AF6951E002C17EF /* RLMSupport.swift in Sources */,
 				ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */,
 				ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */,
 				AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */,
 				ABE75EB219411C9E008B072F /* ViewController.swift in Sources */,
+				37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */,
 				ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */,
 				ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */,
 				ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */,
@@ -542,19 +393,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		ABD99CC61AF6C8A2007966DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ABD99CC21AF6C8A2007966DD /* Monies WatchKit App */;
-			targetProxy = ABD99CC51AF6C8A2007966DD /* PBXContainerItemProxy */;
-		};
-		ABD99CD01AF6C8A2007966DD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = ABD99CB61AF6C8A1007966DD /* Monies WatchKit Extension */;
-			targetProxy = ABD99CCF1AF6C8A2007966DD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		ABD99CCA1AF6C8A2007966DD /* Interface.storyboard */ = {
@@ -576,95 +414,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		ABD99CD31AF6C8A2007966DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				IBSC_MODULE = Monies_WatchKit_Extension;
-				INFOPLIST_FILE = "Monies WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "199aa9f5-3e03-4ead-935d-9bccf118f8a6";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Debug;
-		};
-		ABD99CD41AF6C8A2007966DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				IBSC_MODULE = Monies_WatchKit_Extension;
-				INFOPLIST_FILE = "Monies WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "199aa9f5-3e03-4ead-935d-9bccf118f8a6";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
-			};
-			name = Release;
-		};
-		ABD99CD61AF6C8A2007966DD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CB241AE98519F9C923EFB9C6 /* Pods-Monies WatchKit Extension.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Monies WatchKit Extension/Monies WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Monies WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "515d9eee-9947-486e-9653-d3f64daa969e";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Monies WatchKit Extension/Monies WatchKit Extension-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		ABD99CD71AF6C8A2007966DD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AB298272F5C8C9D393049D2 /* Pods-Monies WatchKit Extension.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "Monies WatchKit Extension/Monies WatchKit Extension.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Monies WatchKit Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "515d9eee-9947-486e-9653-d3f64daa969e";
-				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Monies WatchKit Extension/Monies WatchKit Extension-Bridging-Header.h";
-			};
-			name = Release;
-		};
 		ABE75EC419411C9E008B072F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -750,7 +499,7 @@
 		};
 		ABE75EC719411C9E008B072F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 300FBECA5216106AB611C20E /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 725CAA9AF2E0F5BF633F075A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -769,7 +518,7 @@
 		};
 		ABE75EC819411C9E008B072F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 869466C19A81FB5557CE39FF /* Pods.release.xcconfig */;
+			baseConfigurationReference = D00E450388C602F1C1A5A77F /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -788,24 +537,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ABD99CD21AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit App" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABD99CD31AF6C8A2007966DD /* Debug */,
-				ABD99CD41AF6C8A2007966DD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		ABD99CD51AF6C8A2007966DD /* Build configuration list for PBXNativeTarget "Monies WatchKit Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				ABD99CD61AF6C8A2007966DD /* Debug */,
-				ABD99CD71AF6C8A2007966DD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		ABE75EA519411C9E008B072F /* Build configuration list for PBXProject "Monies" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

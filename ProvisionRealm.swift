@@ -9,7 +9,7 @@
 import Foundation
 
 func provisionRealm() {
-    let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.wildcard")!
-    let realmPath = directory.path!.stringByAppendingPathComponent("db.realm")
-    RLMRealm.setDefaultRealmPath(realmPath)
+//    let directory: NSURL = NSFileManager.defaultManager().containerURLForSecurityApplicationGroupIdentifier("group.wildcard")!
+//    let realmPath = (directory.path! as NSString).stringByAppendingPathComponent("db.realm")
+//    RLMRealm.setDefaultRealmPath(realmPath)
 }
