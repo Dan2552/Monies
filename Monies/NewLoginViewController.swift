@@ -32,27 +32,7 @@ class NewLoginViewController: NapkinViewController {
     
     override func setupFields() {
         input("username")
-        input("password")
-        input("memorableInformation")
-        
-//        sectionSeparator()
-//        input("width")
-//        input("height")
-//        
-//        sectionSeparator()
-//        input("tileset", collection: [
-//            0: "Interior",
-//            1: "Test Landscape"
-//            ])
-//        input("scale")
-//        
-//        if let r = mapConfig.realm {
-//            sectionSeparator()
-//            button("Delete") {
-//                self.mapConfig.deleteFile()
-//                r.write { r.delete(self.mapConfig) }
-//                self.dismissViewControllerAnimated(true, completion: nil)
-//            }
-//        }
+        input("password", type: .Password)
+        input("memorableInformation", type: .Password)
     }
 }

@@ -36,10 +36,10 @@ CHECKOUT OPTIONS:
     :commit: 3ca50e68a9c26cecd85852293c1004b999b00a4d
     :git: https://github.com/bassrock/DateTools.git
   Luncheon:
-    :commit: 195f2c5c78c4dd11e139ebbdcfc25ea3c3e9bfde
+    :commit: d917080f1a0802f0567080568b1e69a677120c53
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
-    :commit: 6b59599cf979971346ebe46629e1b635566e88ca
+    :commit: 56b782f7d0664c8c0b72efae80d7bda976132a78
     :git: https://github.com/Dan2552/Napkin.git
 
 SPEC CHECKSUMS:
