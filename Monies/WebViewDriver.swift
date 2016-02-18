@@ -87,9 +87,9 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
         print("didFinishNavigation")
-        var url = webView.URL!.absoluteString as NSString
+        let url = webView.URL!.absoluteString
         delegate?.webViewDriverProgress(false)
-        pageLoaded(url as! String)
+        pageLoaded(url)
     }
     
     func pageLoaded(url : String) {

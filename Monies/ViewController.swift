@@ -13,7 +13,7 @@ import RealmSwift
 class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource, WebViewDriverProgressDelegate, HalifaxDriverDelegate {
 
     let halifax = (UIApplication.sharedApplication().delegate as! AppDelegate).halifax
-    var accounts: Results<HalifaxAccount>?
+    var accounts: Results<Account>?
     @IBOutlet var tableView : UITableView!
     
     override func viewDidLoad() {
@@ -30,7 +30,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
         UIApplication.sharedApplication().networkActivityIndicatorVisible = progress
     }
     
-    func halifaxDriverAccountAdded(account: HalifaxAccount) {
+    func halifaxDriverAccountAdded(account: Account) {
         refresh()
     }
     
@@ -48,7 +48,7 @@ class ViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, 
     
     func refresh() {
         let realm = try! Realm()
-        accounts = realm.objects(HalifaxAccount)
+        accounts = realm.objects(Account)
         tableView.reloadData()
     }
     

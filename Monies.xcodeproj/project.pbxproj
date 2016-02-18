@@ -10,10 +10,11 @@
 		37DBC9111C73B3A70083C56F /* NewLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9101C73B3A70083C56F /* NewLoginViewController.swift */; };
 		37DBC9131C73BA370083C56F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9121C73BA370083C56F /* Login.swift */; };
 		37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9141C73BF570083C56F /* Int+Oridinal.swift */; };
+		37DBC9181C76515C0083C56F /* AsyncronousAccountCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */; };
 		A206B516A1941E4D860856DB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D32922495513B972ACEFD3 /* Pods.framework */; };
 		AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75ECC1941219F008B072F /* LockViewController.swift */; };
 		AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
-		AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */; };
+		AB9ED7721AF69479002C17EF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* Account.swift */; };
 		ABB6F2F81AFFCE9C0015C563 /* ProvisionRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */; };
 		ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */; };
 		ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAA1AF697B2007966DD /* HalifaxDriver.swift */; };
@@ -43,6 +44,7 @@
 		37DBC9101C73B3A70083C56F /* NewLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewLoginViewController.swift; sourceTree = "<group>"; };
 		37DBC9121C73BA370083C56F /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		37DBC9141C73BF570083C56F /* Int+Oridinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Oridinal.swift"; sourceTree = "<group>"; };
+		37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncronousAccountCreator.swift; sourceTree = "<group>"; };
 		4B5F0E43D7FEC37D79F93E50 /* Pods-Monies WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies WatchKit Extension/Pods-Monies WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		725CAA9AF2E0F5BF633F075A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8081D8AB411B4E18D7E10D18 /* Pods_Monies_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monies_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +52,7 @@
 		AB18D3331AF6DF7300F5836F /* Monies WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Monies WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = "Monies-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Monies/Async.swift; sourceTree = "<group>"; };
-		AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxAccount.swift; sourceTree = "<group>"; };
+		AB9ED7711AF69479002C17EF /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Monies.entitlements; sourceTree = "<group>"; };
 		ABB6F2F41AFFCCD80015C563 /* Monies WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Monies WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		ABB6F2F71AFFCE9C0015C563 /* ProvisionRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProvisionRealm.swift; sourceTree = "<group>"; };
@@ -112,7 +114,7 @@
 		AB9ED7751AF6952A002C17EF /* models */ = {
 			isa = PBXGroup;
 			children = (
-				AB9ED7711AF69479002C17EF /* HalifaxAccount.swift */,
+				AB9ED7711AF69479002C17EF /* Account.swift */,
 				37DBC9121C73BA370083C56F /* Login.swift */,
 			);
 			name = models;
@@ -214,6 +216,7 @@
 				ABE75EB619411C9E008B072F /* Images.xcassets */,
 				ABE75EAD19411C9E008B072F /* Supporting Files */,
 				AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */,
+				37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */,
 			);
 			path = Monies;
 			sourceTree = "<group>";
@@ -377,7 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37DBC9111C73B3A70083C56F /* NewLoginViewController.swift in Sources */,
-				AB9ED7721AF69479002C17EF /* HalifaxAccount.swift in Sources */,
+				AB9ED7721AF69479002C17EF /* Account.swift in Sources */,
 				37DBC9131C73BA370083C56F /* Login.swift in Sources */,
 				ABB6F2F81AFFCE9C0015C563 /* ProvisionRealm.swift in Sources */,
 				ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */,
@@ -389,6 +392,7 @@
 				ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */,
 				ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */,
 				AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */,
+				37DBC9181C76515C0083C56F /* AsyncronousAccountCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
