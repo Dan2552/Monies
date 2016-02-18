@@ -115,7 +115,9 @@ class HalifaxDriver: WebViewDriver, AsyncronousAccountCreatorDelegate {
             creator.balance = balance
         }
         run("$($('.des-m-sat-xx-account-information')[\(index)]).find('.available-balance').text()") { availableBalance in
-            creator.availableBalance = availableBalance
+            var ab = availableBalance
+            if ab.isEmpty { ab = "-" }
+            creator.availableBalance = ab
         }
         run("$($('.des-m-sat-xx-account-information')[\(index)]).find('.account-name a').text()") { title in
             creator.title = title
