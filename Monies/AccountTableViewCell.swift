@@ -15,9 +15,9 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var timeAgoLabel: UILabel!
     var updatedAt = NSDate()
     
-    func setContentForAccount(account: HalifaxAccount) {
-        accountName.text = account.name
-        available.text =  account.calculateRealAvailable()
+    func setContentForAccount(account: Account) {
+        accountName.text = account.title
+        available.text =  account.balance
         updatedAt = account.updatedAtDate()
         updateTimeAgo()
     }

@@ -1,25 +1,55 @@
 PODS:
+  - Alamofire (2.0.2)
   - DateTools (1.5.0)
-  - Realm (0.92.2):
-    - Realm/Headers (= 0.92.2)
-  - Realm/Headers (0.92.2)
+  - Luncheon (0.2.0):
+    - Alamofire (~> 2.0)
+    - Placemat (~> 0.2)
+  - Napkin (0.2.0):
+    - Luncheon (~> 0.2.0)
+    - Placemat (~> 0.2.0)
+    - XLForm (~> 3.0.0)
+  - Placemat (0.2.0)
+  - Realm (0.98.1):
+    - Realm/Headers (= 0.98.1)
+  - Realm/Headers (0.98.1)
+  - RealmSwift (0.98.1):
+    - Realm (= 0.98.1)
+  - XLForm (3.0.2)
 
 DEPENDENCIES:
   - DateTools (from `https://github.com/bassrock/DateTools.git`, branch `NSBundle-Fix`)
-  - Realm (~> 0.92)
+  - Luncheon (from `https://github.com/Dan2552/Luncheon.git`)
+  - Napkin (from `https://github.com/Dan2552/Napkin.git`)
+  - RealmSwift (~> 0.98)
 
 EXTERNAL SOURCES:
   DateTools:
     :branch: NSBundle-Fix
     :git: https://github.com/bassrock/DateTools.git
+  Luncheon:
+    :git: https://github.com/Dan2552/Luncheon.git
+  Napkin:
+    :git: https://github.com/Dan2552/Napkin.git
 
 CHECKOUT OPTIONS:
   DateTools:
     :commit: 3ca50e68a9c26cecd85852293c1004b999b00a4d
     :git: https://github.com/bassrock/DateTools.git
+  Luncheon:
+    :commit: d917080f1a0802f0567080568b1e69a677120c53
+    :git: https://github.com/Dan2552/Luncheon.git
+  Napkin:
+    :commit: 56b782f7d0664c8c0b72efae80d7bda976132a78
+    :git: https://github.com/Dan2552/Napkin.git
 
 SPEC CHECKSUMS:
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
-  Realm: fa8e8f7f788dd63744485c15b453487bc7546c8e
+  Luncheon: 234eacfddec13142b9691976e9c51ff408f76403
+  Napkin: 9d52d6d5673b20cbccb82182b2391e6e38b6da82
+  Placemat: 39c8446df51adaf193d8a06829909579a7fba721
+  Realm: ca4a4122e939e228e10694fc49011386cb2ecb07
+  RealmSwift: 7d3c7033427816a2c3417ba0d004d694987e503a
+  XLForm: 7817ce29f3f259186e837bb7309ac7e5b7e9b883
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.39.0

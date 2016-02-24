@@ -3,7 +3,6 @@
 iOS app to swiftly access your bank account
 
 Currently supports
-
 - Halifax (UK)
 
 ### Credit
