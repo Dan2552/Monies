@@ -10,6 +10,7 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        styleTableView(tableView)
         refresh()
         halifax.delegate = self
         halifax.halifaxDelegate = self
