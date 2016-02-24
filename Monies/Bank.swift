@@ -1,15 +1,9 @@
-//
-//  Login.swift
-//  Monies
-//
-//  Created by Dan on 16/02/2016.
-//  Copyright © 2016 Daniel Green. All rights reserved.
-//
-
 import RealmSwift
 import Luncheon
 
-class Login: Object, Lunch {
+class Bank: Object, Lunch {
+    //has_many :accounts
+
     dynamic var username = ""
     dynamic var password = ""
     dynamic var memorableInformation = ""
@@ -25,8 +19,8 @@ class Login: Object, Lunch {
         try! r.write { self.r.add(self) }
         return true
     }
-    
-    class func existing() -> Login? {
+
+    class func existing() -> Bank? {
         return self.init().r.objects(self).first
     }
 }

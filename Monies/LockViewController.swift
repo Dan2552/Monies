@@ -14,7 +14,7 @@ class LockViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if needsToCreateAccount() {
-            performSegueWithIdentifier("createAccount", sender: nil)
+            performSegueWithIdentifier("newBank", sender: nil)
             return
         }
         touchId()
@@ -46,6 +46,6 @@ class LockViewController: UIViewController {
     }
     
     func needsToCreateAccount() -> Bool {
-        return Login.existing() == nil
+        return Bank.existing() == nil
     }
 }

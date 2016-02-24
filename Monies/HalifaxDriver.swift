@@ -8,7 +8,6 @@ protocol HalifaxDriverDelegate {
 }
 
 class HalifaxDriver: WebViewDriver, AsyncronousAccountCreatorDelegate {
-
     var accountLinks = Array<String>()
     var currentAccount = 0
     var currentUrl = ""
@@ -16,7 +15,7 @@ class HalifaxDriver: WebViewDriver, AsyncronousAccountCreatorDelegate {
     var drive = true
     var loadAccountsInProgress = false
     var currentPageDescription = "web"
-    lazy var login = Login.existing()!
+    lazy var login = Bank.existing()!
     
     func loadedPage(name: String) {
         print(name)

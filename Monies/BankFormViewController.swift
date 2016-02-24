@@ -1,18 +1,10 @@
-//
-//  AccountLoginViewController.swift
-//  Monies
-//
-//  Created by Dan on 16/02/2016.
-//  Copyright © 2016 Daniel Green. All rights reserved.
-//
-
 import UIKit
 import XLForm
 import Luncheon
 import Napkin
 
-class NewLoginViewController: NapkinViewController {
-    var login = Login()
+class BankFormViewController: NapkinViewController {
+    var login = Bank()
     
     override func saveWasTapped() {
         if login.create() {
