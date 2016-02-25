@@ -7,4 +7,4 @@ Currently supports
 
 ### Credit
 
-http://icons8.com for tab bar icons
+http://icons8.com for home screen icon and tab bar icons (the pig and the vault)
