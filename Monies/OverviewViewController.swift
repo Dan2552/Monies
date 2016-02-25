@@ -7,13 +7,25 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
     let halifax = (UIApplication.sharedApplication().delegate as! AppDelegate).halifax
     var accounts: Results<Account>?
     @IBOutlet var tableView : UITableView!
-    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+
+        return refreshControl
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.addSubview(refreshControl)
         refresh()
         halifax.delegate = self
         halifax.halifaxDelegate = self
+
+    }
+
+    func handleRefresh(refreshControl: UIRefreshControl) {
         halifax.loadAccounts()
+        refresh()
     }
     
     func webViewDriverProgress(progress: Bool) {
@@ -22,6 +34,7 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
     
     func halifaxDriverAccountAdded(account: Account) {
         refresh()
+        refreshControl.endRefreshing()
     }
     
     func halifaxDriverLoadedPage(page: String) {
