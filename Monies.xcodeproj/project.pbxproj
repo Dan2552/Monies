@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3737B8EF1C7E371F00213701 /* BankIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B8EE1C7E371F00213701 /* BankIndexViewController.swift */; };
 		3737B8F11C7E3E0B00213701 /* DriverShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B8F01C7E3E0B00213701 /* DriverShowViewController.swift */; };
-		3785782D1C7E62B700C3EEB0 /* UIViewController+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3785782C1C7E62B700C3EEB0 /* UIViewController+Style.swift */; };
+		37B895CF1C7F9F22006E18B8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B895CE1C7F9F22006E18B8 /* Style.swift */; };
 		37DBC9111C73B3A70083C56F /* BankFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9101C73B3A70083C56F /* BankFormViewController.swift */; };
 		37DBC9131C73BA370083C56F /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9121C73BA370083C56F /* Bank.swift */; };
 		37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9141C73BF570083C56F /* Int+Oridinal.swift */; };
@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		3737B8EE1C7E371F00213701 /* BankIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankIndexViewController.swift; sourceTree = "<group>"; };
 		3737B8F01C7E3E0B00213701 /* DriverShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverShowViewController.swift; sourceTree = "<group>"; };
-		3785782C1C7E62B700C3EEB0 /* UIViewController+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Style.swift"; sourceTree = "<group>"; };
+		37B895CE1C7F9F22006E18B8 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		37DBC9101C73B3A70083C56F /* BankFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankFormViewController.swift; sourceTree = "<group>"; };
 		37DBC9121C73BA370083C56F /* Bank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		37DBC9141C73BF570083C56F /* Int+Oridinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Oridinal.swift"; sourceTree = "<group>"; };
@@ -127,6 +127,14 @@
 				37DBC9101C73B3A70083C56F /* BankFormViewController.swift */,
 			);
 			name = Banks;
+			sourceTree = "<group>";
+		};
+		37B895D01C7FB99E006E18B8 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				37B895CE1C7F9F22006E18B8 /* Style.swift */,
+			);
+			name = Style;
 			sourceTree = "<group>";
 		};
 		37DBC9161C73C1670083C56F /* extensions */ = {
@@ -254,6 +262,7 @@
 		ABE75EAC19411C9E008B072F /* Monies */ = {
 			isa = PBXGroup;
 			children = (
+				37B895D01C7FB99E006E18B8 /* Style */,
 				ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */,
 				ABE75EAF19411C9E008B072F /* AppDelegate.swift */,
 				ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */,
@@ -263,7 +272,6 @@
 				ABE75EAD19411C9E008B072F /* Supporting Files */,
 				AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */,
 				37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */,
-				3785782C1C7E62B700C3EEB0 /* UIViewController+Style.swift */,
 			);
 			path = Monies;
 			sourceTree = "<group>";
@@ -420,12 +428,12 @@
 				ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */,
 				ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */,
 				AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */,
-				3785782D1C7E62B700C3EEB0 /* UIViewController+Style.swift in Sources */,
 				ABE75EB219411C9E008B072F /* OverviewViewController.swift in Sources */,
 				37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */,
 				ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */,
 				ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */,
 				ABD99CAC1AF697B2007966DD /* HalifaxDriver.swift in Sources */,
+				37B895CF1C7F9F22006E18B8 /* Style.swift in Sources */,
 				AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */,
 				37DBC9181C76515C0083C56F /* AsyncronousAccountCreator.swift in Sources */,
 			);

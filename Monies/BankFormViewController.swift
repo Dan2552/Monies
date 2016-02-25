@@ -5,12 +5,7 @@ import Napkin
 
 class BankFormViewController: NapkinViewController {
     var login = Bank()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        styleTableView(tableView)
-    }
-
+    
     override func saveWasTapped() {
         if login.create() {
             super.saveWasTapped()

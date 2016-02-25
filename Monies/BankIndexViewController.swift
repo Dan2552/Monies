@@ -4,10 +4,6 @@ import RealmSwift
 class BankIndexViewController: UITableViewController {
     var banks: Results<Bank>?
 
-    override func viewDidLoad() {
-        styleTableView(tableView)
-    }
-
     override func viewDidAppear(animated: Bool) {
         banks = Bank().r.objects(Bank)
         (view as! UITableView).reloadData()
