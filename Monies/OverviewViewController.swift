@@ -38,13 +38,13 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
     }
     
     func halifaxDriverLoadedPage(page: String) {
-        toggleWebButton.title = page
+//        toggleWebButton.title = page
     }
     
     override func viewWillAppear(animated: Bool) {
         self.refresh()
     }
-    
+
     override func viewWillDisappear(animated: Bool) {
         webViewDriverProgress(false)
     }
@@ -66,9 +66,6 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
         return cell
     }
 
-    
-    @IBOutlet var toggleWebButton : UIBarButtonItem!
-    
     @IBAction func toggleWeb(sender : UIBarButtonItem) {
 //        if halifax.webview.hidden {
 //            halifax.webview.hidden = false

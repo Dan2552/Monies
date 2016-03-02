@@ -1,19 +1,22 @@
 import UIKit
 import RealmSwift
 
-class BankIndexViewController: UITableViewController {
+class BankIndexViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var banks: Results<Bank>?
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewDidAppear(animated: Bool) {
         banks = Bank().r.objects(Bank)
-        (view as! UITableView).reloadData()
+        tableView.reloadData()
+
+        navigationController?.title = "Banks"
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(banks?.count ?? 0)
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
         let bank = bankAtIndexPath(indexPath)
         cell.textLabel?.text = bank.username
@@ -21,9 +24,12 @@ class BankIndexViewController: UITableViewController {
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("segue!")
         if let destination = segue.destinationViewController as? DriverShowViewController {
+            print("detected as driver")
             destination.bank = bankAtIndexPath(tableView.indexPathForSelectedRow!)
         }
+        print("?")
     }
 
     func bankAtIndexPath(indexPath: NSIndexPath) -> Bank {
