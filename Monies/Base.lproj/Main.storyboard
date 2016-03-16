@@ -282,7 +282,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Banks" id="4Rd-8u-vZn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="csY-8S-z5C">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="add" id="csY-8S-z5C">
                             <connections>
                                 <segue destination="BuL-eM-aTP" kind="presentation" id="OXA-bv-xsx"/>
                             </connections>
