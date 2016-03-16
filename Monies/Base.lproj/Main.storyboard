@@ -106,7 +106,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£6,452.34" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LD-fG-wqI" customClass="TintColorLabel" customModule="Monies" customModuleProvider="target">
-                                                    <rect key="frame" x="12" y="27.5" width="576" height="38.5"/>
+                                                    <rect key="frame" x="12" y="28" width="576" height="38.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="oiz-5C-xkV"/>
                                                         <constraint firstAttribute="height" constant="39" id="zth-yk-VgJ"/>
@@ -132,8 +132,8 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 minutes ago" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-dX-5ak" customClass="MinorDetailLabel" customModule="Monies" customModuleProvider="target">
-                                                    <rect key="frame" x="544" y="17" width="44" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 minutes ago" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-dX-5ak" customClass="MinorDetailLabel" customModule="Monies" customModuleProvider="target">
+                                                    <rect key="frame" x="544" y="17" width="44" height="36"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="MFI-er-k3L"/>
                                                         <constraint firstAttribute="height" constant="21" id="ixN-HV-daD"/>
@@ -183,6 +183,11 @@
                                                 <constraint firstItem="8LD-fG-wqI" firstAttribute="leading" secondItem="xW8-9w-lWe" secondAttribute="leadingMargin" constant="4" id="wv4-io-ROl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mkv-dX-5ak" secondAttribute="trailing" constant="4" id="x3A-0p-nCa"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="d1E-EI-e84"/>
+                                                </mask>
+                                            </variation>
                                             <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
                                                 <rect key="frame" x="0.0" y="0.0" width="400" height="74.5"/>
                                             </variation>
@@ -378,6 +383,6 @@
         <image name="safe-50" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OXA-bv-xsx"/>
+        <segue reference="WXk-K3-yat"/>
     </inferredMetricsTieBreakers>
 </document>
