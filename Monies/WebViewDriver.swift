@@ -62,6 +62,19 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
             
             // for some reason, clicking sometimes doesn't work without this
             self.run("$('body').text()") { result in }
+
+            // temporarily show the webview onscreen because annoyingly without 
+            // doing this also sometimes hangs
+            let window = UIApplication.sharedApplication().delegate!.window!
+            if self.webview.superview == nil {
+                print("WEBVIEW ADDED TO VIEW HIERARCHY")
+                window?.addSubview(self.webview)
+                Async.main(after: 2) {
+                    print("WEBVIEW REMOVED FROM VIEW HIERARCHY")
+                    self.webview.removeFromSuperview()
+                }
+            }
+
         }
     }
     
