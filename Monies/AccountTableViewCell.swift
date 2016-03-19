@@ -10,7 +10,11 @@ class AccountTableViewCell: UITableViewCell {
     
     func setContentForAccount(account: Account) {
         accountName.text = account.title
-        available.text =  account.balance
+        if account.isBalanceShown {
+            available.text = account.balance
+        } else {
+            available.text = "--------"
+        }
         updatedAt = account.updatedAtDate()
         updateTimeAgo()
     }
@@ -19,5 +23,7 @@ class AccountTableViewCell: UITableViewCell {
         self.timeAgoLabel.text = self.updatedAt.timeAgoSinceNow()
         Async.main(after: 1) { self.updateTimeAgo() }
     }
+
+
 }
 

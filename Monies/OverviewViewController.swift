@@ -66,6 +66,16 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
         return cell
     }
 
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let account = accounts![Int(indexPath.row)]
+        try! account.realm?.write {
+            account.isBalanceShown = !account.isBalanceShown
+        }
+        tableView.reloadData()
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
     @IBAction func toggleWeb(sender : UIBarButtonItem) {
 //        if halifax.webview.hidden {
 //            halifax.webview.hidden = false
