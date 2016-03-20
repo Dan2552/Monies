@@ -7,13 +7,12 @@
 //
 
 class WKWebKitAsyncRunner {
-    private let tasks : Array<(String, (String) -> ()) -> ()>
+    private let tasks : [(String, (String) -> ()) -> ()]
     private var currentTaskIndex = 0
     private var lastResult = ""
-    
+
     init(tasks: Array<(String, (String) -> ()) -> ()>) {
         self.tasks = tasks
-        runTasks()
     }
     
     func currentTask() -> (String, (String) -> ()) -> () {

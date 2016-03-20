@@ -8,7 +8,7 @@ class AccountTableViewCell: UITableViewCell {
     @IBOutlet weak var timeAgoLabel: UILabel!
     var updatedAt = NSDate()
     
-    func setContentForAccount(account: Account) {
+    func setContentForAccount(account: BankAccount) {
         accountName.text = account.title
         if account.isBalanceShown {
             available.text = account.balance

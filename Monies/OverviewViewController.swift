@@ -2,14 +2,15 @@ import UIKit
 import WebKit
 import RealmSwift
 
-class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource, WebViewDriverProgressDelegate, HalifaxDriverDelegate {
+class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    let halifax = (UIApplication.sharedApplication().delegate as! AppDelegate).halifax
-    var accounts: Results<Account>?
+    var accounts: Results<BankAccount>?
     @IBOutlet var tableView : UITableView!
+    var refreshToken: NotificationToken?
+
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
         return refreshControl
     }()
@@ -17,41 +18,32 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.addSubview(refreshControl)
-        refresh()
-        halifax.delegate = self
-        halifax.halifaxDelegate = self
 
+        let realm = try! Realm()
+        refreshToken = realm.objects(BankAccount).addNotificationBlock { results, error in
+            self.accounts = results
+            self.refresh()
+            self.refreshControl.endRefreshing()
+        }
+        refresh()
+    }
+
+    deinit {
+        refreshToken?.stop()
     }
 
     func handleRefresh(refreshControl: UIRefreshControl) {
-        halifax.loadAccounts()
+        DriverManager.sharedInstance.refreshAccounts()
         refresh()
-    }
-    
-    func webViewDriverProgress(progress: Bool) {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = progress
-    }
-    
-    func halifaxDriverAccountAdded(account: Account) {
-        refresh()
-        refreshControl.endRefreshing()
-    }
-    
-    func halifaxDriverLoadedPage(page: String) {
-//        toggleWebButton.title = page
     }
     
     override func viewWillAppear(animated: Bool) {
         self.refresh()
     }
 
-    override func viewWillDisappear(animated: Bool) {
-        webViewDriverProgress(false)
-    }
-    
     func refresh() {
         let realm = try! Realm()
-        accounts = realm.objects(Account)
+        accounts = realm.objects(BankAccount)
         tableView.reloadData()
     }
     
@@ -74,19 +66,6 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
         tableView.reloadData()
 
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-
-    @IBAction func toggleWeb(sender : UIBarButtonItem) {
-//        if halifax.webview.hidden {
-//            halifax.webview.hidden = false
-//            tableView.hidden = true
-//            halifax.drive = false
-//        } else {
-//            halifax.loadAccounts()
-//            halifax.webview.hidden = true
-//            tableView.hidden = false
-//            halifax.drive = true
-//        }
     }
 }
 

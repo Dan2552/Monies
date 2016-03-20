@@ -2,15 +2,27 @@ import UIKit
 import RealmSwift
 
 class BankIndexViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var banks: Results<Bank>?
+    var banks: Results<BankLogin>?
     @IBOutlet weak var tableView: UITableView!
+    var refreshToken: NotificationToken?
 
-    override func viewDidAppear(animated: Bool) {
-        banks = Bank().r.objects(Bank)
+    override func viewDidLoad() {
+        let realm = BankLogin().r
+        banks = realm.objects(BankLogin)
         tableView.reloadData()
 
         navigationController?.title = "Banks"
+
+        refreshToken = realm.objects(BankLogin).addNotificationBlock { results, error in
+            self.banks = results
+            self.tableView.reloadData()
+        }
     }
+
+    deinit {
+        refreshToken?.stop()
+    }
+
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(banks?.count ?? 0)
@@ -24,16 +36,12 @@ class BankIndexViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("segue!")
-        if let destination = segue.destinationViewController as? DriverShowViewController {
-            print("detected as driver")
+        if let destination = segue.destinationViewController as? BankShowViewController {
             destination.bank = bankAtIndexPath(tableView.indexPathForSelectedRow!)
         }
-        print("?")
     }
 
-    func bankAtIndexPath(indexPath: NSIndexPath) -> Bank {
+    func bankAtIndexPath(indexPath: NSIndexPath) -> BankLogin {
         return banks![Int(indexPath.row)]
     }
-
 }

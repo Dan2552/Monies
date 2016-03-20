@@ -1,11 +1,3 @@
-//
-//  driver.swift
-//  MoniesMac
-//
-//  Created by Daniel Green on 05/11/2014.
-//  Copyright (c) 2014 Daniel Green. All rights reserved.
-//
-
 import Foundation
 import WebKit
 
@@ -14,24 +6,26 @@ protocol WebViewDriverProgressDelegate {
 }
 
 class WebViewDriver : NSObject, WKNavigationDelegate {
-    var webview : WKWebView
+    var webView : WKWebView
     var delegate : WebViewDriverProgressDelegate?
-    
-    init(webView: WKWebView) {
-        self.webview = webView
+
+    var activeFlows = [WebDriverFlow]()
+
+    init(webView: WKWebView? = nil) {
+        self.webView = webView ?? WKWebView()
         super.init()
-        self.webview.navigationDelegate = self
+        self.webView.navigationDelegate = self
     }
-    
-    func oneAtATime(closure: () -> ()) {
-        objc_sync_enter(self)
-        closure()
-        objc_sync_exit(self)
+
+    func executeFlows() {
+        for flow in activeFlows {
+            if flow.startFlow() { return }
+        }
     }
     
     func visit(location: String) {
         print("visiting \(location)")
-        self.webview.loadRequest(NSURLRequest(URL: NSURL(string: location)!))
+        self.webView.loadRequest(NSURLRequest(URL: NSURL(string: location)!))
     }
     
     func labelFor(element:String, completion: ((String) -> Void)) {
@@ -45,9 +39,9 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
         }
     }
 
-    func fillIn(field:String, with:String, completion: ((String) -> Void)) {
+    func fillIn(field:String, with:String, redactPrint: Bool = false, completion: ((String) -> Void)) {
         var printValue = with
-        if (field as NSString).containsString("pwd") { printValue = "[redacted]" }
+        if redactPrint { printValue = "[redacted]" }
         print("fill in value \(printValue)")
         
         run("document.getElementById('\(field)').value = \"\(with)\";") { result in
@@ -66,12 +60,13 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
             // temporarily show the webview onscreen because annoyingly without 
             // doing this also sometimes hangs
             let window = UIApplication.sharedApplication().delegate!.window!
-            if self.webview.superview == nil {
+            if self.webView.superview == nil {
                 print("WEBVIEW ADDED TO VIEW HIERARCHY")
-                window?.addSubview(self.webview)
+                window?.addSubview(self.webView)
+                window?.sendSubviewToBack(self.webView)
                 Async.main(after: 2) {
                     print("WEBVIEW REMOVED FROM VIEW HIERARCHY")
-                    self.webview.removeFromSuperview()
+                    self.webView.removeFromSuperview()
                 }
             }
 
@@ -79,7 +74,7 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     }
     
     func run(string:String, completion: ((String) -> Void)) {
-        self.webview.evaluateJavaScript(string, completionHandler: { result, error in
+        self.webView.evaluateJavaScript(string, completionHandler: { result, error in
             if (error != nil) {
                 print("there was an error running javascript:")
                 print(string)
@@ -106,7 +101,13 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     }
     
     func pageLoaded(url : String) {
-        
+        print("pageLoaded: \(url)")
+        for flow in activeFlows {
+            if flow.startActionForPage(url) {
+                print("action started by \(flow)")
+                return
+            }
+        }
     }
 
 }

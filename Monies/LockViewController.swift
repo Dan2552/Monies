@@ -46,6 +46,6 @@ class LockViewController: UIViewController {
     }
     
     func needsToCreateAccount() -> Bool {
-        return Bank.existing() == nil
+        return !BankLogin.existing()
     }
 }

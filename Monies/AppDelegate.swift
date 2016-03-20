@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Monies
-//
-//  Created by Daniel Green on 05/06/2014.
-//  Copyright (c) 2014 Daniel Green. All rights reserved.
-//
-
 import UIKit
 import WebKit
 
@@ -13,10 +5,9 @@ import WebKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-    let halifax = HalifaxDriver(webView: WKWebView())
+    let driverManager = DriverManager.sharedInstance
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        provisionRealm()
         Style().setDark()
 
         return true

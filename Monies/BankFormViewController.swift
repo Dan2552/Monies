@@ -3,7 +3,7 @@ import Luncheon
 import Napkin
 
 class BankFormViewController: NapkinViewController {
-    var login = Bank()
+    var login = BankLogin()
     
     override func saveWasTapped() {
         if login.create() {
@@ -25,5 +25,6 @@ class BankFormViewController: NapkinViewController {
         input("username")
         input("password", type: .Password)
         input("memorableInformation", type: .Password)
+        input("bank", collection: BankLogin.availableBanks)
     }
 }
