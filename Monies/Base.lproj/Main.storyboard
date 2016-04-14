@@ -301,10 +301,10 @@
             </objects>
             <point key="canvasLocation" x="3204" y="1315"/>
         </scene>
-        <!--Driver Show View Controller-->
+        <!--Bank Show View Controller-->
         <scene sceneID="JoU-q8-nrE">
             <objects>
-                <viewController id="rW8-mv-qwO" customClass="DriverShowViewController" customModule="Monies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rW8-mv-qwO" customClass="BankShowViewController" customModule="Monies" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="epn-Fc-pUI"/>
                         <viewControllerLayoutGuide type="bottom" id="ZoY-az-HdB"/>

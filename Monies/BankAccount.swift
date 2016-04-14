@@ -1,6 +1,6 @@
 import RealmSwift
 
-class Account: Object {
+class BankAccount: Object {
     //belongs_to :bank
 
     dynamic var accountNumber = ""
