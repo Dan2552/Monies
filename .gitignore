@@ -34,3 +34,6 @@ Carthage/Build
 
 # Mac
 .DS_Store
+
+.bundle
+Ambient-*
