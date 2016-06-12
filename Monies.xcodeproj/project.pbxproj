@@ -29,7 +29,7 @@
 		ABE75EB219411C9E008B072F /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EB119411C9E008B072F /* OverviewViewController.swift */; };
 		ABE75EB519411C9E008B072F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB319411C9E008B072F /* Main.storyboard */; };
 		ABE75EB719411C9E008B072F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB619411C9E008B072F /* Images.xcassets */; };
-		F84B387CBBAD2759E6468682 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D32922495513B972ACEFD3 /* Pods.framework */; };
+		BFF0F2BE788D39DBA6F32597 /* Pods_Monies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39A3B1AC570F5932BD9D775E /* Pods_Monies.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		138DD6B62E94152BA384CB89 /* Pods-Monies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.debug.xcconfig"; sourceTree = "<group>"; };
 		3737B8EE1C7E371F00213701 /* BankIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankIndexViewController.swift; sourceTree = "<group>"; };
 		3737B8F01C7E3E0B00213701 /* BankShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankShowViewController.swift; sourceTree = "<group>"; };
 		379D73E81C9DEE13001DD2D2 /* WebDriverFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDriverFlow.swift; sourceTree = "<group>"; };
@@ -57,7 +58,8 @@
 		37DBC9121C73BA370083C56F /* BankLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankLogin.swift; sourceTree = "<group>"; };
 		37DBC9141C73BF570083C56F /* Int+Oridinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Oridinal.swift"; sourceTree = "<group>"; };
 		37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncronousAccountCreator.swift; sourceTree = "<group>"; };
-		51CA237266DD45BCF52484A4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		39A3B1AC570F5932BD9D775E /* Pods_Monies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B37702D60F9F79B57CBBA7C /* Pods-Monies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.release.xcconfig"; sourceTree = "<group>"; };
 		AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = "Monies-Bridging-Header.h"; sourceTree = "<group>"; };
 		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		AB9ED7711AF69479002C17EF /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
@@ -73,7 +75,6 @@
 		ABE75EB419411C9E008B072F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABE75EB619411C9E008B072F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ABE75ECC1941219F008B072F /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
-		D111B0BB62F71B29FED53DDC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E2D32922495513B972ACEFD3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,7 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */,
-				F84B387CBBAD2759E6468682 /* Pods.framework in Frameworks */,
+				BFF0F2BE788D39DBA6F32597 /* Pods_Monies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,11 +153,11 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		96CAD505DED9D270BCD6C4E2 /* Pods */ = {
+		8EABB708B462B4B9F586CEDD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D111B0BB62F71B29FED53DDC /* Pods.debug.xcconfig */,
-				51CA237266DD45BCF52484A4 /* Pods.release.xcconfig */,
+				138DD6B62E94152BA384CB89 /* Pods-Monies.debug.xcconfig */,
+				9B37702D60F9F79B57CBBA7C /* Pods-Monies.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -197,7 +198,7 @@
 				ABE75EAC19411C9E008B072F /* Monies */,
 				ABE75EAB19411C9E008B072F /* Products */,
 				B1465BB745594AA7B690DDFD /* Frameworks */,
-				96CAD505DED9D270BCD6C4E2 /* Pods */,
+				8EABB708B462B4B9F586CEDD /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,6 +244,7 @@
 			children = (
 				ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */,
 				E2D32922495513B972ACEFD3 /* Pods.framework */,
+				39A3B1AC570F5932BD9D775E /* Pods_Monies.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -254,13 +256,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABE75EC619411C9E008B072F /* Build configuration list for PBXNativeTarget "Monies" */;
 			buildPhases = (
-				7AFF26A597D5E8278B44F90B /* Check Pods Manifest.lock */,
+				BDD7BC6A19AD0B4CFD57C1CD /* 📦 Check Pods Manifest.lock */,
 				ABE75EA619411C9E008B072F /* Sources */,
 				ABE75EA719411C9E008B072F /* Frameworks */,
 				ABE75EA819411C9E008B072F /* Resources */,
 				ABD99CD81AF6C8A2007966DD /* Embed App Extensions */,
-				3CA41316EC5E25BA535323B4 /* Embed Pods Frameworks */,
-				DCED04527BBF542B335C83BE /* Copy Pods Resources */,
+				10EAF76EBECAE0028D030904 /* 📦 Embed Pods Frameworks */,
+				444333B74ED00D73DCC51971 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -321,49 +323,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3CA41316EC5E25BA535323B4 /* Embed Pods Frameworks */ = {
+		10EAF76EBECAE0028D030904 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies/Pods-Monies-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7AFF26A597D5E8278B44F90B /* Check Pods Manifest.lock */ = {
+		444333B74ED00D73DCC51971 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies/Pods-Monies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDD7BC6A19AD0B4CFD57C1CD /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DCED04527BBF542B335C83BE /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -492,25 +494,27 @@
 		};
 		ABE75EC719411C9E008B072F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D111B0BB62F71B29FED53DDC /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 138DD6B62E94152BA384CB89 /* Pods-Monies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Monies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.danielgreen.MyMonies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		ABE75EC819411C9E008B072F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51CA237266DD45BCF52484A4 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 9B37702D60F9F79B57CBBA7C /* Pods-Monies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Monies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.danielgreen.MyMonies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

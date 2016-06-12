@@ -1,55 +1,51 @@
 PODS:
-  - Alamofire (2.0.2)
-  - DateTools (1.5.0)
-  - Eureka (1.5.0)
-  - Luncheon (0.2.0):
-    - Alamofire (~> 2.0)
+  - Alamofire (3.4.0)
+  - DateTools (1.7.0)
+  - Eureka (1.6.0)
+  - Luncheon (0.3.0):
+    - Alamofire (~> 3.3)
     - Placemat (~> 0.2)
   - Napkin (0.2.0):
     - Eureka (~> 1.4)
-    - Luncheon (~> 0.2.0)
+    - Luncheon (~> 0)
     - Placemat (~> 0.2.0)
   - Placemat (0.2.0)
-  - Realm (0.98.7):
-    - Realm/Headers (= 0.98.7)
-  - Realm/Headers (0.98.7)
-  - RealmSwift (0.98.7):
-    - Realm (= 0.98.7)
+  - Realm (1.0.0):
+    - Realm/Headers (= 1.0.0)
+  - Realm/Headers (1.0.0)
+  - RealmSwift (1.0.0):
+    - Realm (= 1.0.0)
 
 DEPENDENCIES:
-  - DateTools (from `https://github.com/bassrock/DateTools.git`, branch `NSBundle-Fix`)
+  - DateTools
   - Luncheon (from `https://github.com/Dan2552/Luncheon.git`)
   - Napkin (from `https://github.com/Dan2552/Napkin.git`)
   - RealmSwift
 
 EXTERNAL SOURCES:
-  DateTools:
-    :branch: NSBundle-Fix
-    :git: https://github.com/bassrock/DateTools.git
   Luncheon:
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
     :git: https://github.com/Dan2552/Napkin.git
 
 CHECKOUT OPTIONS:
-  DateTools:
-    :commit: 3ca50e68a9c26cecd85852293c1004b999b00a4d
-    :git: https://github.com/bassrock/DateTools.git
   Luncheon:
-    :commit: b6e23ab16054a64747e22ea347543d9adcd7ece7
+    :commit: d33cc9cafd6ec5afc955d26c7dbcde364f6dcda0
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
-    :commit: c5e0ad64b3556cfe6f211bf87fbc97b98349f60b
+    :commit: 086a063880d1b259e83d0667e1af57a7f4f131e1
     :git: https://github.com/Dan2552/Napkin.git
 
 SPEC CHECKSUMS:
-  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
-  DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
-  Eureka: 2fb37bb50569c62ee3284689d5b7aca694b040e0
-  Luncheon: 234eacfddec13142b9691976e9c51ff408f76403
-  Napkin: 23ed2f576ca3ef6dd1a8db4b152b5f427958004b
+  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  Eureka: ef5b9ac93aedeecfe50d98b1ac7678bf09a1fc62
+  Luncheon: 0cc291cb06ed01e90f168f65e4fdf45141f90be8
+  Napkin: 3075d714cd2a08052ca52aec1a66c99c64a72f0d
   Placemat: 39c8446df51adaf193d8a06829909579a7fba721
-  Realm: 46df2178359b6b57812e6cf957956febaba513a5
-  RealmSwift: 3056e6d7ad30ed50dd866185a615fccea73db5f5
+  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
+  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d012be173713724854e054bd2954bf6c95ebd60c
+
+COCOAPODS: 1.0.0

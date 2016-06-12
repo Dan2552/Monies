@@ -20,10 +20,29 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
         self.tableView.addSubview(refreshControl)
 
         let realm = try! Realm()
-        refreshToken = realm.objects(BankAccount).addNotificationBlock { results, error in
-            self.accounts = results
-            self.refresh()
+        refreshToken = realm.objects(BankAccount).addNotificationBlock { (changes: RealmCollectionChange) in
             self.refreshControl.endRefreshing()
+            switch changes {
+            case .Initial:
+                // Results are now populated and can be accessed without blocking the UI
+                self.refresh()
+                break
+            case .Update(_, let deletions, let insertions, let modifications):
+                // Query results have changed, so apply them to the UITableView
+                self.tableView.beginUpdates()
+                self.tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: 0) },
+                    withRowAnimation: .Automatic)
+                self.tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: 0) },
+                    withRowAnimation: .Automatic)
+                self.tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: 0) },
+                    withRowAnimation: .Automatic)
+                self.tableView.endUpdates()
+                break
+            case .Error(let error):
+                // An error occurred while opening the Realm file on the background worker thread
+                fatalError("\(error)")
+                break
+            }
         }
         refresh()
     }
