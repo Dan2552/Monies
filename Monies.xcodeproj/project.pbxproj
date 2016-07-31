@@ -256,13 +256,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABE75EC619411C9E008B072F /* Build configuration list for PBXNativeTarget "Monies" */;
 			buildPhases = (
-				BDD7BC6A19AD0B4CFD57C1CD /* 📦 Check Pods Manifest.lock */,
+				BDD7BC6A19AD0B4CFD57C1CD /* [CP] Check Pods Manifest.lock */,
 				ABE75EA619411C9E008B072F /* Sources */,
 				ABE75EA719411C9E008B072F /* Frameworks */,
 				ABE75EA819411C9E008B072F /* Resources */,
 				ABD99CD81AF6C8A2007966DD /* Embed App Extensions */,
-				10EAF76EBECAE0028D030904 /* 📦 Embed Pods Frameworks */,
-				444333B74ED00D73DCC51971 /* 📦 Copy Pods Resources */,
+				10EAF76EBECAE0028D030904 /* [CP] Embed Pods Frameworks */,
+				444333B74ED00D73DCC51971 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,14 +323,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10EAF76EBECAE0028D030904 /* 📦 Embed Pods Frameworks */ = {
+		10EAF76EBECAE0028D030904 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,14 +338,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies/Pods-Monies-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		444333B74ED00D73DCC51971 /* 📦 Copy Pods Resources */ = {
+		444333B74ED00D73DCC51971 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,14 +353,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies/Pods-Monies-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BDD7BC6A19AD0B4CFD57C1CD /* 📦 Check Pods Manifest.lock */ = {
+		BDD7BC6A19AD0B4CFD57C1CD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,7 +501,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.danielgreen.MyMonies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -514,7 +513,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = uk.danielgreen.MyMonies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
