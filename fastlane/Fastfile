@@ -1,0 +1,5 @@
+lane :build do
+  cert
+  sigh
+  gym
+end

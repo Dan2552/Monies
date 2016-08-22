@@ -1,0 +1,3 @@
+app_identifier "uk.danielgreen.MyMonies" # The bundle identifier of your app
+apple_id "dan2552@gmail.com" # Your Apple email address
+team_id "3K2TUP9VBZ"  # Developer Portal Team ID
