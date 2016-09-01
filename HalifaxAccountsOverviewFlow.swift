@@ -1,5 +1,5 @@
 class HalifaxAccountsOverviewFlow: WebDriverFlow {
-    let url = "https://secure.halifax-online.co.uk/personal/a/mobile/account_overview/"
+    let url = "https://secure.halifax-online.co.uk/personal/a/mobile/account_overview"
 
     override func startFlow() -> Bool {
         driver.visit(url)
@@ -7,7 +7,7 @@ class HalifaxAccountsOverviewFlow: WebDriverFlow {
     }
 
     override func startActionForPage(page: String) -> Bool {
-        if page == url {
+        if page.hasPrefix(url) {
             getAccounts()
             return true
         }

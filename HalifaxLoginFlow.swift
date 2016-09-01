@@ -9,9 +9,11 @@ class HalifaxLoginFlow: WebDriverFlow {
         "https://www.halifax-online.co.uk",
         "https://secure.halifax-online.co.uk"
     ]
+
     let login1Page = "login.jsp"
     let login2Page = "entermemorableinformation.jsp"
-
+    let login1MobilePageUrl = "https://www.halifax-online.co.uk/personal/logon/login.jsp?mobile=true"
+    
     let dataSource: HalifaxLoginFlowDataSource
 
     init(driver: WebViewDriver, dataSource: HalifaxLoginFlowDataSource) {
@@ -28,13 +30,24 @@ class HalifaxLoginFlow: WebDriverFlow {
         return false
     }
 
-    override func startActionForPage(var page: String) -> Bool {
+    override func startActionForPage(page: String) -> Bool {
+        var page = page
         guard isHalifax(page) else { return false }
 
-        page = page.componentsSeparatedByString("?")[0]
+        let urlComponents = page.componentsSeparatedByString("?")
+        var params = ""
+        page = urlComponents[0]
+        
+        if urlComponents.count > 1 {
+            params = urlComponents[1]
+        }
 
         if page.hasSuffix(login1Page) {
-            loginStep1()
+            if params.containsString("mobile=true") {
+                loginStep1()
+            } else {
+                driver.visit(login1MobilePageUrl)
+            }
             return true
         } else if page.hasSuffix(login2Page) {
             loginStep2()
