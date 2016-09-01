@@ -1,5 +1,5 @@
 lane :build do
   cert
-  sigh
+  sigh(development: true)
   gym
 end

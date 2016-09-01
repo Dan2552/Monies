@@ -37,3 +37,11 @@ Carthage/Build
 
 .bundle
 Ambient-*
+
+*.mobileprovision
+
+*.cer
+
+Monies.app.dSYM.zip
+
+fastlane/report.xml
