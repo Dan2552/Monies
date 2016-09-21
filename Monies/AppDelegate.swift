@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let driverManager = DriverManager.sharedInstance
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Style().setDark()
+        Style().set()
 
         return true
     }

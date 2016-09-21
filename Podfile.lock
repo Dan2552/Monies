@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (3.4.0)
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - DateTools (1.7.0)
   - Eureka (1.6.0)
   - Luncheon (0.3.0):
@@ -17,6 +20,7 @@ PODS:
     - Realm (= 1.0.0)
 
 DEPENDENCIES:
+  - ChameleonFramework/Swift
   - DateTools
   - Luncheon (from `https://github.com/Dan2552/Luncheon.git`)
   - Napkin (from `https://github.com/Dan2552/Napkin.git`)
@@ -38,6 +42,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   Eureka: ef5b9ac93aedeecfe50d98b1ac7678bf09a1fc62
   Luncheon: 0cc291cb06ed01e90f168f65e4fdf45141f90be8
@@ -46,6 +51,6 @@ SPEC CHECKSUMS:
   Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
   RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
 
-PODFILE CHECKSUM: 7361516d5b0d81bc4b8143208372230d607e28ec
+PODFILE CHECKSUM: 120f792278dace1780b810e372d98a1263a7f6a5
 
 COCOAPODS: 1.0.1
