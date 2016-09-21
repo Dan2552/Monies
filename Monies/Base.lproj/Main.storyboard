@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -92,64 +93,29 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WlZ-fG-1w1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="102" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WlZ-fG-1w1">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.89411764709999997" green="0.7725490196" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="75" id="JZL-ny-iqV" customClass="AccountTableViewCell" customModule="Monies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="600" height="75"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="102" id="JZL-ny-iqV" customClass="AccountTableViewCell" customModule="Monies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="102"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JZL-ny-iqV" id="xW8-9w-lWe">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="101.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£6,452.34" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LD-fG-wqI" customClass="TintColorLabel" customModule="Monies" customModuleProvider="target">
-                                                    <rect key="frame" x="12" y="28" width="576" height="38.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£6,452.34 available" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LD-fG-wqI" customClass="TintColorLabel" customModule="Monies" customModuleProvider="target">
+                                                    <rect key="frame" x="12" y="31" width="576" height="39"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="oiz-5C-xkV"/>
-                                                        <constraint firstAttribute="height" constant="39" id="zth-yk-VgJ"/>
+                                                        <constraint firstAttribute="height" constant="39" id="Sok-7y-WFw"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                    <color key="textColor" red="0.43137254899999999" green="0.39607843139999999" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="oiz-5C-xkV"/>
-                                                            <exclude reference="zth-yk-VgJ"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="zth-yk-VgJ"/>
-                                                        </mask>
-                                                    </variation>
                                                     <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
                                                         <rect key="frame" x="12" y="27" width="328" height="39"/>
-                                                        <mask key="constraints">
-                                                            <exclude reference="oiz-5C-xkV"/>
-                                                        </mask>
-                                                    </variation>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 minutes ago" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-dX-5ak" customClass="MinorDetailLabel" customModule="Monies" customModuleProvider="target">
-                                                    <rect key="frame" x="544" y="17" width="44" height="36"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="MFI-er-k3L"/>
-                                                        <constraint firstAttribute="height" constant="21" id="ixN-HV-daD"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" red="0.92549019610000005" green="0.85882352939999995" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="ixN-HV-daD"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <variation key="widthClass=compact">
-                                                        <mask key="constraints">
-                                                            <include reference="ixN-HV-daD"/>
-                                                        </mask>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cardcash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3b-zn-DdM">
@@ -171,21 +137,64 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£5,452.34" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anS-53-6NM" customClass="TintColorLabel" customModule="Monies" customModuleProvider="target">
+                                                    <rect key="frame" x="12" y="72" width="576" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="x2m-ok-3dW"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                                        <rect key="frame" x="12" y="27" width="328" height="39"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 minutes ago" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mkv-dX-5ak" customClass="MinorDetailLabel" customModule="Monies" customModuleProvider="target">
+                                                    <rect key="frame" x="544" y="33" width="44" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="MFI-er-k3L"/>
+                                                        <constraint firstAttribute="height" constant="36" id="Vg8-fu-WYz"/>
+                                                        <constraint firstAttribute="height" constant="21" id="ixN-HV-daD"/>
+                                                        <constraint firstAttribute="width" constant="44" id="mXs-8p-0xP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <color key="textColor" red="0.92549019610000005" green="0.85882352939999995" blue="0.72549019609999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="MFI-er-k3L"/>
+                                                            <exclude reference="ixN-HV-daD"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="ixN-HV-daD"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8LD-fG-wqI" firstAttribute="bottom" secondItem="xW8-9w-lWe" secondAttribute="bottomMargin" id="9SC-K2-gqe"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="8LD-fG-wqI" secondAttribute="trailing" constant="4" id="9SX-4H-avz"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="anS-53-6NM" secondAttribute="bottom" constant="0.5" id="AmZ-kb-m6A"/>
+                                                <constraint firstItem="8LD-fG-wqI" firstAttribute="leading" secondItem="xW8-9w-lWe" secondAttribute="leadingMargin" constant="4" id="CAp-O1-5vj"/>
                                                 <constraint firstItem="M3b-zn-DdM" firstAttribute="top" secondItem="xW8-9w-lWe" secondAttribute="topMargin" id="IT1-6E-VUP"/>
-                                                <constraint firstItem="Mkv-dX-5ak" firstAttribute="top" secondItem="xW8-9w-lWe" secondAttribute="topMargin" constant="9" id="Uha-bI-1Vb"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Mkv-dX-5ak" secondAttribute="trailing" constant="4" id="TRH-I4-3Lu"/>
+                                                <constraint firstItem="Mkv-dX-5ak" firstAttribute="centerY" secondItem="xW8-9w-lWe" secondAttribute="centerYWithinMargins" constant="9" id="Uha-bI-1Vb"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="M3b-zn-DdM" secondAttribute="trailing" constant="4" id="cab-k9-Rf3"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Mkv-dX-5ak" secondAttribute="bottom" constant="9" id="d1E-EI-e84"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="8LD-fG-wqI" secondAttribute="trailing" constant="4" id="ei2-4N-PG0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="anS-53-6NM" secondAttribute="trailing" constant="4" id="ghH-u1-ikU"/>
+                                                <constraint firstItem="anS-53-6NM" firstAttribute="leading" secondItem="xW8-9w-lWe" secondAttribute="leadingMargin" constant="4" id="jaQ-Bb-0Js"/>
+                                                <constraint firstItem="Mkv-dX-5ak" firstAttribute="centerY" secondItem="xW8-9w-lWe" secondAttribute="centerY" id="jog-3C-xIx"/>
+                                                <constraint firstItem="8LD-fG-wqI" firstAttribute="top" secondItem="M3b-zn-DdM" secondAttribute="bottom" constant="3" id="pPF-fH-XhC"/>
                                                 <constraint firstItem="M3b-zn-DdM" firstAttribute="leading" secondItem="xW8-9w-lWe" secondAttribute="leadingMargin" constant="4" id="vwK-Ux-TRY"/>
                                                 <constraint firstItem="8LD-fG-wqI" firstAttribute="leading" secondItem="xW8-9w-lWe" secondAttribute="leadingMargin" constant="4" id="wv4-io-ROl"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Mkv-dX-5ak" secondAttribute="trailing" constant="4" id="x3A-0p-nCa"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="Uha-bI-1Vb"/>
                                                     <exclude reference="d1E-EI-e84"/>
+                                                    <exclude reference="x3A-0p-nCa"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=compact-widthClass=compact" ambiguous="YES">
@@ -198,6 +207,7 @@
                                         <connections>
                                             <outlet property="accountName" destination="M3b-zn-DdM" id="KcL-6e-F4I"/>
                                             <outlet property="available" destination="8LD-fG-wqI" id="ceh-bs-Hc3"/>
+                                            <outlet property="balance" destination="anS-53-6NM" id="SKK-c8-3kB"/>
                                             <outlet property="timeAgoLabel" destination="Mkv-dX-5ak" id="kC6-xq-ubo"/>
                                         </connections>
                                     </tableViewCell>
