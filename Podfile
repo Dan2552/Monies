@@ -7,5 +7,8 @@ target "Monies" do
   pod 'DateTools'
   pod 'Luncheon', git: 'https://github.com/Dan2552/Luncheon.git'
   pod 'Napkin', git: 'https://github.com/Dan2552/Napkin.git'
+  pod 'Placemat', git: 'https://github.com/Dan2552/Placemat.git'
   pod 'ChameleonFramework/Swift'
+  pod 'AsyncSwift', '~> 1.7.4'
+  pod 'PureLayout'
 end

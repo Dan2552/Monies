@@ -14,4 +14,8 @@ class BankAccount: Object {
         let interval = (updatedAt as NSString).doubleValue
         return NSDate(timeIntervalSince1970: interval)
     }
+    
+    func toggleIsBalanceShown() {
+        isBalanceShown = !isBalanceShown
+    }
 }

@@ -1,11 +1,3 @@
-//
-//  WKWebKitAsyncRunner.swift
-//  MoniesMac
-//
-//  Created by Daniel Green on 25/01/2015.
-//  Copyright (c) 2015 Daniel Green. All rights reserved.
-//
-
 class WKWebKitAsyncRunner {
     private let tasks : [(String, (String) -> ()) -> ()]
     private var currentTaskIndex = 0

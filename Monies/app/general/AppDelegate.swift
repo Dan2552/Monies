@@ -1,5 +1,6 @@
 import UIKit
 import WebKit
+import Placemat
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,13 +9,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let driverManager = DriverManager.sharedInstance
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Style().set()
-
+        Style().setGlobalTheme()
+        NavigationFlow().presentLockscreen()
         return true
     }
-    
-    func applicationWillTerminate(application: UIApplication) {
-    }
-    
 }
-

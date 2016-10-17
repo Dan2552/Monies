@@ -7,29 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3737B8EF1C7E371F00213701 /* BankIndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B8EE1C7E371F00213701 /* BankIndexViewController.swift */; };
-		3737B8F11C7E3E0B00213701 /* BankShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B8F01C7E3E0B00213701 /* BankShowViewController.swift */; };
+		3737B8EF1C7E371F00213701 /* BankLoginIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B8EE1C7E371F00213701 /* BankLoginIndex.swift */; };
+		3737B8F11C7E3E0B00213701 /* BankLoginShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737B8F01C7E3E0B00213701 /* BankLoginShow.swift */; };
+		377D43661DB3FE7800C92157 /* NavigationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377D43651DB3FE7800C92157 /* NavigationFlow.swift */; };
 		379D73E91C9DEE13001DD2D2 /* WebDriverFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D73E81C9DEE13001DD2D2 /* WebDriverFlow.swift */; };
 		379D73EB1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D73EA1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift */; };
 		379D73ED1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D73EC1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift */; };
 		379D73EF1C9E1F06001DD2D2 /* DriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D73EE1C9E1F06001DD2D2 /* DriverManager.swift */; };
 		37B895CF1C7F9F22006E18B8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B895CE1C7F9F22006E18B8 /* Style.swift */; };
-		37DBC9111C73B3A70083C56F /* BankFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9101C73B3A70083C56F /* BankFormViewController.swift */; };
+		37DBC9111C73B3A70083C56F /* BankLoginEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9101C73B3A70083C56F /* BankLoginEdit.swift */; };
 		37DBC9131C73BA370083C56F /* BankLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9121C73BA370083C56F /* BankLogin.swift */; };
 		37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9141C73BF570083C56F /* Int+Oridinal.swift */; };
 		37DBC9181C76515C0083C56F /* AsyncronousAccountCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */; };
 		AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75ECC1941219F008B072F /* LockViewController.swift */; };
-		AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED76F1AF68E1C002C17EF /* Async.swift */; };
 		AB9ED7721AF69479002C17EF /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* BankAccount.swift */; };
 		ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */; };
 		ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */; };
 		ABD99CAF1AF69838007966DD /* WebViewDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAE1AF69838007966DD /* WebViewDriver.swift */; };
 		ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */; };
 		ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EAF19411C9E008B072F /* AppDelegate.swift */; };
-		ABE75EB219411C9E008B072F /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EB119411C9E008B072F /* OverviewViewController.swift */; };
-		ABE75EB519411C9E008B072F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB319411C9E008B072F /* Main.storyboard */; };
+		ABE75EB219411C9E008B072F /* BankAccountIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75EB119411C9E008B072F /* BankAccountIndex.swift */; };
 		ABE75EB719411C9E008B072F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABE75EB619411C9E008B072F /* Images.xcassets */; };
-		C5275C158618BCCCE822292A /* Pods_Monies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6859C07FEBF3B884CE3F03 /* Pods_Monies.framework */; };
+		D07C3BEBB76AE0DE4B226B05 /* Pods_Monies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03A555D91922B1A31E61A93F /* Pods_Monies.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,21 +45,20 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3737B8EE1C7E371F00213701 /* BankIndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankIndexViewController.swift; sourceTree = "<group>"; };
-		3737B8F01C7E3E0B00213701 /* BankShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankShowViewController.swift; sourceTree = "<group>"; };
+		03A555D91922B1A31E61A93F /* Pods_Monies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3737B8EE1C7E371F00213701 /* BankLoginIndex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankLoginIndex.swift; sourceTree = "<group>"; };
+		3737B8F01C7E3E0B00213701 /* BankLoginShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankLoginShow.swift; sourceTree = "<group>"; };
+		377D43651DB3FE7800C92157 /* NavigationFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationFlow.swift; sourceTree = "<group>"; };
 		379D73E81C9DEE13001DD2D2 /* WebDriverFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebDriverFlow.swift; sourceTree = "<group>"; };
 		379D73EA1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxLoginFlow.swift; sourceTree = "<group>"; };
 		379D73EC1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxAccountsOverviewFlow.swift; sourceTree = "<group>"; };
 		379D73EE1C9E1F06001DD2D2 /* DriverManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverManager.swift; sourceTree = "<group>"; };
 		37B895CE1C7F9F22006E18B8 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		37DBC9101C73B3A70083C56F /* BankFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankFormViewController.swift; sourceTree = "<group>"; };
+		37DBC9101C73B3A70083C56F /* BankLoginEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankLoginEdit.swift; sourceTree = "<group>"; };
 		37DBC9121C73BA370083C56F /* BankLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankLogin.swift; sourceTree = "<group>"; };
 		37DBC9141C73BF570083C56F /* Int+Oridinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Oridinal.swift"; sourceTree = "<group>"; };
 		37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncronousAccountCreator.swift; sourceTree = "<group>"; };
-		6B6859C07FEBF3B884CE3F03 /* Pods_Monies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Monies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2081451B0D28D217CED437B /* Pods-Monies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.debug.xcconfig"; sourceTree = "<group>"; };
-		AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.objj.h; path = "Monies-Bridging-Header.h"; sourceTree = "<group>"; };
-		AB9ED76F1AF68E1C002C17EF /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		967BB8C3CF9C5A9FDDC17C6B /* Pods-Monies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.debug.xcconfig"; sourceTree = "<group>"; };
 		AB9ED7711AF69479002C17EF /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Monies.entitlements; sourceTree = "<group>"; };
 		ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -70,12 +68,11 @@
 		ABE75EAA19411C9E008B072F /* Monies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Monies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABE75EAE19411C9E008B072F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABE75EAF19411C9E008B072F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABE75EB119411C9E008B072F /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
-		ABE75EB419411C9E008B072F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ABE75EB119411C9E008B072F /* BankAccountIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountIndex.swift; sourceTree = "<group>"; };
 		ABE75EB619411C9E008B072F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ABE75ECC1941219F008B072F /* LockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
-		B2D30A76B65B752A6A4A3B8E /* Pods-Monies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.release.xcconfig"; sourceTree = "<group>"; };
 		E2D32922495513B972ACEFD3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA73C7787A7983B453C1B10A /* Pods-Monies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.release.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,20 +81,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */,
-				C5275C158618BCCCE822292A /* Pods_Monies.framework in Frameworks */,
+				D07C3BEBB76AE0DE4B226B05 /* Pods_Monies.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09629FD8DCD383854FA1EA0A /* Pods */ = {
+		273DC0AEDDB112CE877B8300 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A2081451B0D28D217CED437B /* Pods-Monies.debug.xcconfig */,
-				B2D30A76B65B752A6A4A3B8E /* Pods-Monies.release.xcconfig */,
+				967BB8C3CF9C5A9FDDC17C6B /* Pods-Monies.debug.xcconfig */,
+				FA73C7787A7983B453C1B10A /* Pods-Monies.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		3717A3C01DB56F8B0065FE85 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				AB6A772A19479C3F009D3D45 /* controllers */,
+				37DBC9161C73C1670083C56F /* extensions */,
+				377D43641DB3C75900C92157 /* general */,
+				AB9ED7751AF6952A002C17EF /* models */,
+				3717A3C21DB570E60065FE85 /* views */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		3717A3C21DB570E60065FE85 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		3737B8EB1C7E368800213701 /* Lock */ = {
@@ -105,52 +122,57 @@
 			children = (
 				ABE75ECC1941219F008B072F /* LockViewController.swift */,
 			);
-			name = Lock;
+			path = Lock;
 			sourceTree = "<group>";
 		};
-		3737B8EC1C7E369100213701 /* Overview */ = {
+		3737B8EC1C7E369100213701 /* BankAccount */ = {
 			isa = PBXGroup;
 			children = (
-				ABE75EB119411C9E008B072F /* OverviewViewController.swift */,
+				ABE75EB119411C9E008B072F /* BankAccountIndex.swift */,
 			);
-			name = Overview;
+			path = BankAccount;
 			sourceTree = "<group>";
 		};
-		3737B8ED1C7E369D00213701 /* Banks */ = {
+		3737B8ED1C7E369D00213701 /* BankLogin */ = {
 			isa = PBXGroup;
 			children = (
-				3737B8EE1C7E371F00213701 /* BankIndexViewController.swift */,
-				37DBC9101C73B3A70083C56F /* BankFormViewController.swift */,
-				3737B8F01C7E3E0B00213701 /* BankShowViewController.swift */,
+				37DBC9101C73B3A70083C56F /* BankLoginEdit.swift */,
+				3737B8EE1C7E371F00213701 /* BankLoginIndex.swift */,
+				3737B8F01C7E3E0B00213701 /* BankLoginShow.swift */,
 			);
-			name = Banks;
+			path = BankLogin;
 			sourceTree = "<group>";
 		};
-		379D73E61C9DED6D001DD2D2 /* WebDriver */ = {
+		377D43641DB3C75900C92157 /* general */ = {
 			isa = PBXGroup;
 			children = (
-				379D73E71C9DED84001DD2D2 /* flows */,
 				ABD99CB01AF6983B007966DD /* driver */,
+				379D73E71C9DED84001DD2D2 /* flows */,
+				37B895D01C7FB99E006E18B8 /* style */,
+				ABE75EAF19411C9E008B072F /* AppDelegate.swift */,
+				37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */,
+				379D73EE1C9E1F06001DD2D2 /* DriverManager.swift */,
+				377D43651DB3FE7800C92157 /* NavigationFlow.swift */,
 			);
-			name = WebDriver;
+			path = general;
 			sourceTree = "<group>";
 		};
 		379D73E71C9DED84001DD2D2 /* flows */ = {
 			isa = PBXGroup;
 			children = (
-				379D73E81C9DEE13001DD2D2 /* WebDriverFlow.swift */,
-				379D73EA1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift */,
 				379D73EC1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift */,
+				379D73EA1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift */,
+				379D73E81C9DEE13001DD2D2 /* WebDriverFlow.swift */,
 			);
-			name = flows;
+			path = flows;
 			sourceTree = "<group>";
 		};
-		37B895D01C7FB99E006E18B8 /* Style */ = {
+		37B895D01C7FB99E006E18B8 /* style */ = {
 			isa = PBXGroup;
 			children = (
 				37B895CE1C7F9F22006E18B8 /* Style.swift */,
 			);
-			name = Style;
+			path = style;
 			sourceTree = "<group>";
 		};
 		37DBC9161C73C1670083C56F /* extensions */ = {
@@ -158,47 +180,44 @@
 			children = (
 				37DBC9141C73BF570083C56F /* Int+Oridinal.swift */,
 			);
-			name = extensions;
-			path = ..;
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		AB6A772A19479C3F009D3D45 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3737B8EC1C7E369100213701 /* Overview */,
-				3737B8ED1C7E369D00213701 /* Banks */,
+				3737B8EC1C7E369100213701 /* BankAccount */,
+				3737B8ED1C7E369D00213701 /* BankLogin */,
 				3737B8EB1C7E368800213701 /* Lock */,
 			);
-			name = controllers;
+			path = controllers;
 			sourceTree = "<group>";
 		};
 		AB9ED7751AF6952A002C17EF /* models */ = {
 			isa = PBXGroup;
 			children = (
-				37DBC9121C73BA370083C56F /* BankLogin.swift */,
 				AB9ED7711AF69479002C17EF /* BankAccount.swift */,
+				37DBC9121C73BA370083C56F /* BankLogin.swift */,
 			);
-			name = models;
+			path = models;
 			sourceTree = "<group>";
 		};
 		ABD99CB01AF6983B007966DD /* driver */ = {
 			isa = PBXGroup;
 			children = (
-				ABD99CAE1AF69838007966DD /* WebViewDriver.swift */,
 				ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */,
+				ABD99CAE1AF69838007966DD /* WebViewDriver.swift */,
 			);
-			name = driver;
-			path = Monies;
+			path = driver;
 			sourceTree = "<group>";
 		};
 		ABE75EA119411C9E008B072F = {
 			isa = PBXGroup;
 			children = (
-				379D73E61C9DED6D001DD2D2 /* WebDriver */,
-				ABE75EAC19411C9E008B072F /* Monies */,
-				ABE75EAB19411C9E008B072F /* Products */,
 				B1465BB745594AA7B690DDFD /* Frameworks */,
-				09629FD8DCD383854FA1EA0A /* Pods */,
+				ABE75EAC19411C9E008B072F /* Monies */,
+				273DC0AEDDB112CE877B8300 /* Pods */,
+				ABE75EAB19411C9E008B072F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,30 +232,12 @@
 		ABE75EAC19411C9E008B072F /* Monies */ = {
 			isa = PBXGroup;
 			children = (
-				AB9ED76F1AF68E1C002C17EF /* Async.swift */,
-				379D73EE1C9E1F06001DD2D2 /* DriverManager.swift */,
-				AB6A772A19479C3F009D3D45 /* controllers */,
-				AB9ED7751AF6952A002C17EF /* models */,
-				37DBC9161C73C1670083C56F /* extensions */,
-				37B895D01C7FB99E006E18B8 /* Style */,
-				ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */,
-				ABE75EAF19411C9E008B072F /* AppDelegate.swift */,
-				ABD99CB11AF69E11007966DD /* AccountTableViewCell.swift */,
-				ABE75EB319411C9E008B072F /* Main.storyboard */,
+				3717A3C01DB56F8B0065FE85 /* app */,
 				ABE75EB619411C9E008B072F /* Images.xcassets */,
-				AB6A772519479C14009D3D45 /* Monies-Bridging-Header.h */,
-				37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */,
-				ABE75EAD19411C9E008B072F /* Supporting Files */,
+				ABE75EAE19411C9E008B072F /* Info.plist */,
+				ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */,
 			);
 			path = Monies;
-			sourceTree = "<group>";
-		};
-		ABE75EAD19411C9E008B072F /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				ABE75EAE19411C9E008B072F /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B1465BB745594AA7B690DDFD /* Frameworks */ = {
@@ -244,7 +245,7 @@
 			children = (
 				ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */,
 				E2D32922495513B972ACEFD3 /* Pods.framework */,
-				6B6859C07FEBF3B884CE3F03 /* Pods_Monies.framework */,
+				03A555D91922B1A31E61A93F /* Pods_Monies.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,13 +257,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABE75EC619411C9E008B072F /* Build configuration list for PBXNativeTarget "Monies" */;
 			buildPhases = (
-				E7FB696DDBCB070BB0B48934 /* [CP] Check Pods Manifest.lock */,
+				B21BF17E002E05ABECB86E76 /* [CP] Check Pods Manifest.lock */,
 				ABE75EA619411C9E008B072F /* Sources */,
 				ABE75EA719411C9E008B072F /* Frameworks */,
 				ABE75EA819411C9E008B072F /* Resources */,
 				ABD99CD81AF6C8A2007966DD /* Embed App Extensions */,
-				D8816505528C21216CD9DD42 /* [CP] Embed Pods Frameworks */,
-				B75B6B096809C081D192757A /* [CP] Copy Pods Resources */,
+				18AD60F78C205D077433FC8E /* [CP] Embed Pods Frameworks */,
+				91B4D20506CA1B4F66127807 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,7 +316,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABE75EB519411C9E008B072F /* Main.storyboard in Resources */,
 				ABE75EB719411C9E008B072F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,22 +323,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		B75B6B096809C081D192757A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies/Pods-Monies-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D8816505528C21216CD9DD42 /* [CP] Embed Pods Frameworks */ = {
+		18AD60F78C205D077433FC8E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -353,7 +338,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies/Pods-Monies-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E7FB696DDBCB070BB0B48934 /* [CP] Check Pods Manifest.lock */ = {
+		91B4D20506CA1B4F66127807 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Monies/Pods-Monies-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B21BF17E002E05ABECB86E76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -375,9 +375,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3737B8F11C7E3E0B00213701 /* BankShowViewController.swift in Sources */,
-				3737B8EF1C7E371F00213701 /* BankIndexViewController.swift in Sources */,
-				37DBC9111C73B3A70083C56F /* BankFormViewController.swift in Sources */,
+				3737B8F11C7E3E0B00213701 /* BankLoginShow.swift in Sources */,
+				3737B8EF1C7E371F00213701 /* BankLoginIndex.swift in Sources */,
+				37DBC9111C73B3A70083C56F /* BankLoginEdit.swift in Sources */,
 				AB9ED7721AF69479002C17EF /* BankAccount.swift in Sources */,
 				37DBC9131C73BA370083C56F /* BankLogin.swift in Sources */,
 				379D73E91C9DEE13001DD2D2 /* WebDriverFlow.swift in Sources */,
@@ -385,30 +385,19 @@
 				ABD99CB21AF69E11007966DD /* AccountTableViewCell.swift in Sources */,
 				379D73EF1C9E1F06001DD2D2 /* DriverManager.swift in Sources */,
 				AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */,
-				ABE75EB219411C9E008B072F /* OverviewViewController.swift in Sources */,
+				ABE75EB219411C9E008B072F /* BankAccountIndex.swift in Sources */,
 				37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */,
 				ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */,
 				ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */,
 				37B895CF1C7F9F22006E18B8 /* Style.swift in Sources */,
 				379D73ED1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift in Sources */,
-				AB9ED7701AF68E1C002C17EF /* Async.swift in Sources */,
 				379D73EB1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift in Sources */,
 				37DBC9181C76515C0083C56F /* AsyncronousAccountCreator.swift in Sources */,
+				377D43661DB3FE7800C92157 /* NavigationFlow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		ABE75EB319411C9E008B072F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ABE75EB419411C9E008B072F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		ABE75EC419411C9E008B072F /* Debug */ = {
@@ -496,7 +485,7 @@
 		};
 		ABE75EC719411C9E008B072F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A2081451B0D28D217CED437B /* Pods-Monies.debug.xcconfig */;
+			baseConfigurationReference = 967BB8C3CF9C5A9FDDC17C6B /* Pods-Monies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Monies/Info.plist;
@@ -508,7 +497,7 @@
 		};
 		ABE75EC819411C9E008B072F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B2D30A76B65B752A6A4A3B8E /* Pods-Monies.release.xcconfig */;
+			baseConfigurationReference = FA73C7787A7983B453C1B10A /* Pods-Monies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Monies/Info.plist;

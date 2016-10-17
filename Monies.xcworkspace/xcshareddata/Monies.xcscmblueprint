@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4BF6742C58F2534F8B81DD558540EA6D28F7898A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E20C3583D46D1D5FF556AF88E02C4C2285D92E9D" : 0,
+    "4BF6742C58F2534F8B81DD558540EA6D28F7898A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "07F4764F-0A7E-483B-8F19-42AB45423B52",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E20C3583D46D1D5FF556AF88E02C4C2285D92E9D" : "Placemat\/",
+    "4BF6742C58F2534F8B81DD558540EA6D28F7898A" : "Monies\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Monies",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Monies.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Dan2552\/Monies.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4BF6742C58F2534F8B81DD558540EA6D28F7898A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Dan2552\/Placemat.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E20C3583D46D1D5FF556AF88E02C4C2285D92E9D"
+    }
+  ]
+}

@@ -2,10 +2,10 @@ import Foundation
 import RealmSwift
 
 class AsyncronousAccountCreator {
-    var accountNumber = "" { didSet { propertyWasSet() } }
-    var balance = "" { didSet { propertyWasSet() } }
+    var accountNumber    = "" { didSet { propertyWasSet() } }
+    var balance          = "" { didSet { propertyWasSet() } }
     var availableBalance = "" { didSet { propertyWasSet() } }
-    var title = "" { didSet { propertyWasSet() } }
+    var title            = "" { didSet { propertyWasSet() } }
 
     lazy var realm = try! Realm()
 

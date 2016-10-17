@@ -1,5 +1,6 @@
 import Foundation
 import WebKit
+import Async
 
 protocol WebViewDriverProgressDelegate {
     func webViewDriverProgress(progress: Bool)

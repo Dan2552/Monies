@@ -2,29 +2,30 @@ import UIKit
 import WebKit
 import RealmSwift
 
-class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource {
-
-    var accounts: Results<BankAccount>?
-    @IBOutlet var tableView : UITableView!
+class BankAccountIndexViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    var bankAccounts: Results<BankAccount>!
+    var tableView : UITableView!
     var refreshToken: NotificationToken?
 
+    lazy var realm: Realm = { try! Realm() }()
+    
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
-
+        refreshControl.addTarget(self,
+                                 action: #selector(handleRefresh(_:)),
+                                 forControlEvents: UIControlEvents.ValueChanged)
         return refreshControl
     }()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        tableView = setupTableView(style: .Plain)
+        
         self.tableView.addSubview(refreshControl)
 
-        let realm = try! Realm()
         refreshToken = realm.objects(BankAccount).addNotificationBlock { (changes: RealmCollectionChange) in
             self.refreshControl.endRefreshing()
             switch changes {
             case .Initial:
-                // Results are now populated and can be accessed without blocking the UI
                 self.refresh()
                 break
             case .Update(_, let deletions, let insertions, let modifications):
@@ -46,45 +47,43 @@ class OverviewViewController: UIViewController, UIWebViewDelegate, UITableViewDe
         }
         refresh()
     }
-
-    deinit {
-        refreshToken?.stop()
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return AccountTableViewCell.height
     }
 
     func handleRefresh(refreshControl: UIRefreshControl) {
         DriverManager.sharedInstance.refreshAccounts()
-        refresh()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        self.refresh()
     }
 
     func refresh() {
         let realm = try! Realm()
-        accounts = realm.objects(BankAccount)
+        bankAccounts = realm.objects(BankAccount)
         tableView.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(accounts?.count ?? 0)
+        return Int(bankAccounts?.count ?? 0)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! AccountTableViewCell
-        let account = accounts![Int(indexPath.row)]
-        cell.setContentForAccount(account)
+        let reuse = "overview cell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuse) as? AccountTableViewCell ??
+            AccountTableViewCell(style: .Default, reuseIdentifier: reuse)
+        
+        cell.setContentForAccount(bankAccountFor(indexPath))
         return cell
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let account = accounts![Int(indexPath.row)]
-        try! account.realm?.write {
-            account.isBalanceShown = !account.isBalanceShown
+        try! realm.write {
+            bankAccountFor(indexPath).toggleIsBalanceShown()
         }
-        tableView.reloadData()
-
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
+    func bankAccountFor(indexPath: NSIndexPath) -> BankAccount {
+        return bankAccounts[Int(indexPath.row)]
     }
 }
 

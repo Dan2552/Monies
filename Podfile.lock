@@ -1,29 +1,34 @@
 PODS:
-  - Alamofire (3.4.0)
+  - Alamofire (3.5.1)
+  - AsyncSwift (1.7.4)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - DateTools (1.7.0)
-  - Eureka (1.6.0)
-  - Luncheon (0.3.0):
+  - Eureka (1.7.0)
+  - Luncheon (0.4.0):
     - Alamofire (~> 3.3)
     - Placemat (~> 0.2)
-  - Napkin (0.2.0):
-    - Eureka (~> 1.4)
+  - Napkin (0.3.0):
+    - Eureka (~> 1.7.0)
     - Luncheon (~> 0)
-    - Placemat (~> 0.2.0)
-  - Placemat (0.2.0)
-  - Realm (1.0.0):
-    - Realm/Headers (= 1.0.0)
-  - Realm/Headers (1.0.0)
-  - RealmSwift (1.0.0):
-    - Realm (= 1.0.0)
+    - Placemat (~> 0)
+  - Placemat (0.3.0)
+  - PureLayout (3.0.2)
+  - Realm (2.0.2):
+    - Realm/Headers (= 2.0.2)
+  - Realm/Headers (2.0.2)
+  - RealmSwift (2.0.2):
+    - Realm (= 2.0.2)
 
 DEPENDENCIES:
+  - AsyncSwift (~> 1.7.4)
   - ChameleonFramework/Swift
   - DateTools
   - Luncheon (from `https://github.com/Dan2552/Luncheon.git`)
   - Napkin (from `https://github.com/Dan2552/Napkin.git`)
+  - Placemat (from `https://github.com/Dan2552/Placemat.git`)
+  - PureLayout
   - RealmSwift
 
 EXTERNAL SOURCES:
@@ -31,26 +36,33 @@ EXTERNAL SOURCES:
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
     :git: https://github.com/Dan2552/Napkin.git
+  Placemat:
+    :git: https://github.com/Dan2552/Placemat.git
 
 CHECKOUT OPTIONS:
   Luncheon:
-    :commit: d33cc9cafd6ec5afc955d26c7dbcde364f6dcda0
+    :commit: 5164cad83604afe4a5df1c5091d7509ec6340667
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
-    :commit: 086a063880d1b259e83d0667e1af57a7f4f131e1
+    :commit: 47e88fa96a2de8bd36e8542935b15dc38bc0118f
     :git: https://github.com/Dan2552/Napkin.git
+  Placemat:
+    :commit: 87de71e6233792b347cd83c4270cbe4002d01cbe
+    :git: https://github.com/Dan2552/Placemat.git
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  AsyncSwift: cecffe40af6e09558ed25dd71fabf04836b5eaf4
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
-  Eureka: ef5b9ac93aedeecfe50d98b1ac7678bf09a1fc62
-  Luncheon: 0cc291cb06ed01e90f168f65e4fdf45141f90be8
-  Napkin: 3075d714cd2a08052ca52aec1a66c99c64a72f0d
-  Placemat: 39c8446df51adaf193d8a06829909579a7fba721
-  Realm: e15cd8e7c11d3e576f628ba0b7cb855269b4991c
-  RealmSwift: 3229306d020d96f83b335f87a0dcbf2cef0e6a2b
+  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
+  Luncheon: 55cbdd1760198ff543f1f0b41ec2a034024df1b0
+  Napkin: fdc93da9733d84c4fe3cf3480a2d05b3f8e10c77
+  Placemat: 55404c9af80dd77d11ff7576fe0bcee0eca25952
+  PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
+  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
+  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
 
-PODFILE CHECKSUM: 120f792278dace1780b810e372d98a1263a7f6a5
+PODFILE CHECKSUM: db794846cfb94310c9ba23d3722c205f8f66522a
 
 COCOAPODS: 1.0.1

@@ -1,35 +1,28 @@
-//
-//  PatternViewController.swift
-//  Monies
-//
-//  Created by Daniel Green on 05/06/2014.
-//  Copyright (c) 2014 Daniel Green. All rights reserved.
-//
-
 import UIKit
 import LocalAuthentication
+import Async
+import Placemat
 
 class LockViewController: UIViewController {
     
+    override func viewDidLoad() {
+        view.backgroundColor = Style().primaryColor
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if needsToCreateAccount() {
-            performSegueWithIdentifier("newBank", sender: nil)
-            return
-        }
+        guard ensureHasAccounts() else { return }
         touchId()
     }
     
     func touchId() {
         let context = LAContext()
-        var error : NSError?
+        var error: NSError?
         let myLocalizedReasonString = "Identify"
         
         // Allow devices without TouchID
         guard context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) else {
             allow()
             return
-            
         }
         
         context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString) { success, error in
@@ -42,10 +35,12 @@ class LockViewController: UIViewController {
     }
     
     func allow() {
-        performSegueWithIdentifier("allow", sender: self)
+        NavigationFlow().presentMainScreen(from: self)
     }
     
-    func needsToCreateAccount() -> Bool {
-        return !BankLogin.existing()
+    func ensureHasAccounts() -> Bool {
+        if BankLogin.existing() { return true }
+        NavigationFlow().presentEditBankLogin(from: self)
+        return false
     }
 }
