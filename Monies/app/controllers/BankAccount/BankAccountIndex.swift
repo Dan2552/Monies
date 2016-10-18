@@ -24,26 +24,7 @@ class BankAccountIndexViewController: UIViewController, UIWebViewDelegate, UITab
 
         refreshToken = realm.objects(BankAccount).addNotificationBlock { (changes: RealmCollectionChange) in
             self.refreshControl.endRefreshing()
-            switch changes {
-            case .Initial:
-                self.refresh()
-                break
-            case .Update(_, let deletions, let insertions, let modifications):
-                // Query results have changed, so apply them to the UITableView
-                self.tableView.beginUpdates()
-                self.tableView.insertRowsAtIndexPaths(insertions.map { NSIndexPath(forRow: $0, inSection: 0) },
-                    withRowAnimation: .Automatic)
-                self.tableView.deleteRowsAtIndexPaths(deletions.map { NSIndexPath(forRow: $0, inSection: 0) },
-                    withRowAnimation: .Automatic)
-                self.tableView.reloadRowsAtIndexPaths(modifications.map { NSIndexPath(forRow: $0, inSection: 0) },
-                    withRowAnimation: .Automatic)
-                self.tableView.endUpdates()
-                break
-            case .Error(let error):
-                // An error occurred while opening the Realm file on the background worker thread
-                fatalError("\(error)")
-                break
-            }
+            self.refresh()
         }
         refresh()
     }
