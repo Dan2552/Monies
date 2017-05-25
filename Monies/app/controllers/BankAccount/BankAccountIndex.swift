@@ -1,6 +1,7 @@
 import UIKit
 import WebKit
 import RealmSwift
+import Async
 
 class BankAccountIndexViewController: UIViewController, UIWebViewDelegate, UITableViewDelegate, UITableViewDataSource {
     var bankAccounts: Results<BankAccount>!
@@ -23,10 +24,15 @@ class BankAccountIndexViewController: UIViewController, UIWebViewDelegate, UITab
         self.tableView.addSubview(refreshControl)
 
         refreshToken = realm.objects(BankAccount.self).addNotificationBlock { (changes: RealmCollectionChange) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.refreshControl.endRefreshing()
             self.refresh()
         }
         refresh()
+        
+        Async.main(after: 1) {
+            DriverManager.sharedInstance.refreshAccounts()
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -9,6 +9,8 @@ class DriverManager {
     func refreshAccounts() {
         let banks = realm.objects(BankLogin.self)
 
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         for bank in banks {
             setDriverFlowsForBank(bank)
         }
