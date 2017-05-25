@@ -7,13 +7,13 @@ class BankLoginShowViewController: UIViewController {
     var driver: WebViewDriver { return DriverManager.sharedInstance.driverForBank(bankLogin) }
 
     override func viewDidLoad() {
-        view.backgroundColor = UIColor.whiteColor()
-        navigationItem.rightBarButtonItem = BlockBarButtonItem(barButtonSystemItem: .Edit) {
+        view.backgroundColor = UIColor.white
+        navigationItem.rightBarButtonItem = BlockBarButtonItem(barButtonSystemItem: .edit) {
             NavigationFlow().presentEditBankLogin(from: self, bankLogin: self.bankLogin)
         }
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         title = bankLogin.username
         setupWebView()
@@ -23,10 +23,12 @@ class BankLoginShowViewController: UIViewController {
         let webView = driver.webView
         guard webView.superview != view else { return }
         
+        webView.removeFromSuperview()
         view.addSubview(webView)
-        webView.autoPinEdgeToSuperviewEdge(.Top)
-        webView.autoPinEdgeToSuperviewEdge(.Right)
-        webView.autoPinEdgeToSuperviewEdge(.Left)
-        webView.autoPinEdgeToSuperviewEdge(.Bottom)
+        
+        webView.autoPin(toTopLayoutGuideOf: self, withInset: 0)
+        webView.autoPin(toBottomLayoutGuideOf: self, withInset: 0)
+        webView.autoPinEdge(toSuperviewEdge: .right)
+        webView.autoPinEdge(toSuperviewEdge: .left)
     }
 }

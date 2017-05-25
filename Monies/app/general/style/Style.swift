@@ -5,21 +5,21 @@ class TintColorLabel: UILabel {}
 class MinorDetailLabel: UILabel {}
 
 enum StyleTextSize: Int {
-    case Small = 10
-    case Normal = 16
-    case Large = 26
+    case small = 10
+    case normal = 16
+    case large = 26
 }
 
 class Style {
     let fontName = "HelveticaNeue-Light"
     let primaryColor = FlatPlum()
-    let secondaryColor = UIColor.whiteColor()
+    let secondaryColor = UIColor.white
     
     func setGlobalTheme() {
         Chameleon.setGlobalThemeUsingPrimaryColor(primaryColor,
                                                   withSecondaryColor: secondaryColor,
                                                   usingFontName: fontName,
-                                                  andContentStyle: .Contrast)
+                                                  andContentStyle: .contrast)
     }
 
     func font(size: StyleTextSize) -> UIFont {

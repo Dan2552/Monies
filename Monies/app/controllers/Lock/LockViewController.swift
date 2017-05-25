@@ -9,7 +9,7 @@ class LockViewController: UIViewController {
         view.backgroundColor = Style().primaryColor
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         guard ensureHasAccounts() else { return }
         touchId()
     }
@@ -20,12 +20,12 @@ class LockViewController: UIViewController {
         let myLocalizedReasonString = "Identify"
         
         // Allow devices without TouchID
-        guard context.canEvaluatePolicy(.DeviceOwnerAuthenticationWithBiometrics, error: &error) else {
+        guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
             allow()
             return
         }
         
-        context.evaluatePolicy(LAPolicy.DeviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString) { success, error in
+        context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString) { success, error in
             if success {
                 Async.main(after: 0) { self.allow() }
             } else {

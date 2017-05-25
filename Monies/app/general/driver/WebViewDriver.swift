@@ -1,9 +1,10 @@
 import Foundation
 import WebKit
 import Async
+import then
 
 protocol WebViewDriverProgressDelegate {
-    func webViewDriverProgress(progress: Bool)
+    func webViewDriverProgress(_ progress: Bool)
 }
 
 class WebViewDriver : NSObject, WKNavigationDelegate {
@@ -23,85 +24,94 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
             if flow.startFlow() { return }
         }
     }
-    
-    func visit(location: String) {
+
+    func visit(_ location: String) {
         print("visiting \(location)")
-        self.webView.loadRequest(NSURLRequest(URL: NSURL(string: location)!))
+        self.webView.load(URLRequest(url: URL(string: location)!))
     }
-    
-    func labelFor(element:String, completion: ((String) -> Void)) {
+
+    func labelFor(_ element:String) -> Promise<String> {
         let js = "var answer; var mem = document.getElementById('\(element)'); if (mem) { answer = mem.parentElement.children[0].textContent }; mem && answer || 'null'"
-        
-        run(js) { result in
-            if result != "null" {
-                print("read label \(result)")
-                completion(result)
-            }
-        }
-    }
 
-    func fillIn(field:String, with:String, redactPrint: Bool = false, completion: ((String) -> Void)) {
-        var printValue = with
-        if redactPrint { printValue = "[redacted]" }
-        print("fill in value \(printValue)")
-        
-        run("document.getElementById('\(field)').value = \"\(with)\";") { result in
-            completion(result)
-        }
-    }
-
-    func click(field:String, completion: ((String) -> Void)) {
-        print("click \(field)")
-        run("document.getElementById('\(field)').click();") { (result) in
-            completion(result)
-            
-            // for some reason, clicking sometimes doesn't work without this
-            self.run("$('body').text()") { result in }
-
-            // temporarily show the webview onscreen because annoyingly without 
-            // doing this also sometimes hangs
-            let window = UIApplication.sharedApplication().delegate!.window!
-            if self.webView.superview == nil {
-                print("WEBVIEW ADDED TO VIEW HIERARCHY")
-                window?.addSubview(self.webView)
-                window?.sendSubviewToBack(self.webView)
-                Async.main(after: 2) {
-                    print("WEBVIEW REMOVED FROM VIEW HIERARCHY")
-                    self.webView.removeFromSuperview()
+        return run(js).then({ result in
+            return Promise { resolve, reject in
+                
+                if result == "null" {
+                    resolve("")
+                } else {
+                    print("read label \(result)")
+                    resolve(result)
                 }
-            }
-
-        }
-    }
-    
-    func run(string:String, completion: ((String) -> Void)) {
-        self.webView.evaluateJavaScript(string, completionHandler: { result, error in
-            if (error != nil) {
-                print("there was an error running javascript:")
-                print(string)
-            }
-            
-            if let result : AnyObject = result {
-                completion("\(result)")
-            } else {
-                completion("")
             }
         })
     }
-    
-    func webView(webView: WKWebView, didCommitNavigation navigation: WKNavigation!) {
+
+    func fillIn(_ field: String, with: String, redactPrint: Bool = false) -> Promise<String> {
+        var printValue = with
+        if redactPrint { printValue = "[redacted]" }
+        print("fill in value \(printValue)")
+
+        return run("document.getElementById('\(field)').value = \"\(with)\";")
+    }
+
+    func click(_ field:String) -> Promise<String> {
+        print("click \(field)")
+        return Promise { resolve, reject in
+            async {
+                self.webViewHack()
+                _ = try! await(self.run("$('body').text()"))
+                _ = try! await(self.run("document.getElementById('\(field)').click();"))
+            }
+            resolve("")
+        }
+    }
+
+    func run(_ string:String) -> Promise<String> {
+        webViewHack()
+        return Promise { resolve, reject in
+            self.webView.evaluateJavaScript(string) { result, error in
+                if (error != nil) {
+                    print("there was an error running javascript:")
+                    print(string)
+                }
+
+                if let result = result {
+                    resolve("\(result)")
+                } else {
+                    resolve("")
+                }
+            }
+        }
+    }
+
+    // temporarily show the webview onscreen because annoyingly without
+    // doing this also sometimes hangs
+    func webViewHack() {
+        let window = UIApplication.shared.delegate!.window!
+        if webView.superview == nil {
+            print("WEBVIEW ADDED TO VIEW HIERARCHY")
+            window?.addSubview(self.webView)
+            window?.sendSubview(toBack: self.webView)
+            Async.main(after: 2) {
+                print("WEBVIEW REMOVED FROM VIEW HIERARCHY")
+                self.webView.removeFromSuperview()
+            }
+        }
+    }
+
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         print("didCommitNavigation")
         delegate?.webViewDriverProgress(true)
     }
-    
-    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!) {
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         print("didFinishNavigation")
-        let url = webView.URL!.absoluteString
+        let url = webView.url!.absoluteString
         delegate?.webViewDriverProgress(false)
         pageLoaded(url)
     }
-    
-    func pageLoaded(url : String) {
+
+    func pageLoaded(_ url : String) {
         print("pageLoaded: \(url)")
         for flow in activeFlows {
             if flow.startActionForPage(url) {

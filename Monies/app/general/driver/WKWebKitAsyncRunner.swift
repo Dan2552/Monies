@@ -1,7 +1,7 @@
 class WKWebKitAsyncRunner {
-    private let tasks : [(String, (String) -> ()) -> ()]
-    private var currentTaskIndex = 0
-    private var lastResult = ""
+    fileprivate let tasks : [(String, (String) -> ()) -> ()]
+    fileprivate var currentTaskIndex = 0
+    fileprivate var lastResult = ""
 
     init(tasks: Array<(String, (String) -> ()) -> ()>) {
         self.tasks = tasks
@@ -18,7 +18,7 @@ class WKWebKitAsyncRunner {
     func runTasks() {
         let task = currentTask()
         task(lastResult) { result in
-            self.lastResult = result ?? ""
+            self.lastResult = result
             self.currentTaskIndex = self.currentTaskIndex + 1
             self.runTasks()
         }

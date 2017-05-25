@@ -1,37 +1,41 @@
 PODS:
-  - Alamofire (3.5.1)
-  - AsyncSwift (1.7.4)
+  - Alamofire (4.0.1)
+  - AsyncSwift (2.0.1)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - DateTools (1.7.0)
-  - Eureka (1.7.0)
-  - Luncheon (0.4.0):
-    - Alamofire (~> 3.3)
-    - Placemat (~> 0.2)
-  - Napkin (0.3.0):
-    - Eureka (~> 1.7.0)
-    - Luncheon (~> 0)
-    - Placemat (~> 0)
-  - Placemat (0.3.0)
+  - DateTools (2.0.0)
+  - Eureka (2.0.1)
+  - Luncheon (0.6.0):
+    - Alamofire (~> 4.0.1)
+    - Placemat (>= 0.6.0)
+  - Napkin (0.6.0):
+    - Eureka (~> 2.0)
+    - Luncheon (>= 0.6.0)
+    - Placemat (>= 0.6.0)
+  - Placemat (0.6.0)
   - PureLayout (3.0.2)
-  - Realm (2.0.2):
-    - Realm/Headers (= 2.0.2)
-  - Realm/Headers (2.0.2)
-  - RealmSwift (2.0.2):
-    - Realm (= 2.0.2)
+  - Realm (2.7.0):
+    - Realm/Headers (= 2.7.0)
+  - Realm/Headers (2.7.0)
+  - RealmSwift (2.7.0):
+    - Realm (= 2.7.0)
+  - thenPromise (2.2.3)
 
 DEPENDENCIES:
-  - AsyncSwift (~> 1.7.4)
-  - ChameleonFramework/Swift
+  - AsyncSwift
+  - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - DateTools
   - Luncheon (from `https://github.com/Dan2552/Luncheon.git`)
   - Napkin (from `https://github.com/Dan2552/Napkin.git`)
   - Placemat (from `https://github.com/Dan2552/Placemat.git`)
   - PureLayout
   - RealmSwift
+  - thenPromise
 
 EXTERNAL SOURCES:
+  ChameleonFramework:
+    :git: https://github.com/ViccAlexander/Chameleon.git
   Luncheon:
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
@@ -40,29 +44,33 @@ EXTERNAL SOURCES:
     :git: https://github.com/Dan2552/Placemat.git
 
 CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: acc480fbe023c6e5fe40f68593f4a70a8c4c7ad5
+    :git: https://github.com/ViccAlexander/Chameleon.git
   Luncheon:
-    :commit: 5164cad83604afe4a5df1c5091d7509ec6340667
+    :commit: 38a01c7a26e2d71c8a07e518c7d2cc6913d9cfa1
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
-    :commit: 47e88fa96a2de8bd36e8542935b15dc38bc0118f
+    :commit: 14425fd41969b2ae080d6e98ee8f11ddca905c62
     :git: https://github.com/Dan2552/Napkin.git
   Placemat:
-    :commit: 87de71e6233792b347cd83c4270cbe4002d01cbe
+    :commit: 4ed2750669ee1d065dbbbe273d6bec96c561c79e
     :git: https://github.com/Dan2552/Placemat.git
 
 SPEC CHECKSUMS:
-  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
-  AsyncSwift: cecffe40af6e09558ed25dd71fabf04836b5eaf4
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
-  Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
-  Luncheon: 55cbdd1760198ff543f1f0b41ec2a034024df1b0
-  Napkin: fdc93da9733d84c4fe3cf3480a2d05b3f8e10c77
-  Placemat: 55404c9af80dd77d11ff7576fe0bcee0eca25952
+  DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
+  Luncheon: '0709a618bee453253881441387522c4ee605b87b'
+  Napkin: 458de7ecdc48dc19a8e516a7063631c29a227b23
+  Placemat: 9d23f53c47bfd1b6a530cb1b67365297fdd14739
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  Realm: 0f5a194af0b7e6158b83db41b4ee1a00be7ddf1a
-  RealmSwift: 0eb5070d851cba7c66e841ca756d83609dc78bc8
+  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
+  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  thenPromise: c6c356db4a6d5865be4668bdb7657233d9d843c0
 
-PODFILE CHECKSUM: db794846cfb94310c9ba23d3722c205f8f66522a
+PODFILE CHECKSUM: 4775c2105970566cc772be16acce7c57bba758a5
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1

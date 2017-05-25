@@ -1,3 +1,5 @@
+import then
+
 class HalifaxAccountsOverviewFlow: WebDriverFlow {
     let url = "https://secure.halifax-online.co.uk/personal/a/mobile/account_overview"
 
@@ -6,7 +8,7 @@ class HalifaxAccountsOverviewFlow: WebDriverFlow {
         return true
     }
 
-    override func startActionForPage(page: String) -> Bool {
+    override func startActionForPage(_ page: String) -> Bool {
         if page.hasPrefix(url) {
             getAccounts()
             return true
@@ -14,33 +16,33 @@ class HalifaxAccountsOverviewFlow: WebDriverFlow {
         return false
     }
 
-    private func getAccounts() {
+    fileprivate func getAccounts() {
         print("Accounts")
-        driver.run("$('.balance').length") { accountCountStr in
-            if let accountCount = Int(accountCountStr) {
-                for i in 0..<accountCount {
-                    self.parseAccount(i)
+        
+        run(
+            driver.run("$('.balance').length").chain { accountCountStr in
+                if let accountCount = Int(accountCountStr) {
+                    for i in 0..<accountCount {
+                        self.parseAccount(i)
+                    }
                 }
             }
-        }
+        )
     }
 
-    private func parseAccount(index: Int) {
+    private func parseAccount(_ index: Int) {
+        let account = "$($('.des-m-sat-xx-account-information')[\(index)]).find('.account-number').text()"
+        let balance = "$($('.des-m-sat-xx-account-information')[\(index)]).find('.balance span').text()"
+        let available = "$($('.des-m-sat-xx-account-information')[\(index)]).find('.available-balance').text()"
+        let title = "$($('.des-m-sat-xx-account-information')[\(index)]).find('.account-name a').text()"
+        
         let creator = AsyncronousAccountCreator()
-
-        driver.run("$($('.des-m-sat-xx-account-information')[\(index)]).find('.account-number').text()") { accountNumber in
-            creator.accountNumber = accountNumber
-        }
-        driver.run("$($('.des-m-sat-xx-account-information')[\(index)]).find('.balance span').text()") { balance in
-            creator.balance = balance
-        }
-        driver.run("$($('.des-m-sat-xx-account-information')[\(index)]).find('.available-balance').text()") { availableBalance in
-            var ab = availableBalance
-            if ab.isEmpty { ab = "-" }
-            creator.availableBalance = ab
-        }
-        driver.run("$($('.des-m-sat-xx-account-information')[\(index)]).find('.account-name a').text()") { title in
-            creator.title = title
-        }
+        
+        run(
+            driver.run(account).chain({ creator.accountNumber = $0 })
+                .then(driver.run(balance).chain({ creator.balance = $0 }))
+                .then(driver.run(available).chain({ creator.availableBalance = $0.isEmpty ? "-" : $0 }))
+                .then(driver.run(title).chain({ creator.title = $0 } ))
+        )
     }
 }

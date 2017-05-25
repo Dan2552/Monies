@@ -14,12 +14,12 @@
 		379D73EB1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D73EA1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift */; };
 		379D73ED1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D73EC1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift */; };
 		379D73EF1C9E1F06001DD2D2 /* DriverManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379D73EE1C9E1F06001DD2D2 /* DriverManager.swift */; };
-		37B895CF1C7F9F22006E18B8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B895CE1C7F9F22006E18B8 /* Style.swift */; };
 		37DBC9111C73B3A70083C56F /* BankLoginEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9101C73B3A70083C56F /* BankLoginEdit.swift */; };
 		37DBC9131C73BA370083C56F /* BankLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9121C73BA370083C56F /* BankLogin.swift */; };
 		37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9141C73BF570083C56F /* Int+Oridinal.swift */; };
 		37DBC9181C76515C0083C56F /* AsyncronousAccountCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */; };
 		AB31F387194C9F3A00C07DD6 /* LockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE75ECC1941219F008B072F /* LockViewController.swift */; };
+		AB71B87E1ED61A20005A0ACB /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB71B87D1ED61A20005A0ACB /* Style.swift */; };
 		AB9ED7721AF69479002C17EF /* BankAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9ED7711AF69479002C17EF /* BankAccount.swift */; };
 		ABD79B9B1AF685FB00C6254A /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */; };
 		ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD99CAB1AF697B2007966DD /* WKWebKitAsyncRunner.swift */; };
@@ -53,12 +53,12 @@
 		379D73EA1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxLoginFlow.swift; sourceTree = "<group>"; };
 		379D73EC1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalifaxAccountsOverviewFlow.swift; sourceTree = "<group>"; };
 		379D73EE1C9E1F06001DD2D2 /* DriverManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverManager.swift; sourceTree = "<group>"; };
-		37B895CE1C7F9F22006E18B8 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		37DBC9101C73B3A70083C56F /* BankLoginEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankLoginEdit.swift; sourceTree = "<group>"; };
 		37DBC9121C73BA370083C56F /* BankLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankLogin.swift; sourceTree = "<group>"; };
 		37DBC9141C73BF570083C56F /* Int+Oridinal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Oridinal.swift"; sourceTree = "<group>"; };
 		37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncronousAccountCreator.swift; sourceTree = "<group>"; };
 		967BB8C3CF9C5A9FDDC17C6B /* Pods-Monies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Monies.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Monies/Pods-Monies.debug.xcconfig"; sourceTree = "<group>"; };
+		AB71B87D1ED61A20005A0ACB /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Style.swift; path = style/Style.swift; sourceTree = "<group>"; };
 		AB9ED7711AF69479002C17EF /* BankAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccount.swift; sourceTree = "<group>"; };
 		ABB6F2F31AFFCCCB0015C563 /* Monies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Monies.entitlements; sourceTree = "<group>"; };
 		ABD79B9A1AF685FB00C6254A /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
@@ -146,9 +146,9 @@
 		377D43641DB3C75900C92157 /* general */ = {
 			isa = PBXGroup;
 			children = (
+				AB71B87C1ED61A0F005A0ACB /* style */,
 				ABD99CB01AF6983B007966DD /* driver */,
 				379D73E71C9DED84001DD2D2 /* flows */,
-				37B895D01C7FB99E006E18B8 /* style */,
 				ABE75EAF19411C9E008B072F /* AppDelegate.swift */,
 				37DBC9171C76515C0083C56F /* AsyncronousAccountCreator.swift */,
 				379D73EE1C9E1F06001DD2D2 /* DriverManager.swift */,
@@ -167,14 +167,6 @@
 			path = flows;
 			sourceTree = "<group>";
 		};
-		37B895D01C7FB99E006E18B8 /* style */ = {
-			isa = PBXGroup;
-			children = (
-				37B895CE1C7F9F22006E18B8 /* Style.swift */,
-			);
-			path = style;
-			sourceTree = "<group>";
-		};
 		37DBC9161C73C1670083C56F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +183,14 @@
 				3737B8EB1C7E368800213701 /* Lock */,
 			);
 			path = controllers;
+			sourceTree = "<group>";
+		};
+		AB71B87C1ED61A0F005A0ACB /* style */ = {
+			isa = PBXGroup;
+			children = (
+				AB71B87D1ED61A20005A0ACB /* Style.swift */,
+			);
+			name = style;
 			sourceTree = "<group>";
 		};
 		AB9ED7751AF6952A002C17EF /* models */ = {
@@ -288,6 +288,7 @@
 					ABE75EA919411C9E008B072F = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 3K2TUP9VBZ;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 						};
 					};
@@ -365,7 +366,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -376,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3737B8F11C7E3E0B00213701 /* BankLoginShow.swift in Sources */,
+				AB71B87E1ED61A20005A0ACB /* Style.swift in Sources */,
 				3737B8EF1C7E371F00213701 /* BankLoginIndex.swift in Sources */,
 				37DBC9111C73B3A70083C56F /* BankLoginEdit.swift in Sources */,
 				AB9ED7721AF69479002C17EF /* BankAccount.swift in Sources */,
@@ -389,7 +391,6 @@
 				37DBC9151C73BF570083C56F /* Int+Oridinal.swift in Sources */,
 				ABD99CAD1AF697B2007966DD /* WKWebKitAsyncRunner.swift in Sources */,
 				ABE75EB019411C9E008B072F /* AppDelegate.swift in Sources */,
-				37B895CF1C7F9F22006E18B8 /* Style.swift in Sources */,
 				379D73ED1C9E1098001DD2D2 /* HalifaxAccountsOverviewFlow.swift in Sources */,
 				379D73EB1C9DEFF8001DD2D2 /* HalifaxLoginFlow.swift in Sources */,
 				37DBC9181C76515C0083C56F /* AsyncronousAccountCreator.swift in Sources */,
@@ -441,6 +442,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -478,6 +480,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

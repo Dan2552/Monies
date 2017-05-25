@@ -1,3 +1,5 @@
+import then
+
 class WebDriverFlow {
     let driver: WebViewDriver
 
@@ -13,19 +15,25 @@ class WebDriverFlow {
       - Return true if the flow will take an action
       - Return false if the flow will not
     */
-    func startActionForPage(page: String) -> Bool {
+    func startActionForPage(_ page: String) -> Bool {
         return false
     }
 
     /**
      Start off a flow. Usually this would just be loading a specific page.
-     
+
      Only override this on flows that you want to start a process. (i.e. with a login flow,
-     it would be best to not override because if you try starting another process, it'll 
+     it would be best to not override because if you try starting another process, it'll
      probably redirect to the login page)
     */
     func startFlow() -> Bool {
         return false
+    }
+    
+    func run(_ promise: Promise<String>) {
+        async {
+            _ = try! await(promise)
+        }
     }
 }
 
