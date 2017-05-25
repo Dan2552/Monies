@@ -3,7 +3,7 @@ import Placemat
 
 class NavigationFlow {
     func presentLockscreen() {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = try! Navigation(viewController: LockViewController()).setupWindow()
     }
     
@@ -23,22 +23,22 @@ class NavigationFlow {
         let tabs = UITabBarController()
         tabs.viewControllers = [tab1, tab2]
         
-        Navigation(viewController: current).show(tabs)
+        Navigation(viewController: current).show(target: tabs)
     }
     
     func presentEditBankLogin(from current: UIViewController, bankLogin: BankLogin? = nil) {
         let target = BankLoginEditViewController()
         target.bankLogin = bankLogin ?? target.bankLogin
-        Navigation(viewController: current).show(target, modally: true)
+        Navigation(viewController: current).show(target: target, modally: true)
     }
     
     func presentBankLogin(from current: UIViewController, bankLogin: BankLogin) {
         let target = BankLoginShowViewController()
         target.bankLogin = bankLogin
-        Navigation(viewController: current).show(target)
+        Navigation(viewController: current).show(target: target)
     }
     
-    private func embedInNavigationController(viewController: UIViewController) -> UIViewController {
+    private func embedInNavigationController(_ viewController: UIViewController) -> UIViewController {
         let navigation = UINavigationController()
         navigation.viewControllers = [viewController]
         return navigation

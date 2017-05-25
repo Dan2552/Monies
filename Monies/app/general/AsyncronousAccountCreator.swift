@@ -14,7 +14,7 @@ class AsyncronousAccountCreator {
             return
         }
         
-        let existing = realm.objects(BankAccount).filter("accountNumber == '\(accountNumber)'")
+        let existing = realm.objects(BankAccount.self).filter("accountNumber == '\(accountNumber)'")
         let account = existing.first ?? BankAccount.init()
         try! realm.write {
             account.accountNumber = accountNumber
@@ -26,5 +26,4 @@ class AsyncronousAccountCreator {
             print("persisted")
         }
     }
-    
 }

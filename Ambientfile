@@ -1,6 +1,7 @@
 base_ios_settings! "Monies", prefix: "uk.danielgreen."
 
 option "TARGETED_DEVICE_FAMILY", "1,2"
+option "SWIFT_VERSION", "3.0"
 
 plist "Monies/Info.plist" do
   entry "UIViewControllerBasedStatusBarAppearance", false

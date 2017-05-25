@@ -9,9 +9,9 @@ class BankLoginEditViewController: EditViewController {
         if bankLogin.create() {
             super.saveWasTapped()
         } else {
-            let alert = UIAlertController(title: nil, message: "Fill in all fields", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(alert, animated: true, completion: nil)
+            let alert = UIAlertController(title: nil, message: "Fill in all fields", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
         }
     }
     override func setValuesToSubject() {
@@ -24,13 +24,14 @@ class BankLoginEditViewController: EditViewController {
     override func setupFields() {
         input("bank", collection: BankLogin.availableBanks)
         
-        sectionSeparator("Credentials")
+        sectionSeparator(header: "Credentials")
         
         input("username")
-        input("password", type: .Password)
+        input("password", type: .password)
         
-        sectionSeparator("Memorable Information", footer: "The passphrase that you enter information when logging in where it says things like \"Please enter characters 2, 3 and 6 from your memorable information\".")
+        sectionSeparator(header: "Memorable Information",
+                         footer: "The passphrase that you enter information when logging in where it says things like \"Please enter characters 2, 3 and 6 from your memorable information\".")
         
-        input("memorableInformation", type: .Password)
+        input("memorableInformation", type: .password)
     }
 }

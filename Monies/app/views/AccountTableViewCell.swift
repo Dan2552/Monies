@@ -16,10 +16,10 @@ class AccountTableViewCell: UITableViewCell {
     let timeAgo = UILabel()
     let balance = UILabel()
     
-    var updatedAt = NSDate()
+    var updatedAt = Date()
     
-    private static let largeLabelHeight: CGFloat = 35
-    private static let normalLabelHeight: CGFloat = 20
+    fileprivate static let largeLabelHeight: CGFloat = 35
+    fileprivate static let normalLabelHeight: CGFloat = 20
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -44,34 +44,34 @@ class AccountTableViewCell: UITableViewCell {
         
         let timeAgoWidth: CGFloat = 44
         
-        timeAgo.autoPinEdge(.Top, toEdge: .Top, ofView: self)
-        timeAgo.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: self)
-        timeAgo.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: -padding)
-        timeAgo.autoSetDimension(.Width, toSize: timeAgoWidth)
+        timeAgo.autoPinEdge(.top, to: .top, of: self)
+        timeAgo.autoPinEdge(.bottom, to: .bottom, of: self)
+        timeAgo.autoPinEdge(.right, to: .right, of: self, withOffset: -padding)
+        timeAgo.autoSetDimension(.width, toSize: timeAgoWidth)
         timeAgo.numberOfLines = 0
-        timeAgo.font = Style().font(.Small)
-        timeAgo.textAlignment = .Center
+        timeAgo.font = Style().font(size: .small)
+        timeAgo.textAlignment = .center
         timeAgo.textColor = Style().primaryColor
         
         [accountName, available, balance].forEach {
-            $0.autoPinEdge(.Left, toEdge: .Left, ofView: self, withOffset: padding)
-            $0.autoPinEdge(.Right, toEdge: .Right, ofView: self, withOffset: (padding + timeAgoWidth + padding))
+            $0.autoPinEdge(.left, to: .left, of: self, withOffset: padding)
+            $0.autoPinEdge(.right, to: .right, of: self, withOffset: (padding + timeAgoWidth + padding))
         }
         
-        accountName.autoPinEdge(.Top, toEdge: .Top, ofView: self, withOffset: padding)
-        accountName.autoSetDimension(.Height, toSize: normalLabelHeight)
-        accountName.font = Style().font(.Normal)
+        accountName.autoPinEdge(.top, to: .top, of: self, withOffset: padding)
+        accountName.autoSetDimension(.height, toSize: normalLabelHeight)
+        accountName.font = Style().font(size: .normal)
         
-        available.autoPinEdge(.Top, toEdge: .Bottom, ofView: accountName, withOffset: betweenLabels)
-        available.autoSetDimension(.Height, toSize: largeLabelHeight)
-        available.font = Style().font(.Large)
+        available.autoPinEdge(.top, to: .bottom, of: accountName, withOffset: betweenLabels)
+        available.autoSetDimension(.height, toSize: largeLabelHeight)
+        available.font = Style().font(size: .large)
         
-        balance.autoPinEdge(.Top, toEdge: .Bottom, ofView: available, withOffset: betweenLabels)
-        balance.autoSetDimension(.Height, toSize: normalLabelHeight)
-        balance.font = Style().font(.Normal)
+        balance.autoPinEdge(.top, to: .bottom, of: available, withOffset: betweenLabels)
+        balance.autoSetDimension(.height, toSize: normalLabelHeight)
+        balance.font = Style().font(size: .normal)
     }
     
-    func setContentForAccount(account: BankAccount) {
+    func setContentForAccount(_ account: BankAccount) {
         accountName.text = account.title
         if account.isBalanceShown {
             available.text = "\(account.availableBalance) available"
@@ -85,7 +85,7 @@ class AccountTableViewCell: UITableViewCell {
     }
     
     func updateTimeAgo() {
-        timeAgo.text = updatedAt.timeAgoSinceNow()
+        timeAgo.text = (updatedAt as NSDate).timeAgoSinceNow()
         Async.main(after: 1) { self.updateTimeAgo() }
     }
 }

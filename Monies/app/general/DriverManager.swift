@@ -7,7 +7,7 @@ class DriverManager {
     lazy var realm = try! Realm()
 
     func refreshAccounts() {
-        let banks = realm.objects(BankLogin)
+        let banks = realm.objects(BankLogin.self)
 
         for bank in banks {
             setDriverFlowsForBank(bank)
@@ -18,7 +18,7 @@ class DriverManager {
         }
     }
 
-    func driverForBank(bank: BankLogin) -> WebViewDriver {
+    func driverForBank(_ bank: BankLogin) -> WebViewDriver {
         if !drivers.keys.contains(bank.uuid) {
             drivers[bank.uuid] = WebViewDriver()
         }
@@ -26,7 +26,7 @@ class DriverManager {
         return drivers[bank.uuid]!
     }
 
-    func setDriverFlowsForBank(bank: BankLogin) {
+    func setDriverFlowsForBank(_ bank: BankLogin) {
         let driver = driverForBank(bank)
         driver.activeFlows.removeAll()
 

@@ -13,57 +13,57 @@ class BankAccountIndexViewController: UIViewController, UIWebViewDelegate, UITab
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self,
                                  action: #selector(handleRefresh(_:)),
-                                 forControlEvents: UIControlEvents.ValueChanged)
+                                 for: UIControlEvents.valueChanged)
         return refreshControl
     }()
 
     override func viewDidLoad() {
-        tableView = setupTableView(style: .Plain)
+        tableView = setupTableView(style: .plain)
         
         self.tableView.addSubview(refreshControl)
 
-        refreshToken = realm.objects(BankAccount).addNotificationBlock { (changes: RealmCollectionChange) in
+        refreshToken = realm.objects(BankAccount.self).addNotificationBlock { (changes: RealmCollectionChange) in
             self.refreshControl.endRefreshing()
             self.refresh()
         }
         refresh()
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return AccountTableViewCell.height
     }
 
-    func handleRefresh(refreshControl: UIRefreshControl) {
+    func handleRefresh(_ refreshControl: UIRefreshControl) {
         DriverManager.sharedInstance.refreshAccounts()
     }
 
     func refresh() {
         let realm = try! Realm()
-        bankAccounts = realm.objects(BankAccount)
+        bankAccounts = realm.objects(BankAccount.self)
         tableView.reloadData()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Int(bankAccounts?.count ?? 0)
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuse = "overview cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuse) as? AccountTableViewCell ??
-            AccountTableViewCell(style: .Default, reuseIdentifier: reuse)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuse) as? AccountTableViewCell ??
+            AccountTableViewCell(style: .default, reuseIdentifier: reuse)
         
         cell.setContentForAccount(bankAccountFor(indexPath))
         return cell
     }
 
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         try! realm.write {
             bankAccountFor(indexPath).toggleIsBalanceShown()
         }
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func bankAccountFor(indexPath: NSIndexPath) -> BankAccount {
+    func bankAccountFor(_ indexPath: IndexPath) -> BankAccount {
         return bankAccounts[Int(indexPath.row)]
     }
 }

@@ -1,3 +1,5 @@
+import then
+
 protocol HalifaxLoginFlowDataSource {
     func halifaxLoginUsername() -> String
     func halifaxLoginPassword() -> String
@@ -21,7 +23,7 @@ class HalifaxLoginFlow: WebDriverFlow {
         super.init(driver: driver)
     }
 
-    func isHalifax(page: String) -> Bool {
+    func isHalifax(_ page: String) -> Bool {
         for url in baseUrls {
             if page.hasPrefix(url) {
                 return true
@@ -30,11 +32,11 @@ class HalifaxLoginFlow: WebDriverFlow {
         return false
     }
 
-    override func startActionForPage(page: String) -> Bool {
+    override func startActionForPage(_ page: String) -> Bool {
         var page = page
         guard isHalifax(page) else { return false }
 
-        let urlComponents = page.componentsSeparatedByString("?")
+        let urlComponents = page.components(separatedBy: "?")
         var params = ""
         page = urlComponents[0]
         
@@ -43,7 +45,7 @@ class HalifaxLoginFlow: WebDriverFlow {
         }
 
         if page.hasSuffix(login1Page) {
-            if params.containsString("mobile=true") {
+            if params.contains("mobile=true") {
                 loginStep1()
             } else {
                 driver.visit(login1MobilePageUrl)
@@ -58,32 +60,30 @@ class HalifaxLoginFlow: WebDriverFlow {
     }
 
     func loginStep1() {
-        WKWebKitAsyncRunner(tasks: [
-            { self.driver.fillIn("frmLogin:strCustomerLogin_userID", with: self.dataSource.halifaxLoginUsername(), completion: $1) },
-            { self.driver.fillIn("frmLogin:strCustomerLogin_pwd", with: self.dataSource.halifaxLoginPassword(), redactPrint: true, completion: $1) },
-            { self.driver.click("frmLogin:lnkLogin1", completion: $1)},
-        ]).runTasks()
+        run(
+            driver.fillIn("frmLogin:strCustomerLogin_userID", with: self.dataSource.halifaxLoginUsername())
+                .then(driver.fillIn("frmLogin:strCustomerLogin_pwd", with: self.dataSource.halifaxLoginPassword(), redactPrint: true))
+                .then(driver.click("frmLogin:lnkLogin1"))
+        )
     }
 
-    func loginStep2(i: Int = 1) {
-        guard i < 4 else { return }
-
-        let element = "frmEnterMemorableInformation1:formMem\(i)"
-        WKWebKitAsyncRunner(tasks: [
-            { self.driver.labelFor(element, completion: $1) },
-            { self.driver.fillIn(element, with: self.characterForLabel($0), redactPrint: true, completion: $1)},
-            {
-                if i == 3 {
-                    self.driver.click("frmEnterMemorableInformation1:lnkSubmit", completion: $1)
-                } else {
-                    $1("")
-                }
-            },
-            { _,_ in self.loginStep2(i + 1) }
-        ]).runTasks()
+    func loginStep2() {
+        run(
+            driver.labelFor(memorableField(1))
+                .then({ label in self.driver.fillIn("frmEnterMemorableInformation1:formMem\(1)", with: self.characterForLabel(label), redactPrint: true) })
+                .then(driver.labelFor(memorableField(2)))
+                .then({ label in self.driver.fillIn("frmEnterMemorableInformation1:formMem\(2)", with: self.characterForLabel(label), redactPrint: true) })
+                .then(driver.labelFor(memorableField(3)))
+                .then({ label in self.driver.fillIn("frmEnterMemorableInformation1:formMem\(3)", with: self.characterForLabel(label), redactPrint: true) })
+                .then(driver.click("frmEnterMemorableInformation1:lnkSubmit"))
+        )
+    }
+    
+    private func memorableField(_ index: Int) -> String {
+        return "frmEnterMemorableInformation1:formMem\(index)"
     }
 
-    private func characterForLabel(key:String) -> String {
+    fileprivate func characterForLabel(_ key:String) -> String {
         var labels = [String]()
         
         for i in 1...100 {
@@ -91,7 +91,7 @@ class HalifaxLoginFlow: WebDriverFlow {
         }
 
         var n = -1
-        for (index, label) in labels.enumerate() {
+        for (index, label) in labels.enumerated() {
             if (key == label) { n = index }
         }
 

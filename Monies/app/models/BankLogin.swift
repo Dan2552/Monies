@@ -12,7 +12,7 @@ class BankLogin: Object, Lunch, HalifaxLoginFlowDataSource {
     dynamic var password = ""
     dynamic var memorableInformation = ""
     dynamic var bank = 0
-    dynamic var uuid = NSUUID().UUIDString
+    dynamic var uuid = NSUUID().uuidString
 
     lazy var r = try! Realm()
     
