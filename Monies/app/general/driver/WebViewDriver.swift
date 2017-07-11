@@ -69,16 +69,18 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     func run(_ string:String) -> Promise<String> {
         webViewHack()
         return Promise { resolve, reject in
-            self.webView.evaluateJavaScript(string) { result, error in
-                if (error != nil) {
-                    print("there was an error running javascript:")
-                    print(string)
-                }
+            Async.main {
+                self.webView.evaluateJavaScript(string) { result, error in
+                    if (error != nil) {
+                        print("there was an error running javascript:")
+                        print(string)
+                    }
 
-                if let result = result {
-                    resolve("\(result)")
-                } else {
-                    resolve("")
+                    if let result = result {
+                        resolve("\(result)")
+                    } else {
+                        resolve("")
+                    }
                 }
             }
         }
@@ -87,14 +89,16 @@ class WebViewDriver : NSObject, WKNavigationDelegate {
     // temporarily show the webview onscreen because annoyingly without
     // doing this also sometimes hangs
     func webViewHack() {
-        let window = UIApplication.shared.delegate!.window!
-        if webView.superview == nil {
-            print("WEBVIEW ADDED TO VIEW HIERARCHY")
-            window?.addSubview(self.webView)
-            window?.sendSubview(toBack: self.webView)
-            Async.main(after: 2) {
-                print("WEBVIEW REMOVED FROM VIEW HIERARCHY")
-                self.webView.removeFromSuperview()
+        Async.main {
+            let window = UIApplication.shared.delegate!.window!
+            if self.webView.superview == nil {
+                print("WEBVIEW ADDED TO VIEW HIERARCHY")
+                window?.addSubview(self.webView)
+                window?.sendSubview(toBack: self.webView)
+                Async.main(after: 2) {
+                    print("WEBVIEW REMOVED FROM VIEW HIERARCHY")
+                    self.webView.removeFromSuperview()
+                }
             }
         }
     }
