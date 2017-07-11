@@ -5,21 +5,21 @@ PODS:
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
   - DateTools (2.0.0)
-  - Eureka (2.0.1)
+  - Eureka (3.0.0)
   - Luncheon (0.6.0):
     - Alamofire (~> 4.0.1)
     - Placemat (>= 0.6.0)
-  - Napkin (0.6.0):
-    - Eureka (~> 2.0)
+  - Napkin (0.7.0):
+    - Eureka (~> 3.0.0)
     - Luncheon (>= 0.6.0)
-    - Placemat (>= 0.6.0)
-  - Placemat (0.6.0)
+    - Placemat (>= 0.7.1)
+  - Placemat (0.7.1)
   - PureLayout (3.0.2)
-  - Realm (2.7.0):
-    - Realm/Headers (= 2.7.0)
-  - Realm/Headers (2.7.0)
-  - RealmSwift (2.7.0):
-    - Realm (= 2.7.0)
+  - Realm (2.8.3):
+    - Realm/Headers (= 2.8.3)
+  - Realm/Headers (2.8.3)
+  - RealmSwift (2.8.3):
+    - Realm (= 2.8.3)
   - thenPromise (2.2.3)
 
 DEPENDENCIES:
@@ -45,16 +45,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ChameleonFramework:
-    :commit: acc480fbe023c6e5fe40f68593f4a70a8c4c7ad5
+    :commit: 6dd284bde21ea2e7f9fd89bc36f40df16e16369d
     :git: https://github.com/ViccAlexander/Chameleon.git
   Luncheon:
-    :commit: 38a01c7a26e2d71c8a07e518c7d2cc6913d9cfa1
+    :commit: c7c2d3e4e1dfd187ebcc78bec282191ef1215f47
     :git: https://github.com/Dan2552/Luncheon.git
   Napkin:
-    :commit: 14425fd41969b2ae080d6e98ee8f11ddca905c62
+    :commit: 93dfefbeefb0eaaf35ad9c16e846bdcf9540932c
     :git: https://github.com/Dan2552/Napkin.git
   Placemat:
-    :commit: 4ed2750669ee1d065dbbbe273d6bec96c561c79e
+    :commit: bd6e70701463a6628c7f62805b1834bb1567bcb1
     :git: https://github.com/Dan2552/Placemat.git
 
 SPEC CHECKSUMS:
@@ -62,13 +62,13 @@ SPEC CHECKSUMS:
   AsyncSwift: 632138e42ead868b53c745fcde9bf733ce1527ad
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  Eureka: ae837bb1dfae0c07bc1bda7aeef87876eeb537c2
+  Eureka: f36fd440c3ebb7bfea0a4fbe6f16a05f1cb35906
   Luncheon: '0709a618bee453253881441387522c4ee605b87b'
-  Napkin: 458de7ecdc48dc19a8e516a7063631c29a227b23
-  Placemat: 9d23f53c47bfd1b6a530cb1b67365297fdd14739
+  Napkin: 3486648ce1eaaa437f44751f1c79faf4129f6911
+  Placemat: 4b48105380cdcff45abef4c4e17db7ab6ba8ec57
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
-  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
-  RealmSwift: 6d06425d3900c86473c4f323bf6949b43fca22bc
+  Realm: 3601ef091c8c499a31101d8563b991e75546cdce
+  RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
   thenPromise: c6c356db4a6d5865be4668bdb7657233d9d843c0
 
 PODFILE CHECKSUM: 4775c2105970566cc772be16acce7c57bba758a5
