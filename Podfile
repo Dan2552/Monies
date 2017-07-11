@@ -13,6 +13,7 @@ target "Monies" do
   pod 'AsyncSwift'
   pod 'PureLayout'
   pod 'thenPromise'
+  pod "Eureka", git: "https://github.com/xmartlabs/Eureka", branch: "swift3.2"
 end
 
 post_install do |installer|
