@@ -20,7 +20,7 @@ class BankAccountIndexViewController: UIViewController, UIWebViewDelegate, UITab
 
     override func viewDidLoad() {
         tableView = setupTableView(style: .plain)
-        
+        tableView.separatorStyle = .none
         self.tableView.addSubview(refreshControl)
 
         refreshToken = realm.objects(BankAccount.self).addNotificationBlock { (changes: RealmCollectionChange) in
@@ -58,7 +58,7 @@ class BankAccountIndexViewController: UIViewController, UIWebViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: reuse) as? AccountTableViewCell ??
             AccountTableViewCell(style: .default, reuseIdentifier: reuse)
         
-        cell.setContentForAccount(bankAccountFor(indexPath))
+        cell.setContentForAccount(bankAccountFor(indexPath), row: indexPath.row)
         return cell
     }
 

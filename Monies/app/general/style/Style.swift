@@ -6,13 +6,13 @@ class MinorDetailLabel: UILabel {}
 
 enum StyleTextSize: Int {
     case small = 10
-    case normal = 16
-    case large = 26
+    case normal = 14
+    case large = 24
 }
 
 class Style {
     let fontName = "HelveticaNeue-Light"
-    let primaryColor = FlatPlum()
+    let primaryColor = FlatWhite()
     let secondaryColor = UIColor.white
     
     func setGlobalTheme() {
@@ -20,6 +20,8 @@ class Style {
                                                   withSecondaryColor: secondaryColor,
                                                   usingFontName: fontName,
                                                   andContentStyle: .contrast)
+        
+        UITabBar.appearance().barTintColor = .black
     }
 
     func font(size: StyleTextSize) -> UIFont {
